@@ -1,0 +1,13 @@
+name: flutter_in_action
+description: flutter book
+version: 0.0.1
+author: crazyq1 <zonggeu@163.com>
+homepage: https://github.com/ahyangnb/flutter-advanced-book
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  path: ^1.6.2
+dev_dependencies:
+  test: ^1.5.1

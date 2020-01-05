@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="{{ config.language }}" {% if page.dir== "rtl" %}dir="rtl"{% endif %}>
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>{% block title %}{{ config.title|d("GitBook", true) }}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="baidu-site-verification" content="Y34sAqDKUH"/>
+    <meta name="theme-color" content="#ffffff">
+    <!--<meta name="description" content="{% block description %}{% endblock %}">-->
+    <meta name="description" content="《Flutter高级进阶》是Flutter教程网开源的电子书，主要帮助开发者进阶深入学习flutter。">
+    <meta name="keywords" content="flutter实战,flutter书籍,flutter电子书,flutter进阶 ">
+    <meta name="generator" content="GitBook {{ gitbook.version }}">
+    {% if config.author %}
+    <meta name="author" content="{{ config.author }}">
+    {% endif %}
+    {% if config.isbn %}
+    <meta name="identifier" content="{{ config.isbn }}" scheme="ISBN">
+    {% endif %}
+    {% block style %}
+    {% for resource in plugins.resources.css %}
+    {% if resource.url %}
+    <link rel="stylesheet" href="{{ resource.url }}">
+    {% else %}
+    <link rel="stylesheet" href="{{ resource.path|resolveAsset }}">
+    {% endif %}
+    {% endfor %}
+    {% endblock %}
+    {% block head %}{% endblock %}
+    <style>
+        .pull-right > i {
+            font-size: 25px;
+            color: #777 !important;
+            cursor: pointer;
+
+        }
+
+        .pull-right > i:hover {
+            color: #777 !important;
+        }
+
+        body {
+            font-size: 15px !important;
+        }
+
+        a[href='../todo.html'], a[href='todo.html'] {
+            color: #888 !important;
+        }
+
+        .copyright {
+            text-align: center;
+            margin: 80px 16px 30px 16px;
+            padding-top: 16px;
+            border-top: #eee 1px solid;
+            color: grey;
+            font-size: .9em;
+        }
+
+        .ad {
+            color: white;
+            text-align: center;
+            background: url(https://img.alicdn.com/tfs/TB1Huu7vMmTBuNjy1XbXXaMrVXa-2880-400.png);
+            background-size: cover;
+            cursor: pointer;
+            margin-bottom: 30px;
+            padding: 18px
+        }
+
+        .ad:hover {
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+{% block body %}{% endblock %}
+
+{% block javascript %}{% endblock %}
+
+<script>
+    var _hmt = _hmt || [];
+    $("#bd").remove();
+
+
+    function init() {
+        var p = location.pathname;
+        _hmt.push(['_trackPageview', p]);
+        if (p[p.length - 1] === '/') {
+            p += "index.md"
+        } else {
+            p = p.split(".")[0] + ".md";
+        }
+        p = "https://github.com/ahyangnb/flutter-advanced-book/blob/master/docs" + p;
+        $(".pull-right .fa-edit").parent("a").attr("href", p);
+        $("table").wrap("<div style='overflow: auto'></div>");
+
+        $(".copyright").remove();
+        $("<div class='copyright'> 有错误欢迎提出，作者马上改进并红包奖赏。</div>").appendTo(".page-inner");
+    }
+
+    function hookAPI(api, ob, fn) {
+        return function () {
+            var result = api.apply(ob, [].slice.call(arguments));
+            setTimeout(fn, 1000);
+            return result;
+        }
+    }
+
+    function addAD() {
+        if (location.href !== 'http://book.flutterj.com/' && $("#book-search-results .ad").length == 0) {
+            var id=Math.ceil(Math.random()*10)%2;
+            $(".ad"+id).clone().hide().fadeIn().prependTo("#book-search-results")
+            setTimeout(function () {
+                $(".body-inner").animate({scrollTop: 0}, 200)
+            }, 800);
+        }
+    }
+
+    function _track(p,url) {
+        _hmt.push(['_trackEvent', 'ad', 'click', p]);
+        setTimeout(function () {
+            location.href = url
+        }, 100);
+    }
+
+    // setInterval(addAD, 300);
+
+    init();
+
+    if (history.pushState) {
+        history.pushState = hookAPI(history.pushState, history, init);
+    }
+
+</script>
+</body>
+
+</html>
