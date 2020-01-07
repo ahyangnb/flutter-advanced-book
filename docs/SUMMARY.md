@@ -1,13 +1,12 @@
 ﻿# Summary
 
 * [简介](README.md)
-* [前言](intro.md)
 
-## 入门篇
-
-* [第一章：起步](chapter1/index.md)
+* [第一章：性能篇](chapter1/index.md)
     * [1.1：移动开发技术简介](chapter1/mobile_development_intro.md)
-    * [1.2：初识Flutter](chapter1/flutter_intro.md)  
-    * [1.3：搭建Flutter开发环境](chapter1/install_flutter.md)      
-    * [1.4：Dart语言简介](chapter1/dart.md)    
     
+*  [第二章：原理篇](chapter2/index.md)
+    * [1.1：setState更新原理和流程](chapter2/setstate.md)
+    
+*  [第三章：面试篇](chapter3/index.md)
+    * [1.1：dart部分面试题](chapter3/dart_interview.md)
