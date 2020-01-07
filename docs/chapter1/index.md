@@ -1,2 +1,2 @@
 ## 本章目录   
-* [移动开发技术简介](mobile_development_intro.md)
+* [性能优化之局部刷新](partial_refresh.md)

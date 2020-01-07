@@ -3,7 +3,7 @@
 * [简介](README.md)
 
 * [第一章：性能篇](chapter1/index.md)
-    * [1.1：移动开发技术简介](chapter1/mobile_development_intro.md)
+    * [1.1：性能优化之局部刷新](chapter1/partial_refresh.md)
     
 *  [第二章：原理篇](chapter2/index.md)
     * [1.1：setState更新原理和流程](chapter2/setstate.md)
