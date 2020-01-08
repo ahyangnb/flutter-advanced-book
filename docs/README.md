@@ -1,11 +1,11 @@
 ## 作者
 q1，一年Flutter工作经验，[Flutter教程网](http://www.flutterj.com/)
-创办者，微信公众号"Flutter前线"小编，
+创办者，微信公众号"[Flutter前线](http://www.flutterj.com/content/uploadfile/202001/87441578227752.png)"小编，
 [FlutterCandies](https://github.com/fluttercandies)开源组织成员，具有：
 [wechat_flutter](https://github.com/fluttercandies/wechat_flutter)，
 [nav_router](https://github.com/fluttercandies/nav_router)等开源项目作品，
 视频课程：[Flutter实用例子进阶课程](http://www.flutterj.com/?post=124) ，
-高仿谷歌翻译项目课程，
+[高仿谷歌翻译项目课程](http://www.flutterj.com/?post=73)，
 目前就职于广州某创业公司，
 持续对Flutter社区输出文章资源，目前主要关注移动端行业发展和技术更新迭代，不断进步。
 
@@ -20,4 +20,6 @@ q1，一年Flutter工作经验，[Flutter教程网](http://www.flutterj.com/)
 ## 章节介绍
 本书分为多个章节，不确定性，会一直更，直到完善，然后固定章节，目前已有章节：
 [性能篇](chapter1)、[原理篇](chapter2)、[面试篇](chapter3)。
+
+> 持续更新中。。。敬请期待！
 
