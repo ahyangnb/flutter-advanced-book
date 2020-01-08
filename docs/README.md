@@ -1,4 +1,23 @@
+## 作者
+q1，一年Flutter工作经验，[Flutter教程网](http://www.flutterj.com/)
+创办者，微信公众号"Flutter前线"小编，
+[FlutterCandies](https://github.com/fluttercandies)开源组织成员，具有：
+[wechat_flutter](https://github.com/fluttercandies/wechat_flutter)，
+[nav_router](https://github.com/fluttercandies/nav_router)等开源项目作品，
+视频课程：[Flutter实用例子进阶课程](http://www.flutterj.com/?post=124) ，
+高仿谷歌翻译项目课程，
+目前就职于广州某创业公司，
+持续对Flutter社区输出文章资源，目前主要关注移动端行业发展和技术更新迭代，不断进步。
 
-## 内容简介
+![img](../img/avatar.png)
 
-hahaha
+
+## 简介
+本书主要讲解Flutter进阶，深入原理，以及工作所可能遇到的技术栈和问题解决方案、面试中
+可能遇到的问题，以实战角度进行：文案、思维导图、代码示例、工作原理、使用方式进行讲解，
+可帮助开发者快速进阶flutter技术。
+
+## 章节介绍
+本书分为多个章节，不确定性，会一直更，直到完善，然后固定章节，目前已有章节：
+[性能篇](chapter1)、[原理篇](chapter2)、[面试篇](chapter3)。
+

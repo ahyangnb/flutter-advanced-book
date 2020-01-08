@@ -10,3 +10,4 @@
     
 *  [第三章：面试篇](chapter3/index.md)
     * [1.1：dart部分面试题](chapter3/dart_interview.md)
+    * [1.2：Flutter优缺点以及理念架构](chapter3/flutter_framwork.md)
