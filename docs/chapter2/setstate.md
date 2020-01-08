@@ -1,17 +1,31 @@
-> 本文来自整理和简化
 
-调用 setState()必须是没有调用过 dispose()方法，不然出错，可通过` mounted `属性来判断调用此方法是否合法。
+
+# 分析
+
+
+Flutter状态类：
+* StatelessWidget：无状态类，没有状态更新，界面一经创建无法更改；
+* StatefulWidget：有状态类，当状态改变，调用`setState()`方法会触发`StatefulWidget`的UI状态更新，自定义继承`StatefulWidget`的子类须重写`createState()`方法。
+
+> 也就是只有当我们的类是有状态类的时候才能进行状态刷新，setState也是在State（有状态类）类里
+
+# 逻辑
+
+调用 `setState()` 必须是没有调用过 `dispose()` 方法，不然出错，可通过` mounted `属性来判断调用此方法是否合法。
 ```dart
 if (mounted) {
   setState(() {});
 }
 ```
-
-清晰的看到在framework.dart内setstate方法除了一些条件判断就是：
+setState方法
 ```dart
-_element.markNeedsBuild();
+void setState(VoidCallback fn) {
+    ...
+    _element.markNeedsBuild();  
+  }
 ```
-那我们看看markNeedsBuild。
+清晰的看到在`framework.dart`内`setState`方法除了一些条件判断就是：`_element.markNeedsBuild();`
+那我们看看`markNeedsBuild`。
 ## Element 类 markNeedsBuild方法
 ```dart
   void markNeedsBuild() {
@@ -56,7 +70,7 @@ void scheduleBuildFor(Element element) {
     }());
   }
   ```
-把一个 element 添加到 _dirtyElements 链表，以便当`WidgetsBinding.drawFrame`中调用 buildScope 的时候能够重构 element。onBuildScheduled()是一个 BuildOwner 的回调。
+把一个 element 添加到 `_dirtyElements` 链表，以便当`WidgetsBinding.drawFrame`中调用 buildScope 的时候能够重构 element。`onBuildScheduled()`是一个 BuildOwner 的回调。
 
 onBuildScheduled回调在WidgetsBinding的initInstances里初始化。
 ```dart
@@ -73,14 +87,14 @@ SystemChannels.system.setMessageHandler(_handleSystemMessage);  FlutterErrorDeta
   }
 }
 ```
-我们可以看到buildOwner.onBuildScheduled回调等于了_handleBuildScheduled，那现在来看看这个_handleBuildScheduled方法：
+我们可以看到`buildOwner.onBuildScheduled`回调等于了`_handleBuildScheduled`，那现在来看看这个`_handleBuildScheduled`方法：
 ```dart
 void _handleBuildScheduled() {
     //调用ensureVisualUpdate
     ensureVisualUpdate();
   }
 ```
-可以看到调用ensureVisualUpdate方法，那我们继续走下去。
+可以看到调用`ensureVisualUpdate`方法，那我们继续走下去。
 
 # SchedulerBinding类ensureVisualUpdate方法
 ```dart
@@ -100,7 +114,8 @@ void _handleBuildScheduled() {
     }
   }
 ```
-分别case了SchedulerPhase 的 5 个枚举值：
+分别case了`SchedulerPhase` 的 5 个枚举值：
+
 状态|含义
 --|:--:
 idle|没有正在处理的帧，可能正在执行的是 WidgetsBinding.scheduleTask，scheduleMicrotask，Timer，事件 handlers，或者其他回调等
@@ -110,7 +125,7 @@ persistentCallbacks|WidgetsBinding.drawFrame 和 SchedulerBinding.handleDrawFram
 postFrameCallbacks|主要是清理和计划执行下一帧的工作
 
 # 第二个case调用scheduleFrame()方法
-那我们看看scheduleFrame()方法
+那我们看看`scheduleFrame()`方法
 ```dart
   void scheduleFrame() {
   if (_hasScheduledFrame || !_framesEnabled) return;
@@ -126,7 +141,8 @@ postFrameCallbacks|主要是清理和计划执行下一帧的工作
 }
   ```
 WidgetsFlutterBinding 混入的这些 Binding 中基本都是监听并处理 Window 对象的一些事件，然后将这些事件按照 Framework 的模型包装、抽象然后分发。可以看到 WidgetsFlutterBinding 正是粘连 Flutter engine 与上层 Framework 的“胶水”。
-|名|解释
+
+名|解释|
 --|:--:
 GestureBinding|提供了 window.onPointerDataPacket 回调，绑定 Framework 手势子系统，是 Framework 事件模型与底层事件的绑定入口
 ServicesBinding|提供了 window.onPlatformMessage 回调， 用于绑定平台消息通道（message channel），主要处理原生和 Flutter 通信
@@ -154,7 +170,7 @@ void initInstances() {
   addPersistentFrameCallback(_handlePersistentFrameCallback);
 }
 ```
-addPersistentFrameCallback 中添加 _handlePersistentFrameCallback 最终调用了 drawFrame 而 WidgetsBinding 重写了 RendererBinding 中的 drawFrame() 方法。最终发现我们又回到了 WidgetsBinding 这个类中，在 WidgetsBinding 中 drawFrame 的实现如下：
+addPersistentFrameCallback 中添加 `_handlePersistentFrameCallback` 最终调用了 drawFrame 而 WidgetsBinding 重写了 RendererBinding 中的 drawFrame() 方法。最终发现我们又回到了 WidgetsBinding 这个类中，在 WidgetsBinding 中 drawFrame 的实现如下：
 ```dart
 @override
 void drawFrame() {
@@ -168,7 +184,7 @@ void drawFrame() {
   }
 }
 ```
-在上面 scheduleBuildFor 方法介绍中有提到："scheduleBuildFor 是把一个 element 添加到 _dirtyElements 链表，以便当[WidgetsBinding.drawFrame]中调用 buildScope 的时候能够重构 element。onBuildScheduled()是一个 BuildOwner 的回调"。在 drawFrame 中调用 buildOwner.buildScope(renderViewElement)更新 elements。
+在上面 scheduleBuildFor 方法介绍中有提到："scheduleBuildFor 是把一个 element 添加到 _dirtyElements 链表，以便当`[WidgetsBinding.drawFrame]`中调用 buildScope 的时候能够重构 element。`onBuildScheduled()`是一个 BuildOwner 的回调"。在 drawFrame 中调用 `buildOwner.buildScope(renderViewElement)`更新 elements。
 ```dart
   void buildScope(Element context, [ VoidCallback callback ]) {
     ...
@@ -201,9 +217,9 @@ void drawFrame() {
 
 ### 添加脏链表
 
-- 1. “脏”链表是待更新的链表
+- 1.“脏”链表是待更新的链表
 - 2.更新过后就不“脏”了
-- 3._active=false 的时候直接返回
+- 3.`_active=false` 的时候直接返回
 
 ### 调用 window.scheduleFrame()
 
@@ -214,12 +230,12 @@ void drawFrame() {
 
 ### 更新帧信号来临从而刷新需要重构的界面
 
-- "scheduleBuildFor 是把一个 element 添加到 _dirtyElements 链表
-- 以便当[WidgetsBinding.drawFrame]中调用 buildScope 的时候能够重构 element
-- onBuildScheduled()是一个 BuildOwner 的回调"
-- 在 drawFrame 中调用 buildOwner.buildScope(renderViewElement)更新 elements
+- `scheduleBuildFor` 是把一个 element 添加到 `_dirtyElements` 链表
+- 以便当`[WidgetsBinding.drawFrame]`中调用 `buildScope` 的时候能够重构 element
+- `onBuildScheduled()`是一个 BuildOwner 的回调"
+- 在 `drawFrame` 中调用 `buildOwner.buildScope(renderViewElement)`更新 elements
 
 # 图：
 
-![](https://user-gold-cdn.xitu.io/2020/1/1/16f608e2ec41b049?w=2763&h=1065&f=png&s=275054)
+![setState](../img/setstate.png)
 

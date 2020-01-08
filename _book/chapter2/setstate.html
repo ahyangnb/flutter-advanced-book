@@ -329,18 +329,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <blockquote>
-<p>&#x672C;&#x6587;&#x6765;&#x81EA;&#x6574;&#x7406;&#x548C;&#x7B80;&#x5316;</p>
+                                <h1 id="&#x5206;&#x6790;">&#x5206;&#x6790;</h1>
+<p>Flutter&#x72B6;&#x6001;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>StatelessWidget&#xFF1A;&#x65E0;&#x72B6;&#x6001;&#x7C7B;&#xFF0C;&#x6CA1;&#x6709;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#xFF0C;&#x754C;&#x9762;&#x4E00;&#x7ECF;&#x521B;&#x5EFA;&#x65E0;&#x6CD5;&#x66F4;&#x6539;&#xFF1B;</li>
+<li>StatefulWidget&#xFF1A;&#x6709;&#x72B6;&#x6001;&#x7C7B;&#xFF0C;&#x5F53;&#x72B6;&#x6001;&#x6539;&#x53D8;&#xFF0C;&#x8C03;&#x7528;<code>setState()</code>&#x65B9;&#x6CD5;&#x4F1A;&#x89E6;&#x53D1;<code>StatefulWidget</code>&#x7684;UI&#x72B6;&#x6001;&#x66F4;&#x65B0;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7EE7;&#x627F;<code>StatefulWidget</code>&#x7684;&#x5B50;&#x7C7B;&#x987B;&#x91CD;&#x5199;<code>createState()</code>&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<blockquote>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x6709;&#x5F53;&#x6211;&#x4EEC;&#x7684;&#x7C7B;&#x662F;&#x6709;&#x72B6;&#x6001;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x5237;&#x65B0;&#xFF0C;setState&#x4E5F;&#x662F;&#x5728;State&#xFF08;&#x6709;&#x72B6;&#x6001;&#x7C7B;&#xFF09;&#x7C7B;&#x91CC;</p>
 </blockquote>
-<p>&#x8C03;&#x7528; setState()&#x5FC5;&#x987B;&#x662F;&#x6CA1;&#x6709;&#x8C03;&#x7528;&#x8FC7; dispose()&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x7136;&#x51FA;&#x9519;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;<code>mounted</code>&#x5C5E;&#x6027;&#x6765;&#x5224;&#x65AD;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x662F;&#x5426;&#x5408;&#x6CD5;&#x3002;</p>
+<h1 id="&#x903B;&#x8F91;">&#x903B;&#x8F91;</h1>
+<p>&#x8C03;&#x7528; <code>setState()</code> &#x5FC5;&#x987B;&#x662F;&#x6CA1;&#x6709;&#x8C03;&#x7528;&#x8FC7; <code>dispose()</code> &#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x7136;&#x51FA;&#x9519;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;<code>mounted</code>&#x5C5E;&#x6027;&#x6765;&#x5224;&#x65AD;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x662F;&#x5426;&#x5408;&#x6CD5;&#x3002;</p>
 <pre class="language-"><code class="lang-dart"><span class="token keyword">if</span> <span class="token punctuation">(</span>mounted<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x6E05;&#x6670;&#x7684;&#x770B;&#x5230;&#x5728;framework.dart&#x5185;setstate&#x65B9;&#x6CD5;&#x9664;&#x4E86;&#x4E00;&#x4E9B;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x5C31;&#x662F;&#xFF1A;</p>
-<pre class="language-"><code class="lang-dart">_element<span class="token punctuation">.</span><span class="token function">markNeedsBuild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>setState&#x65B9;&#x6CD5;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">setState</span><span class="token punctuation">(</span>VoidCallback fn<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    _element<span class="token punctuation">.</span><span class="token function">markNeedsBuild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x90A3;&#x6211;&#x4EEC;&#x770B;&#x770B;markNeedsBuild&#x3002;</p>
+<p>&#x6E05;&#x6670;&#x7684;&#x770B;&#x5230;&#x5728;<code>framework.dart</code>&#x5185;<code>setState</code>&#x65B9;&#x6CD5;&#x9664;&#x4E86;&#x4E00;&#x4E9B;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x5C31;&#x662F;&#xFF1A;<code>_element.markNeedsBuild();</code>
+&#x90A3;&#x6211;&#x4EEC;&#x770B;&#x770B;<code>markNeedsBuild</code>&#x3002;</p>
 <h2 id="element-&#x7C7B;-markneedsbuild&#x65B9;&#x6CD5;">Element &#x7C7B; markNeedsBuild&#x65B9;&#x6CD5;</h2>
 <pre class="language-"><code class="lang-dart">  <span class="token keyword">void</span> <span class="token function">markNeedsBuild</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">assert</span><span class="token punctuation">(</span>_debugLifecycleState <span class="token operator">!=</span> _ElementLifecycle<span class="token punctuation">.</span>defunct<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -382,7 +393,7 @@
     <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x628A;&#x4E00;&#x4E2A; element &#x6DFB;&#x52A0;&#x5230; _dirtyElements &#x94FE;&#x8868;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F53;<code>WidgetsBinding.drawFrame</code>&#x4E2D;&#x8C03;&#x7528; buildScope &#x7684;&#x65F6;&#x5019;&#x80FD;&#x591F;&#x91CD;&#x6784; element&#x3002;onBuildScheduled()&#x662F;&#x4E00;&#x4E2A; BuildOwner &#x7684;&#x56DE;&#x8C03;&#x3002;</p>
+<p>&#x628A;&#x4E00;&#x4E2A; element &#x6DFB;&#x52A0;&#x5230; <code>_dirtyElements</code> &#x94FE;&#x8868;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F53;<code>WidgetsBinding.drawFrame</code>&#x4E2D;&#x8C03;&#x7528; buildScope &#x7684;&#x65F6;&#x5019;&#x80FD;&#x591F;&#x91CD;&#x6784; element&#x3002;<code>onBuildScheduled()</code>&#x662F;&#x4E00;&#x4E2A; BuildOwner &#x7684;&#x56DE;&#x8C03;&#x3002;</p>
 <p>onBuildScheduled&#x56DE;&#x8C03;&#x5728;WidgetsBinding&#x7684;initInstances&#x91CC;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
 <pre class="language-"><code class="lang-dart">mixin WidgetsBinding on BindingBase<span class="token punctuation">,</span> SchedulerBinding<span class="token punctuation">,</span> GestureBinding<span class="token punctuation">,</span> RendererBinding<span class="token punctuation">,</span> SemanticsBinding <span class="token punctuation">{</span>
   <span class="token metadata symbol">@override</span>
@@ -397,13 +408,13 @@ SystemChannels<span class="token punctuation">.</span>system<span class="token p
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;buildOwner.onBuildScheduled&#x56DE;&#x8C03;&#x7B49;&#x4E8E;&#x4E86;_handleBuildScheduled&#xFF0C;&#x90A3;&#x73B0;&#x5728;&#x6765;&#x770B;&#x770B;&#x8FD9;&#x4E2A;_handleBuildScheduled&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;<code>buildOwner.onBuildScheduled</code>&#x56DE;&#x8C03;&#x7B49;&#x4E8E;&#x4E86;<code>_handleBuildScheduled</code>&#xFF0C;&#x90A3;&#x73B0;&#x5728;&#x6765;&#x770B;&#x770B;&#x8FD9;&#x4E2A;<code>_handleBuildScheduled</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
 <pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_handleBuildScheduled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">//&#x8C03;&#x7528;ensureVisualUpdate</span>
     <span class="token function">ensureVisualUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8C03;&#x7528;ensureVisualUpdate&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x8D70;&#x4E0B;&#x53BB;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8C03;&#x7528;<code>ensureVisualUpdate</code>&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x8D70;&#x4E0B;&#x53BB;&#x3002;</p>
 <h1 id="schedulerbinding&#x7C7B;ensurevisualupdate&#x65B9;&#x6CD5;">SchedulerBinding&#x7C7B;ensureVisualUpdate&#x65B9;&#x6CD5;</h1>
 <pre class="language-"><code class="lang-dart">  <span class="token keyword">void</span> <span class="token function">ensureVisualUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">switch</span> <span class="token punctuation">(</span>schedulerPhase<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -421,16 +432,39 @@ SystemChannels<span class="token punctuation">.</span>system<span class="token p
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x5206;&#x522B;case&#x4E86;SchedulerPhase &#x7684; 5 &#x4E2A;&#x679A;&#x4E3E;&#x503C;&#xFF1A;
-&#x72B6;&#x6001;|&#x542B;&#x4E49;
---|:--:
-idle|&#x6CA1;&#x6709;&#x6B63;&#x5728;&#x5904;&#x7406;&#x7684;&#x5E27;&#xFF0C;&#x53EF;&#x80FD;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x662F; WidgetsBinding.scheduleTask&#xFF0C;scheduleMicrotask&#xFF0C;Timer&#xFF0C;&#x4E8B;&#x4EF6; handlers&#xFF0C;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x56DE;&#x8C03;&#x7B49;
-transientCallbacks|SchedulerBinding.handleBeginFrame &#x8FC7;&#x7A0B;&#xFF0C; &#x5904;&#x7406;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x66F4;&#x65B0;
-midFrameMicrotasks|&#x5904;&#x7406; transientCallbacks &#x9636;&#x6BB5;&#x89E6;&#x53D1;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#xFF08;Microtasks&#xFF09;
-persistentCallbacks|WidgetsBinding.drawFrame &#x548C; SchedulerBinding.handleDrawFrame &#x8FC7;&#x7A0B;&#xFF0C;build/layout/paint &#x6D41;&#x6C34;&#x7EBF;&#x5DE5;&#x4F5C;
-postFrameCallbacks|&#x4E3B;&#x8981;&#x662F;&#x6E05;&#x7406;&#x548C;&#x8BA1;&#x5212;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x5E27;&#x7684;&#x5DE5;&#x4F5C;</p>
+<p>&#x5206;&#x522B;case&#x4E86;<code>SchedulerPhase</code> &#x7684; 5 &#x4E2A;&#x679A;&#x4E3E;&#x503C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x72B6;&#x6001;</th>
+<th style="text-align:center">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idle</td>
+<td style="text-align:center">&#x6CA1;&#x6709;&#x6B63;&#x5728;&#x5904;&#x7406;&#x7684;&#x5E27;&#xFF0C;&#x53EF;&#x80FD;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;&#x662F; WidgetsBinding.scheduleTask&#xFF0C;scheduleMicrotask&#xFF0C;Timer&#xFF0C;&#x4E8B;&#x4EF6; handlers&#xFF0C;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x56DE;&#x8C03;&#x7B49;</td>
+</tr>
+<tr>
+<td>transientCallbacks</td>
+<td style="text-align:center">SchedulerBinding.handleBeginFrame &#x8FC7;&#x7A0B;&#xFF0C; &#x5904;&#x7406;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x66F4;&#x65B0;</td>
+</tr>
+<tr>
+<td>midFrameMicrotasks</td>
+<td style="text-align:center">&#x5904;&#x7406; transientCallbacks &#x9636;&#x6BB5;&#x89E6;&#x53D1;&#x7684;&#x5FAE;&#x4EFB;&#x52A1;&#xFF08;Microtasks&#xFF09;</td>
+</tr>
+<tr>
+<td>persistentCallbacks</td>
+<td style="text-align:center">WidgetsBinding.drawFrame &#x548C; SchedulerBinding.handleDrawFrame &#x8FC7;&#x7A0B;&#xFF0C;build/layout/paint &#x6D41;&#x6C34;&#x7EBF;&#x5DE5;&#x4F5C;</td>
+</tr>
+<tr>
+<td>postFrameCallbacks</td>
+<td style="text-align:center">&#x4E3B;&#x8981;&#x662F;&#x6E05;&#x7406;&#x548C;&#x8BA1;&#x5212;&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x5E27;&#x7684;&#x5DE5;&#x4F5C;</td>
+</tr>
+</tbody>
+</table>
 <h1 id="&#x7B2C;&#x4E8C;&#x4E2A;case&#x8C03;&#x7528;scheduleframe&#x65B9;&#x6CD5;">&#x7B2C;&#x4E8C;&#x4E2A;case&#x8C03;&#x7528;scheduleFrame()&#x65B9;&#x6CD5;</h1>
-<p>&#x90A3;&#x6211;&#x4EEC;&#x770B;&#x770B;scheduleFrame()&#x65B9;&#x6CD5;</p>
+<p>&#x90A3;&#x6211;&#x4EEC;&#x770B;&#x770B;<code>scheduleFrame()</code>&#x65B9;&#x6CD5;</p>
 <pre class="language-"><code class="lang-dart">  <span class="token keyword">void</span> <span class="token function">scheduleFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>_hasScheduledFrame <span class="token operator">||</span> <span class="token operator">!</span>_framesEnabled<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
   <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -444,16 +478,45 @@ postFrameCallbacks|&#x4E3B;&#x8981;&#x662F;&#x6E05;&#x7406;&#x548C;&#x8BA1;&#x52
   _hasScheduledFrame <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>WidgetsFlutterBinding &#x6DF7;&#x5165;&#x7684;&#x8FD9;&#x4E9B; Binding &#x4E2D;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x76D1;&#x542C;&#x5E76;&#x5904;&#x7406; Window &#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E9B;&#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x6309;&#x7167; Framework &#x7684;&#x6A21;&#x578B;&#x5305;&#x88C5;&#x3001;&#x62BD;&#x8C61;&#x7136;&#x540E;&#x5206;&#x53D1;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230; WidgetsFlutterBinding &#x6B63;&#x662F;&#x7C98;&#x8FDE; Flutter engine &#x4E0E;&#x4E0A;&#x5C42; Framework &#x7684;&#x201C;&#x80F6;&#x6C34;&#x201D;&#x3002;
-|&#x540D;|&#x89E3;&#x91CA;
---|:--:
-GestureBinding|&#x63D0;&#x4F9B;&#x4E86; window.onPointerDataPacket &#x56DE;&#x8C03;&#xFF0C;&#x7ED1;&#x5B9A; Framework &#x624B;&#x52BF;&#x5B50;&#x7CFB;&#x7EDF;&#xFF0C;&#x662F; Framework &#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x4E0E;&#x5E95;&#x5C42;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x5165;&#x53E3;
-ServicesBinding|&#x63D0;&#x4F9B;&#x4E86; window.onPlatformMessage &#x56DE;&#x8C03;&#xFF0C; &#x7528;&#x4E8E;&#x7ED1;&#x5B9A;&#x5E73;&#x53F0;&#x6D88;&#x606F;&#x901A;&#x9053;&#xFF08;message channel&#xFF09;&#xFF0C;&#x4E3B;&#x8981;&#x5904;&#x7406;&#x539F;&#x751F;&#x548C; Flutter &#x901A;&#x4FE1;
-SchedulerBinding|&#x63D0;&#x4F9B;&#x4E86; window.onBeginFrame &#x548C; window.onDrawFrame &#x56DE;&#x8C03;&#xFF0C;&#x76D1;&#x542C;&#x5237;&#x65B0;&#x4E8B;&#x4EF6;&#xFF0C;&#x7ED1;&#x5B9A; Framework &#x7ED8;&#x5236;&#x8C03;&#x5EA6;&#x5B50;&#x7CFB;&#x7EDF;
-PaintingBinding|&#x7ED1;&#x5B9A;&#x7ED8;&#x5236;&#x5E93;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x56FE;&#x7247;&#x7F13;&#x5B58;
-SemanticsBinding|&#x8BED;&#x4E49;&#x5316;&#x5C42;&#x4E0E; Flutter engine &#x7684;&#x6865;&#x6881;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x8F85;&#x52A9;&#x529F;&#x80FD;&#x7684;&#x5E95;&#x5C42;&#x652F;&#x6301;
-RendererBinding|&#x63D0;&#x4F9B;&#x4E86; window.onMetricsChanged &#x3001;window.onTextScaleFactorChanged &#x7B49;&#x56DE;&#x8C03;&#x3002;&#x5B83;&#x662F;&#x6E32;&#x67D3;&#x6811;&#x4E0E; Flutter engine &#x7684;&#x6865;&#x6881;
-WidgetsBinding|&#x63D0;&#x4F9B;&#x4E86; window.onLocaleChanged&#x3001;onBuildScheduled &#x7B49;&#x56DE;&#x8C03;&#x3002;&#x5B83;&#x662F; Flutter widget &#x5C42;&#x4E0E; engine &#x7684;&#x6865;&#x6881;</p>
+<p>WidgetsFlutterBinding &#x6DF7;&#x5165;&#x7684;&#x8FD9;&#x4E9B; Binding &#x4E2D;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x76D1;&#x542C;&#x5E76;&#x5904;&#x7406; Window &#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E9B;&#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x6309;&#x7167; Framework &#x7684;&#x6A21;&#x578B;&#x5305;&#x88C5;&#x3001;&#x62BD;&#x8C61;&#x7136;&#x540E;&#x5206;&#x53D1;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230; WidgetsFlutterBinding &#x6B63;&#x662F;&#x7C98;&#x8FDE; Flutter engine &#x4E0E;&#x4E0A;&#x5C42; Framework &#x7684;&#x201C;&#x80F6;&#x6C34;&#x201D;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;</th>
+<th style="text-align:center">&#x89E3;&#x91CA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GestureBinding</td>
+<td style="text-align:center">&#x63D0;&#x4F9B;&#x4E86; window.onPointerDataPacket &#x56DE;&#x8C03;&#xFF0C;&#x7ED1;&#x5B9A; Framework &#x624B;&#x52BF;&#x5B50;&#x7CFB;&#x7EDF;&#xFF0C;&#x662F; Framework &#x4E8B;&#x4EF6;&#x6A21;&#x578B;&#x4E0E;&#x5E95;&#x5C42;&#x4E8B;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x5165;&#x53E3;</td>
+</tr>
+<tr>
+<td>ServicesBinding</td>
+<td style="text-align:center">&#x63D0;&#x4F9B;&#x4E86; window.onPlatformMessage &#x56DE;&#x8C03;&#xFF0C; &#x7528;&#x4E8E;&#x7ED1;&#x5B9A;&#x5E73;&#x53F0;&#x6D88;&#x606F;&#x901A;&#x9053;&#xFF08;message channel&#xFF09;&#xFF0C;&#x4E3B;&#x8981;&#x5904;&#x7406;&#x539F;&#x751F;&#x548C; Flutter &#x901A;&#x4FE1;</td>
+</tr>
+<tr>
+<td>SchedulerBinding</td>
+<td style="text-align:center">&#x63D0;&#x4F9B;&#x4E86; window.onBeginFrame &#x548C; window.onDrawFrame &#x56DE;&#x8C03;&#xFF0C;&#x76D1;&#x542C;&#x5237;&#x65B0;&#x4E8B;&#x4EF6;&#xFF0C;&#x7ED1;&#x5B9A; Framework &#x7ED8;&#x5236;&#x8C03;&#x5EA6;&#x5B50;&#x7CFB;&#x7EDF;</td>
+</tr>
+<tr>
+<td>PaintingBinding</td>
+<td style="text-align:center">&#x7ED1;&#x5B9A;&#x7ED8;&#x5236;&#x5E93;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x56FE;&#x7247;&#x7F13;&#x5B58;</td>
+</tr>
+<tr>
+<td>SemanticsBinding</td>
+<td style="text-align:center">&#x8BED;&#x4E49;&#x5316;&#x5C42;&#x4E0E; Flutter engine &#x7684;&#x6865;&#x6881;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x8F85;&#x52A9;&#x529F;&#x80FD;&#x7684;&#x5E95;&#x5C42;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td>RendererBinding</td>
+<td style="text-align:center">&#x63D0;&#x4F9B;&#x4E86; window.onMetricsChanged &#x3001;window.onTextScaleFactorChanged &#x7B49;&#x56DE;&#x8C03;&#x3002;&#x5B83;&#x662F;&#x6E32;&#x67D3;&#x6811;&#x4E0E; Flutter engine &#x7684;&#x6865;&#x6881;</td>
+</tr>
+<tr>
+<td>WidgetsBinding</td>
+<td style="text-align:center">&#x63D0;&#x4F9B;&#x4E86; window.onLocaleChanged&#x3001;onBuildScheduled &#x7B49;&#x56DE;&#x8C03;&#x3002;&#x5B83;&#x662F; Flutter widget &#x5C42;&#x4E0E; engine &#x7684;&#x6865;&#x6881;</td>
+</tr>
+</tbody>
+</table>
 <p>&#x4E4B;&#x524D;&#x7684;&#x6587;&#x4E2D;&#x6709;&#x8BF4;&#x8FC7;&#xFF0C;UI &#x7684;&#x7ED8;&#x5236;&#x903B;&#x8F91;&#x662F;&#x5728; Render &#x6811;&#x4E2D;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x8FD8;&#x6765;&#x7EC6;&#x770B; RendererBinding &#x7684;&#x903B;&#x8F91;&#x3002;</p>
 <h1 id="rendererbinding">RendererBinding</h1>
 <pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">initInstances</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -470,7 +533,7 @@ WidgetsBinding|&#x63D0;&#x4F9B;&#x4E86; window.onLocaleChanged&#x3001;onBuildSch
   <span class="token function">addPersistentFrameCallback</span><span class="token punctuation">(</span>_handlePersistentFrameCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>addPersistentFrameCallback &#x4E2D;&#x6DFB;&#x52A0; _handlePersistentFrameCallback &#x6700;&#x7EC8;&#x8C03;&#x7528;&#x4E86; drawFrame &#x800C; WidgetsBinding &#x91CD;&#x5199;&#x4E86; RendererBinding &#x4E2D;&#x7684; drawFrame() &#x65B9;&#x6CD5;&#x3002;&#x6700;&#x7EC8;&#x53D1;&#x73B0;&#x6211;&#x4EEC;&#x53C8;&#x56DE;&#x5230;&#x4E86; WidgetsBinding &#x8FD9;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x5728; WidgetsBinding &#x4E2D; drawFrame &#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>addPersistentFrameCallback &#x4E2D;&#x6DFB;&#x52A0; <code>_handlePersistentFrameCallback</code> &#x6700;&#x7EC8;&#x8C03;&#x7528;&#x4E86; drawFrame &#x800C; WidgetsBinding &#x91CD;&#x5199;&#x4E86; RendererBinding &#x4E2D;&#x7684; drawFrame() &#x65B9;&#x6CD5;&#x3002;&#x6700;&#x7EC8;&#x53D1;&#x73B0;&#x6211;&#x4EEC;&#x53C8;&#x56DE;&#x5230;&#x4E86; WidgetsBinding &#x8FD9;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x5728; WidgetsBinding &#x4E2D; drawFrame &#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre class="language-"><code class="lang-dart"><span class="token metadata symbol">@override</span>
 <span class="token keyword">void</span> <span class="token function">drawFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
@@ -483,7 +546,7 @@ WidgetsBinding|&#x63D0;&#x4F9B;&#x4E86; window.onLocaleChanged&#x3001;onBuildSch
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x5728;&#x4E0A;&#x9762; scheduleBuildFor &#x65B9;&#x6CD5;&#x4ECB;&#x7ECD;&#x4E2D;&#x6709;&#x63D0;&#x5230;&#xFF1A;&quot;scheduleBuildFor &#x662F;&#x628A;&#x4E00;&#x4E2A; element &#x6DFB;&#x52A0;&#x5230; _dirtyElements &#x94FE;&#x8868;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F53;[WidgetsBinding.drawFrame]&#x4E2D;&#x8C03;&#x7528; buildScope &#x7684;&#x65F6;&#x5019;&#x80FD;&#x591F;&#x91CD;&#x6784; element&#x3002;onBuildScheduled()&#x662F;&#x4E00;&#x4E2A; BuildOwner &#x7684;&#x56DE;&#x8C03;&quot;&#x3002;&#x5728; drawFrame &#x4E2D;&#x8C03;&#x7528; buildOwner.buildScope(renderViewElement)&#x66F4;&#x65B0; elements&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x9762; scheduleBuildFor &#x65B9;&#x6CD5;&#x4ECB;&#x7ECD;&#x4E2D;&#x6709;&#x63D0;&#x5230;&#xFF1A;&quot;scheduleBuildFor &#x662F;&#x628A;&#x4E00;&#x4E2A; element &#x6DFB;&#x52A0;&#x5230; _dirtyElements &#x94FE;&#x8868;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F53;<code>[WidgetsBinding.drawFrame]</code>&#x4E2D;&#x8C03;&#x7528; buildScope &#x7684;&#x65F6;&#x5019;&#x80FD;&#x591F;&#x91CD;&#x6784; element&#x3002;<code>onBuildScheduled()</code>&#x662F;&#x4E00;&#x4E2A; BuildOwner &#x7684;&#x56DE;&#x8C03;&quot;&#x3002;&#x5728; drawFrame &#x4E2D;&#x8C03;&#x7528; <code>buildOwner.buildScope(renderViewElement)</code>&#x66F4;&#x65B0; elements&#x3002;</p>
 <pre class="language-"><code class="lang-dart">  <span class="token keyword">void</span> <span class="token function">buildScope</span><span class="token punctuation">(</span>Element context<span class="token punctuation">,</span> <span class="token punctuation">[</span> VoidCallback callback <span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
       <span class="token keyword">while</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> dirtyCount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -512,12 +575,9 @@ WidgetsBinding|&#x63D0;&#x4F9B;&#x4E86; window.onLocaleChanged&#x3001;onBuildSch
 </ul>
 <h3 id="&#x6DFB;&#x52A0;&#x810F;&#x94FE;&#x8868;">&#x6DFB;&#x52A0;&#x810F;&#x94FE;&#x8868;</h3>
 <ul>
-<li><ol>
-<li>&#x201C;&#x810F;&#x201D;&#x94FE;&#x8868;&#x662F;&#x5F85;&#x66F4;&#x65B0;&#x7684;&#x94FE;&#x8868;</li>
-</ol>
-</li>
+<li>1.&#x201C;&#x810F;&#x201D;&#x94FE;&#x8868;&#x662F;&#x5F85;&#x66F4;&#x65B0;&#x7684;&#x94FE;&#x8868;</li>
 <li>2.&#x66F4;&#x65B0;&#x8FC7;&#x540E;&#x5C31;&#x4E0D;&#x201C;&#x810F;&#x201D;&#x4E86;</li>
-<li>3._active=false &#x7684;&#x65F6;&#x5019;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</li>
+<li>3.<code>_active=false</code> &#x7684;&#x65F6;&#x5019;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</li>
 </ul>
 <h3 id="&#x8C03;&#x7528;-windowscheduleframe">&#x8C03;&#x7528; window.scheduleFrame()</h3>
 <ul>
@@ -528,13 +588,13 @@ WidgetsBinding|&#x63D0;&#x4F9B;&#x4E86; window.onLocaleChanged&#x3001;onBuildSch
 </ul>
 <h3 id="&#x66F4;&#x65B0;&#x5E27;&#x4FE1;&#x53F7;&#x6765;&#x4E34;&#x4ECE;&#x800C;&#x5237;&#x65B0;&#x9700;&#x8981;&#x91CD;&#x6784;&#x7684;&#x754C;&#x9762;">&#x66F4;&#x65B0;&#x5E27;&#x4FE1;&#x53F7;&#x6765;&#x4E34;&#x4ECE;&#x800C;&#x5237;&#x65B0;&#x9700;&#x8981;&#x91CD;&#x6784;&#x7684;&#x754C;&#x9762;</h3>
 <ul>
-<li>&quot;scheduleBuildFor &#x662F;&#x628A;&#x4E00;&#x4E2A; element &#x6DFB;&#x52A0;&#x5230; _dirtyElements &#x94FE;&#x8868;</li>
-<li>&#x4EE5;&#x4FBF;&#x5F53;[WidgetsBinding.drawFrame]&#x4E2D;&#x8C03;&#x7528; buildScope &#x7684;&#x65F6;&#x5019;&#x80FD;&#x591F;&#x91CD;&#x6784; element</li>
-<li>onBuildScheduled()&#x662F;&#x4E00;&#x4E2A; BuildOwner &#x7684;&#x56DE;&#x8C03;&quot;</li>
-<li>&#x5728; drawFrame &#x4E2D;&#x8C03;&#x7528; buildOwner.buildScope(renderViewElement)&#x66F4;&#x65B0; elements</li>
+<li><code>scheduleBuildFor</code> &#x662F;&#x628A;&#x4E00;&#x4E2A; element &#x6DFB;&#x52A0;&#x5230; <code>_dirtyElements</code> &#x94FE;&#x8868;</li>
+<li>&#x4EE5;&#x4FBF;&#x5F53;<code>[WidgetsBinding.drawFrame]</code>&#x4E2D;&#x8C03;&#x7528; <code>buildScope</code> &#x7684;&#x65F6;&#x5019;&#x80FD;&#x591F;&#x91CD;&#x6784; element</li>
+<li><code>onBuildScheduled()</code>&#x662F;&#x4E00;&#x4E2A; BuildOwner &#x7684;&#x56DE;&#x8C03;&quot;</li>
+<li>&#x5728; <code>drawFrame</code> &#x4E2D;&#x8C03;&#x7528; <code>buildOwner.buildScope(renderViewElement)</code>&#x66F4;&#x65B0; elements</li>
 </ul>
 <h1 id="&#x56FE;&#xFF1A;">&#x56FE;&#xFF1A;</h1>
-<p><img src="https://user-gold-cdn.xitu.io/2020/1/1/16f608e2ec41b049?w=2763&amp;h=1065&amp;f=png&amp;s=275054" alt=""></p>
+<p><img src="../img/setstate.png" alt="setState"></p>
 
                                 
                                 </section>
@@ -578,7 +638,7 @@ WidgetsBinding|&#x63D0;&#x4F9B;&#x4E86; window.onLocaleChanged&#x3001;onBuildSch
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.1：setState更新原理和流程","level":"1.3.1","depth":2,"next":{"title":"第三章：面试篇","level":"1.4","depth":1,"path":"chapter3/index.md","ref":"chapter3/index.md","articles":[{"title":"1.1：dart部分面试题","level":"1.4.1","depth":2,"path":"chapter3/dart_interview.md","ref":"chapter3/dart_interview.md","articles":[]},{"title":"1.2：Flutter优缺点以及理念架构","level":"1.4.2","depth":2,"path":"chapter3/flutter_framwork.md","ref":"chapter3/flutter_framwork.md","articles":[]}]},"previous":{"title":"第二章：原理篇","level":"1.3","depth":1,"path":"chapter2/index.md","ref":"chapter2/index.md","articles":[{"title":"1.1：setState更新原理和流程","level":"1.3.1","depth":2,"path":"chapter2/setstate.md","ref":"chapter2/setstate.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight","livereload"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/setstate.md","mtime":"2020-01-08T02:28:36.916Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-08T03:16:01.382Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.1：setState更新原理和流程","level":"1.3.1","depth":2,"next":{"title":"第三章：面试篇","level":"1.4","depth":1,"path":"chapter3/index.md","ref":"chapter3/index.md","articles":[{"title":"1.1：dart部分面试题","level":"1.4.1","depth":2,"path":"chapter3/dart_interview.md","ref":"chapter3/dart_interview.md","articles":[]},{"title":"1.2：Flutter优缺点以及理念架构","level":"1.4.2","depth":2,"path":"chapter3/flutter_framwork.md","ref":"chapter3/flutter_framwork.md","articles":[]}]},"previous":{"title":"第二章：原理篇","level":"1.3","depth":1,"path":"chapter2/index.md","ref":"chapter2/index.md","articles":[{"title":"1.1：setState更新原理和流程","level":"1.3.1","depth":2,"path":"chapter2/setstate.md","ref":"chapter2/setstate.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight","livereload"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/setstate.md","mtime":"2020-01-08T13:08:55.740Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-08T12:56:52.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

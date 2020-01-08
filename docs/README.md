@@ -1,3 +1,5 @@
+<img src="img/avatar.png" width="20%">
+
 ## 作者
 q1，一年Flutter工作经验，[Flutter教程网](http://www.flutterj.com/)
 创办者，微信公众号"[Flutter前线](http://www.flutterj.com/content/uploadfile/202001/87441578227752.png)"小编，
@@ -8,8 +10,6 @@ q1，一年Flutter工作经验，[Flutter教程网](http://www.flutterj.com/)
 [高仿谷歌翻译项目课程](http://www.flutterj.com/?post=73)，
 目前就职于广州某创业公司，
 持续对Flutter社区输出文章资源，目前主要关注移动端行业发展和技术更新迭代，不断进步。
-
-![img](../img/avatar.png)
 
 
 ## 简介
