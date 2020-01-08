@@ -91,4 +91,9 @@ class TextWidgetState extends State<TextWidget> {
 
 可以明显的看到按钮的count并无变动，但需要更新的文本组件更新了值，已经完美实现了局部刷新。
 
+<img src="../img/keystate.gif" width="30%">
+
 # 实现原理：
+textKey是一个`GlobalKey`类型的Key范型为`TextWidgetState`（封装的文本&&有状态类），
+所以这个Key可以通过`currentState`方法调用到类里面的`onPressed`方法，
+而`onPressed`方法刚好有调用`setState`来刷新局部状态。
