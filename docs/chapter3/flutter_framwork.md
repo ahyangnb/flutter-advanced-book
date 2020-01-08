@@ -26,7 +26,4 @@ Flutter的顶层是用drat编写的框架（SDK），它实现了一套基础库
 * 第二是Dart 运行时环境
 * 第三文本渲染布局引擎。
 
-![image](https://github.com/ahyangnb/flutter_interview/blob/master/img/frameworkAndEngine.jpg?raw=true)
-
-***
-### [Flutter每日一面目录大全](https://github.com/ahyangnb/flutter_interview)
+![image](../img/frameworkAndEngine.jpg)
