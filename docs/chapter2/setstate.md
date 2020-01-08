@@ -2,14 +2,13 @@
 
 # 分析
 
-
 Flutter状态类：
 * StatelessWidget：无状态类，没有状态更新，界面一经创建无法更改；
 * StatefulWidget：有状态类，当状态改变，调用`setState()`方法会触发`StatefulWidget`的UI状态更新，自定义继承`StatefulWidget`的子类须重写`createState()`方法。
 
 > 也就是只有当我们的类是有状态类的时候才能进行状态刷新，setState也是在State（有状态类）类里
 
-# 逻辑
+# 解析 ： framework.dart文件State类
 
 调用 `setState()` 必须是没有调用过 `dispose()` 方法，不然出错，可通过` mounted `属性来判断调用此方法是否合法。
 ```dart
@@ -24,7 +23,7 @@ void setState(VoidCallback fn) {
     _element.markNeedsBuild();  
   }
 ```
-清晰的看到在`framework.dart`内`setState`方法除了一些条件判断就是：`_element.markNeedsBuild();`
+`setState`方法除了一些条件判断就是：`_element.markNeedsBuild();`
 那我们看看`markNeedsBuild`。
 ## Element 类 markNeedsBuild方法
 ```dart

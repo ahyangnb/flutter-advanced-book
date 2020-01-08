@@ -7,7 +7,7 @@ q1，一年Flutter工作经验，[Flutter教程网](http://www.flutterj.com/)
 视频课程：[Flutter实用例子进阶课程](http://www.flutterj.com/?post=124) ，
 [高仿谷歌翻译项目课程](http://www.flutterj.com/?post=73)，
 目前就职于广州某创业公司，
-持续对Flutter社区输出文章资源，目前主要关注移动端行业发展和技术更新迭代，不断进步。
+持续对Flutter社区输出文章资源，主要关注移动端行业发展和技术更新迭代，不断进步。
 
 
 ## 简介
@@ -17,7 +17,8 @@ q1，一年Flutter工作经验，[Flutter教程网](http://www.flutterj.com/)
 
 ## 章节介绍
 本书分为多个章节，不确定性，会一直更，直到完善，然后固定章节，目前已有章节：
-[性能篇](chapter1)、[原理篇](chapter2)、[面试篇](chapter3)。
+[进阶篇](chapter1)、[原理篇](chapter2)、[面试篇](chapter3)。
 
+> 本书暂未想过发版实体书，主要发布电子版供大家学习参考。
 > 持续更新中。。。敬请期待！
 
