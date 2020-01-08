@@ -1,5 +1,3 @@
-<img src="img/avatar.png" width="20%">
-
 ## 作者
 q1，一年Flutter工作经验，[Flutter教程网](http://www.flutterj.com/)
 创办者，微信公众号"[Flutter前线](http://www.flutterj.com/content/uploadfile/202001/87441578227752.png)"小编，

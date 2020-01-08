@@ -30,11 +30,13 @@ void setState(VoidCallback fn) {
 ```dart
   void markNeedsBuild() {
     assert(_debugLifecycleState != _ElementLifecycle.defunct);
+    // 由于一帧做两次更新有点低效，所以在如果`_active=false` 的时候直接返回。
     if (!_active)
       return;//返回
      ...
     if (dirty)
       return;
+     // 设置`_dirty = true `
     _dirty = true;
     //调用scheduleBuildFor方法
     owner.scheduleBuildFor(this);
@@ -43,7 +45,6 @@ void setState(VoidCallback fn) {
 ```
 将 element 元素标记为“脏”,并把它添加到全局的“脏”链表里,以便在下一帧更新信号时更新.
 * 这里的“ `脏`”链表是待更新的链表，更新过后就不“脏”了。
-* 由于一帧做两次更新有点低效，所以在`_active=false` 的时候直接返回。
 
 那我们看看本方法最后调用的scheduleBuildFor方法。
 ## BuildOwner 类 scheduleBuildFor方法
@@ -61,7 +62,7 @@ void scheduleBuildFor(Element element) {
       _scheduledFlushDirtyElements = true;
       onBuildScheduled();//回调
     }
-    _dirtyElements.add(element);//把element加入脏元素链表
+    _dirtyElements.add(element);//把element添加到脏元素链表
     element._inDirtyList = true;
     assert(() {
       if (debugPrintScheduleBuildForStacks)
@@ -70,7 +71,8 @@ void scheduleBuildFor(Element element) {
     }());
   }
   ```
-把一个 element 添加到 `_dirtyElements` 链表，以便当`WidgetsBinding.drawFrame`中调用 buildScope 的时候能够重构 element。`onBuildScheduled()`是一个 BuildOwner 的回调。
+把一个 element 添加到 `_dirtyElements` 链表，主要为了方便当`WidgetsBinding.drawFrame`中调用 buildScope 
+的时候能够重构 element。`onBuildScheduled()`是一个 BuildOwner 的回调。
 
 onBuildScheduled回调在WidgetsBinding的initInstances里初始化。
 ```dart
@@ -80,14 +82,15 @@ mixin WidgetsBinding on BindingBase, SchedulerBinding, GestureBinding, RendererB
     super.initInstances();
     _instance = this;
     // 这里
-    buildOwner.onBuildScheduled = _handleBuildScheduled;
+    buildOwner.onBuildScheduled = _handleBuildScheduled; // 赋值onBuildScheduled
     window.onLocaleChanged = handleLocaleChanged;window.onAccessibilityFeaturesChanged = handleAccessibilityFeaturesChanged;
  SystemChannels.navigation.setMethodCallHandler(_handleNavigationInvocation);
 SystemChannels.system.setMessageHandler(_handleSystemMessage);  FlutterErrorDetails.propertiesTransformers.add(transformDebugCreator);
   }
 }
 ```
-我们可以看到`buildOwner.onBuildScheduled`回调等于了`_handleBuildScheduled`，那现在来看看这个`_handleBuildScheduled`方法：
+可以看到Flutter应用启动过程初始化WidgetsBinding时`buildOwner.onBuildScheduled`回调等于了
+`_handleBuildScheduled`，那现在来看看这个`_handleBuildScheduled`方法：
 ```dart
 void _handleBuildScheduled() {
     //调用ensureVisualUpdate
@@ -103,8 +106,7 @@ void _handleBuildScheduled() {
       case SchedulerPhase.idle:
       case SchedulerPhase.postFrameCallbacks:
         //当schedulerPhase为SchedulerPhase.idle，
-        //SchedulerPhase.postFrameCallbacks时调用
-        //scheduleFrame()
+        //SchedulerPhase.postFrameCallbacks时调用scheduleFrame()
         scheduleFrame();
         return;
       case SchedulerPhase.transientCallbacks:
@@ -114,6 +116,7 @@ void _handleBuildScheduled() {
     }
   }
 ```
+schedulerPhase的初始值为SchedulerPhase.idle。SchedulerPhase是一个enum枚举类型，
 分别case了`SchedulerPhase` 的 5 个枚举值：
 
 状态|含义
@@ -125,9 +128,10 @@ persistentCallbacks|WidgetsBinding.drawFrame 和 SchedulerBinding.handleDrawFram
 postFrameCallbacks|主要是清理和计划执行下一帧的工作
 
 # 第二个case调用scheduleFrame()方法
-那我们看看`scheduleFrame()`方法
+那我们看看`scheduler/binding.dart`文件的SchedulerBinding类`scheduleFrame()`方法
 ```dart
   void scheduleFrame() {
+  // 这个判断表示只有当APP处于可见状态才会准备调度下一帧方法
   if (_hasScheduledFrame || !_framesEnabled) return;
   assert(() {
     if (debugPrintScheduleFrameStacks)
@@ -140,21 +144,149 @@ postFrameCallbacks|主要是清理和计划执行下一帧的工作
   _hasScheduledFrame = true;
 }
   ```
-WidgetsFlutterBinding 混入的这些 Binding 中基本都是监听并处理 Window 对象的一些事件，然后将这些事件按照 Framework 的模型包装、抽象然后分发。可以看到 WidgetsFlutterBinding 正是粘连 Flutter engine 与上层 Framework 的“胶水”。
+  这里的 `window.scheduleFrame()`方法是一个Native方法，
+  由于本人并没有扎实的原生经验所以下方借鉴了袁辉辉大佬的部分讲解，
+  
+#  lib/ui/window.dart文件 Window类 (Native)
+```dart
+void scheduleFrame() native 'Window_scheduleFrame';
+```
+  window是Flutter引擎中跟图形相关接口打交道的核心类。
+  
+# ScheduleFrame(C++)  window.cc文件
+```objectivec
+void ScheduleFrame(Dart_NativeArguments args) {
+// 看下方 RuntimeController::ScheduleFrame
+  UIDartState::Current()->window()->client()->ScheduleFrame();
+}
+```
+通过`RegisterNatives()`完成native方法的注册，“`Window_scheduleFrame`”所对应的native方法如上所示。
 
-名|解释|
---|:--:
-GestureBinding|提供了 window.onPointerDataPacket 回调，绑定 Framework 手势子系统，是 Framework 事件模型与底层事件的绑定入口
-ServicesBinding|提供了 window.onPlatformMessage 回调， 用于绑定平台消息通道（message channel），主要处理原生和 Flutter 通信
-SchedulerBinding|提供了 window.onBeginFrame 和 window.onDrawFrame 回调，监听刷新事件，绑定 Framework 绘制调度子系统
-PaintingBinding|绑定绘制库，主要用于处理图片缓存
-SemanticsBinding|语义化层与 Flutter engine 的桥梁，主要是辅助功能的底层支持
-RendererBinding|提供了 window.onMetricsChanged 、window.onTextScaleFactorChanged 等回调。它是渲染树与 Flutter engine 的桥梁
-WidgetsBinding|提供了 window.onLocaleChanged、onBuildScheduled 等回调。它是 Flutter widget 层与 engine 的桥梁
+# RuntimeController::ScheduleFrame
+所在文件：`flutter/runtime/runtime_controller.cc`
+```objectivec
+void RuntimeController::ScheduleFrame() {
+  client_.ScheduleFrame(); // 看下面Engine::ScheduleFrame
+}
+```
 
-之前的文中有说过，UI 的绘制逻辑是在 Render 树中实现的，所以这里还来细看 RendererBinding 的逻辑。
+# Engine::ScheduleFrame
+所在文件：`flutter/shell/common/engine.cc`
+```objectivec
+void Engine::ScheduleFrame(bool regenerate_layer_tree) {
+  animator_->RequestFrame(regenerate_layer_tree);
+}
+```
+这里推荐查看袁辉辉大佬的：[Flutter渲染机制—UI线程](http://gityuan.com/2019/06/15/flutter_ui_draw/)
+文中小节[2.1]介绍Engine::ScheduleFrame()经过层层调用，最终会注册Vsync回调。 等待下一次vsync信号的到来，
+然后再经过层层调用最终会调用到`Window::BeginFrame()`。
 
-# RendererBinding
+# Window::BeginFrame 
+所在文件：`flutter/lib/ui/window/window.cc`
+```objectivec
+void Window::BeginFrame(fml::TimePoint frameTime) {
+  std::shared_ptr<tonic::DartState> dart_state = library_.dart_state().lock();
+  if (!dart_state)
+    return;
+  tonic::DartState::Scope scope(dart_state);
+
+  int64_t microseconds = (frameTime - fml::TimePoint()).ToMicroseconds();
+
+  DartInvokeField(library_.value(), "_beginFrame",
+                  {
+                      Dart_NewInteger(microseconds),
+                  });
+
+  //执行MicroTask
+  UIDartState::Current()->FlushMicrotasksNow();
+
+  DartInvokeField(library_.value(), "_drawFrame", {});
+}
+```
+`Window::BeginFrame()`过程主要工作：
+
+* 执行_beginFrame
+* 执行FlushMicrotasksNow
+* 执行_drawFrame
+可见，Microtask位于beginFrame和drawFrame之间，那么Microtask的耗时会影响ui绘制过程。
+
+# handleBeginFrame
+文件所在: `lib/src/scheduler/binding.dart` SchedulerBinding类
+```dart
+void handleBeginFrame(Duration rawTimeStamp) {
+  Timeline.startSync('Frame', arguments: timelineWhitelistArguments);
+  _firstRawTimeStampInEpoch ??= rawTimeStamp;
+  _currentFrameTimeStamp = _adjustForEpoch(rawTimeStamp ?? _lastRawTimeStamp);
+  if (rawTimeStamp != null)
+    _lastRawTimeStamp = rawTimeStamp;
+
+  profile(() {
+    _profileFrameNumber += 1;
+    _profileFrameStopwatch.reset();
+    _profileFrameStopwatch.start();
+  });
+
+  //此时阶段等于SchedulerPhase.idle;
+  _hasScheduledFrame = false;
+  try {
+    Timeline.startSync('Animate', arguments: timelineWhitelistArguments);
+    _schedulerPhase = SchedulerPhase.transientCallbacks;
+    //执行动画的回调方法
+    final Map<int, _FrameCallbackEntry> callbacks = _transientCallbacks;
+    _transientCallbacks = <int, _FrameCallbackEntry>{};
+    callbacks.forEach((int id, _FrameCallbackEntry callbackEntry) {
+      if (!_removedIds.contains(id))
+        _invokeFrameCallback(callbackEntry.callback, _currentFrameTimeStamp, callbackEntry.debugStack);
+    });
+    _removedIds.clear();
+  } finally {
+    _schedulerPhase = SchedulerPhase.midFrameMicrotasks;
+  }
+}
+```
+该方法主要功能是遍历`_transientCallbacks`，执行相应的Animate操作，
+可通过`scheduleFrameCallback()`/`cancelFrameCallbackWithId()`来完成添加和删除成员，
+再来简单看看这两个方法。
+
+# handleDrawFrame
+文件所在：`lib/src/scheduler/binding.dart` SchedulerBinding类
+```dart
+void handleDrawFrame() {
+  assert(_schedulerPhase == SchedulerPhase.midFrameMicrotasks);
+  Timeline.finishSync(); // 标识结束"Animate"阶段
+  try {
+    _schedulerPhase = SchedulerPhase.persistentCallbacks;
+    //执行PERSISTENT FRAME回调
+    for (FrameCallback callback in _persistentCallbacks)
+      _invokeFrameCallback(callback, _currentFrameTimeStamp);
+
+    _schedulerPhase = SchedulerPhase.postFrameCallbacks;
+    // 执行POST-FRAME回调
+    final List<FrameCallback> localPostFrameCallbacks = List<FrameCallback>.from(_postFrameCallbacks);
+    _postFrameCallbacks.clear();
+    for (FrameCallback callback in localPostFrameCallbacks)
+      _invokeFrameCallback(callback, _currentFrameTimeStamp);
+  } finally {
+    _schedulerPhase = SchedulerPhase.idle;
+    Timeline.finishSync(); //标识结束”Frame“阶段
+    profile(() {
+      _profileFrameStopwatch.stop();
+      _profileFramePostEvent();
+    });
+    _currentFrameTimeStamp = null;
+  }
+}
+```
+
+该方法主要功能：
+
+* 遍历`_persistentCallbacks`，执行相应的回调方法，可通过`addPersistentFrameCallback()`注册，一旦注册后不可移除，后续每一次frame回调都会执行；
+* 遍历`_postFrameCallbacks`，执行相应的回调方法，可通过`addPostFrameCallback()`注册，`handleDrawFrame()`执行完成后会清空`_postFrameCallbacks`内容。
+
+# UI 的绘制逻辑【附加】
+UI 的绘制逻辑是在 Render 树中实现的，所以这里还来细看 RendererBinding 的逻辑。
+
+# RendererBinding 【附加】
 ```dart
 void initInstances() {
   ...
@@ -170,7 +302,7 @@ void initInstances() {
   addPersistentFrameCallback(_handlePersistentFrameCallback);
 }
 ```
-addPersistentFrameCallback 中添加 `_handlePersistentFrameCallback` 最终调用了 drawFrame 而 WidgetsBinding 重写了 RendererBinding 中的 drawFrame() 方法。最终发现我们又回到了 WidgetsBinding 这个类中，在 WidgetsBinding 中 drawFrame 的实现如下：
+addPersistentFrameCallback 中添加 `_handlePersistentFrameCallback` 最终调用了 drawFrame 而 WidgetsBinding 重写了 RendererBinding 中的 `drawFrame()` 方法。最终发现我们又回到了 WidgetsBinding 这个类中，在 WidgetsBinding 中 drawFrame 的实现如下：
 ```dart
 @override
 void drawFrame() {
@@ -208,34 +340,28 @@ void drawFrame() {
 ### 条件判断
 
 - 1.生命周期判断
-- 2.是否安装mounted
+- 2.是否可以进行刷新：mounted
 
-### 管理类
-
-- 1.告诉管理类方法自己需要被重新构建
-- 也就是BuildOwner类scheduleBuildFor方法
-
-### 添加脏链表
+### 添加脏链表 _dirty = true
 
 - 1.“脏”链表是待更新的链表
 - 2.更新过后就不“脏”了
 - 3.`_active=false` 的时候直接返回
 
-### 调用 window.scheduleFrame()
+### 管理类
 
-- native 方法
-- 按照 Framework 的模型包装、抽象然后分发
-- WidgetsFlutterBinding 正是粘连 Flutter engine 和上层 Framework 的“胶水”
+- 1.告诉管理类方法自己需要被重新构建：
+- owner.scheduleBuildFor(this)
+
+
+### 调用 window.scheduleFrame() =》native 方法
+
+- RegisterNatives()完成native方法的注册
+- 最终会注册Vsync回调。 等待下一次vsync信号的到来，
+- 然后再经过层层调用最终会调用到 Window::BeginFrame()
 - UI 的绘制逻辑是在 Render 树中实现的
 
 ### 更新帧信号来临从而刷新需要重构的界面
 
-- `scheduleBuildFor` 是把一个 element 添加到 `_dirtyElements` 链表
-- 以便当`[WidgetsBinding.drawFrame]`中调用 `buildScope` 的时候能够重构 element
-- `onBuildScheduled()`是一个 BuildOwner 的回调"
 - 在 `drawFrame` 中调用 `buildOwner.buildScope(renderViewElement)`更新 elements
-
-# 图：
-
-![setState](../img/setstate.png)
 
