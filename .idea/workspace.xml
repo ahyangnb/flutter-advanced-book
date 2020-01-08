@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b46192b1-bdd3-4da5-8f70-dcda4123d019" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/chapter1/screen_algorithm.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/img/frameworkAndEngine.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/_book/chapter1/index.html" afterPath="$PROJECT_DIR$/_book/chapter1/index.html" />
       <change beforePath="$PROJECT_DIR$/_book/chapter1/partial_refresh.html" afterPath="$PROJECT_DIR$/_book/chapter1/partial_refresh.html" />
@@ -12,12 +10,8 @@
       <change beforePath="$PROJECT_DIR$/_book/chapter3/dart_interview.html" afterPath="$PROJECT_DIR$/_book/chapter3/dart_interview.html" />
       <change beforePath="$PROJECT_DIR$/_book/chapter3/flutter_framwork.html" afterPath="$PROJECT_DIR$/_book/chapter3/flutter_framwork.html" />
       <change beforePath="$PROJECT_DIR$/_book/chapter3/index.html" afterPath="$PROJECT_DIR$/_book/chapter3/index.html" />
+      <change beforePath="$PROJECT_DIR$/_book/gitbook/gitbook-plugin-livereload/plugin.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/_book/index.html" afterPath="$PROJECT_DIR$/_book/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/search_index.json" afterPath="$PROJECT_DIR$/_book/search_index.json" />
-      <change beforePath="$PROJECT_DIR$/_book/search_plus_index.json" afterPath="$PROJECT_DIR$/_book/search_plus_index.json" />
-      <change beforePath="$PROJECT_DIR$/docs/SUMMARY.md" afterPath="$PROJECT_DIR$/docs/SUMMARY.md" />
-      <change beforePath="$PROJECT_DIR$/docs/chapter1/index.md" afterPath="$PROJECT_DIR$/docs/chapter1/index.md" />
-      <change beforePath="$PROJECT_DIR$/docs/chapter3/flutter_framwork.md" afterPath="$PROJECT_DIR$/docs/chapter3/flutter_framwork.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,8 +43,8 @@
         <entry file="file://$PROJECT_DIR$/docs/chapter3/flutter_framwork.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="184">
-                <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+              <first_editor relative-caret-position="214">
+                <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -391,7 +385,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578500316958</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="commit img">
+      <created>1578500647464</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1578500647464</updated>
+    </task>
+    <task id="LOCAL-00013" summary="commit build part">
+      <created>1578500691768</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1578500691768</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -457,7 +465,9 @@
     <MESSAGE value="commit update setstate" />
     <MESSAGE value="commit update 1" />
     <MESSAGE value="commit 局部刷新优化性能" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 局部刷新优化性能" />
+    <MESSAGE value="commit img" />
+    <MESSAGE value="commit build part" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit build part" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -865,8 +875,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="184">
-            <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <first_editor relative-caret-position="214">
+            <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             <folding />
           </first_editor>
           <second_editor />
