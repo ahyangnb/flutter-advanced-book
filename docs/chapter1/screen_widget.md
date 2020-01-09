@@ -15,67 +15,67 @@ Expanded、Flexible、Spacer、AspectRatio、Wrap、GridView、Table、SafeArea.
 
 ##### 代码：
 ```dart
-    new Container( // 容器组件
-      height: 200, // 设置默认高度
-      margin: EdgeInsets.symmetric(horizontal: 10.0),// 两边的外边距
-      child: new Row( // 一行显示
-        children: <Widget>[
-          // 第一个区块
-          new Expanded(
-            child: new Container(
-              decoration: BoxDecoration(
+new Container( // 容器组件
+  height: 200, // 设置默认高度
+  margin: EdgeInsets.symmetric(horizontal: 10.0),// 两边的外边距
+  child: new Row( // 一行显示
+    children: <Widget>[
+      // 第一个区块
+      new Expanded(
+        child: new Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(4.0)),// 圆角
+              color: Colors.amber.withOpacity(0.5)),// 颜色
+        ),
+      ),
+      // 间隔
+      new SizedBox(width: 10.0, height: 10.0),
+      // 第二个区块
+      new Expanded(
+        child: new Column(
+          children: <Widget>[
+            new Expanded( // 继续用Expanded撑开
+              child: new Container(
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(4.0)),// 圆角
-                  color: Colors.amber.withOpacity(0.5)),// 颜色
+                  color: Colors.grey.withOpacity(0.5),// 颜色
+                ),
+              ),
             ),
-          ),
-          // 间隔
-          new SizedBox(width: 10.0, height: 10.0),
-          // 第二个区块
-          new Expanded(
-            child: new Column(
-              children: <Widget>[
-                new Expanded( // 继续用Expanded撑开
-                  child: new Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(4.0)),// 圆角
-                      color: Colors.grey.withOpacity(0.5),// 颜色
+            new SizedBox(width: 10.0, height: 10.0),// 间隔10
+            new Expanded(
+              child: new Row(
+                children: <Widget>[
+                  new Expanded(
+                    child: new Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(4.0),
+                        ),
+                        color: Colors.red.withOpacity(0.5),
+                      ),
                     ),
                   ),
-                ),
-                new SizedBox(width: 10.0, height: 10.0),// 间隔10
-                new Expanded(
-                  child: new Row(
-                    children: <Widget>[
-                      new Expanded(
-                        child: new Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(4.0),
-                            ),
-                            color: Colors.red.withOpacity(0.5),
+                  new SizedBox(width: 10.0, height: 10.0),
+                  new Expanded(
+                    child: new Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(4.0),
                           ),
-                        ),
-                      ),
-                      new SizedBox(width: 10.0, height: 10.0),
-                      new Expanded(
-                        child: new Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(4.0),
-                              ),
-                              color: Colors.blueAccent.withOpacity(0.5)),
-                        ),
-                      ),
-                    ],
+                          color: Colors.blueAccent.withOpacity(0.5)),
+                    ),
                   ),
-                )
-              ],
-            ),
-          ),
-          // 为了使代码简单就不减少嵌套了
-        ],
+                ],
+              ),
+            )
+          ],
+        ),
       ),
-    )
+      // 为了使代码简单就不减少嵌套了
+    ],
+  ),
+)
 ```
 
 这样就实现了Expanded自适应屏幕了，Expanded有个flex属性，
@@ -85,38 +85,38 @@ Expanded、Flexible、Spacer、AspectRatio、Wrap、GridView、Table、SafeArea.
 
 ##### 示例代码：
 ```dart
-    new Container(
-      height: 100, // 设置默认高度
-      margin: EdgeInsets.symmetric(horizontal: 10.0),
-      child: new Row(
-        children: <Widget>[
-          // 第一个区块
-          new Expanded(
-            flex: 1,
-            child: new Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                  color: Colors.amber.withOpacity(0.5)),
-            ),
-          ),
-          // 间隔
-          new SizedBox(width: 10.0, height: 10.0),
-          // 第而个区块
-          new Expanded(
-            flex: 2,
-            child: new Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(4.0),
-                ),
-                color: Colors.blueAccent.withOpacity(0.5),
-              ),
-            ),
-          ),
-          // 为了使代码简单就不减少嵌套了
-        ],
+new Container(
+  height: 100, // 设置默认高度
+  margin: EdgeInsets.symmetric(horizontal: 10.0),
+  child: new Row(
+    children: <Widget>[
+      // 第一个区块
+      new Expanded(
+        flex: 1,
+        child: new Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(4.0)),
+              color: Colors.amber.withOpacity(0.5)),
+        ),
       ),
-    );
+      // 间隔
+      new SizedBox(width: 10.0, height: 10.0),
+      // 第而个区块
+      new Expanded(
+        flex: 2,
+        child: new Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(4.0),
+            ),
+            color: Colors.blueAccent.withOpacity(0.5),
+          ),
+        ),
+      ),
+      // 为了使代码简单就不减少嵌套了
+    ],
+  ),
+);
 ```
 第一个区块占比为1，第二个为2，则效果为：
 
@@ -130,25 +130,25 @@ Spacer同Expanded一样具有flex属性，其含义和使用也是一模一样�
 
 ##### 示例代码：
 ```dart
-    new Column(
-      children: <Widget>[
-        new Container(
-          height: 200,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(4.0)),
-            color: Colors.amber.withOpacity(0.5),
-          ),
-        ),
-        new Spacer(flex: 1),
-        new Container(
-          height: 200,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(4.0)),
-            color: Colors.blueAccent.withOpacity(0.5),
-          ),
-        ),
-      ],
-    )
+new Column(
+  children: <Widget>[
+    new Container(
+      height: 200,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(4.0)),
+        color: Colors.amber.withOpacity(0.5),
+      ),
+    ),
+    new Spacer(flex: 1),
+    new Container(
+      height: 200,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(4.0)),
+        color: Colors.blueAccent.withOpacity(0.5),
+      ),
+    ),
+  ],
+)
 ```
 
 效果：
@@ -157,15 +157,15 @@ Spacer同Expanded一样具有flex属性，其含义和使用也是一模一样�
 
 我们给最下面那个区块也加个Spacer试试：
 ```dart
-    new Column(
-      children: <Widget>[
-        ...
-        new Container(
-        ...
-        ),
-        new Spacer(flex: 1),
-      ],
-    )
+new Column(
+  children: <Widget>[
+    ...
+    new Container(
+    ...
+    ),
+    new Spacer(flex: 1),
+  ],
+)
 ```
 效果：
 
