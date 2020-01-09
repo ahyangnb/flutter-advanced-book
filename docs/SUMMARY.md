@@ -9,6 +9,7 @@
     
 *  [第二章：原理篇](chapter2/index.md)
     * [1.1：setState更新原理和流程](chapter2/setstate.md)
+    * [1.2：生命周期](chapter2/life_cycle.md)
     
 *  [第三章：面试篇](chapter3/index.md)
     * [1.1：dart部分面试题](chapter3/dart_interview.md)

@@ -1,0 +1,24 @@
+digraph pic {
+    node [shape = "record"];
+    edge [style = "dashed"];
+
+    "开始" [style = "filled", color = "black", fillcolor = "chartreuse"];
+
+    b;
+    subgraph cluster_cd {
+
+    label = "c and d";
+
+    bgcolor = "mintcream";
+
+    c;
+
+    d;
+
+    }
+    "开始" -> b;
+
+    b -> d;
+
+    c -> d [color = "red"];
+}
