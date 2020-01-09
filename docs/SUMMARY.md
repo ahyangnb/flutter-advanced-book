@@ -3,13 +3,13 @@
 * [简介](README.md)
 
 * [第一章：进阶篇](chapter1/index.md)
-    * [1.1：局部刷新优化性能](chapter1/partial_refresh.md)
-    * [1.2：屏幕适配之组件应用](chapter1/screen_widget.md)
-    * [1.3：屏幕适配之屏幕算法](chapter1/screen_algorithm.md)
+    * [1.1：生命周期](chapter1/life_cycle.md)
+    * [1.2：局部刷新优化性能](chapter1/partial_refresh.md)
+    * [1.3：屏幕适配之组件应用](chapter1/screen_widget.md)
+    * [1.4：屏幕适配之屏幕算法](chapter1/screen_algorithm.md)
     
 *  [第二章：原理篇](chapter2/index.md)
     * [1.1：setState更新原理和流程](chapter2/setstate.md)
-    * [1.2：生命周期](chapter2/life_cycle.md)
     
 *  [第三章：面试篇](chapter3/index.md)
     * [1.1：dart部分面试题](chapter3/dart_interview.md)
