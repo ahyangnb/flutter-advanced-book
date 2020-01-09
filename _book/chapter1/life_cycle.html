@@ -1,0 +1,729 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>1.1：生命周期 · 《Flutter高级进阶》</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="baidu-site-verification" content="Y34sAqDKUH"/>
+    <meta name="theme-color" content="#ffffff">
+    <!--<meta name="description" content="">-->
+    <meta name="description" content="《Flutter高级进阶》是Flutter教程网开源的电子书，主要帮助开发者进阶深入学习flutter。">
+    <meta name="keywords" content="flutter实战,flutter书籍,flutter电子书,flutter进阶 ">
+    <meta name="generator" content="GitBook 3.2.3">
+    
+    <meta name="author" content="q1 zonggeu@163.com">
+    
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+    
+    
+    
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="partial_refresh.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    <style>
+        .pull-right > i {
+            font-size: 25px;
+            color: #777 !important;
+            cursor: pointer;
+
+        }
+
+        .pull-right > i:hover {
+            color: #777 !important;
+        }
+
+        body {
+            font-size: 15px !important;
+        }
+
+        a[href='../todo.html'], a[href='todo.html'] {
+            color: #888 !important;
+        }
+
+        .copyright {
+            text-align: center;
+            margin: 80px 16px 30px 16px;
+            padding-top: 16px;
+            border-top: #eee 1px solid;
+            color: grey;
+            font-size: .9em;
+        }
+
+        .ad {
+            color: white;
+            text-align: center;
+            background: url(https://img.alicdn.com/tfs/TB1Huu7vMmTBuNjy1XbXXaMrVXa-2880-400.png);
+            background-size: cover;
+            cursor: pointer;
+            margin-bottom: 30px;
+            padding: 18px
+        }
+
+        .ad:hover {
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.flutterj.com/" target="_blank" class="custom-link"><div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div></a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一章：进阶篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="life_cycle.html">
+            
+                <a href="life_cycle.html">
+            
+                    
+                    1.1：生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="partial_refresh.html">
+            
+                <a href="partial_refresh.html">
+            
+                    
+                    1.2：局部刷新优化性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="screen_widget.html">
+            
+                <a href="screen_widget.html">
+            
+                    
+                    1.3：屏幕适配之组件应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="screen_algorithm.html">
+            
+                <a href="screen_algorithm.html">
+            
+                    
+                    1.4：屏幕适配之屏幕算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter2/">
+            
+                <a href="../chapter2/">
+            
+                    
+                    第二章：原理篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter2/setstate.html">
+            
+                <a href="../chapter2/setstate.html">
+            
+                    
+                    1.1：setState更新原理和流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter3/">
+            
+                <a href="../chapter3/">
+            
+                    
+                    第三章：面试篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter3/dart_interview.html">
+            
+                <a href="../chapter3/dart_interview.html">
+            
+                    
+                    1.1：dart部分面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter3/flutter_framwork.html">
+            
+                <a href="../chapter3/flutter_framwork.html">
+            
+                    
+                    1.2：Flutter优缺点以及理念架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+    <a class="btn pull-right" aria-label="GitHub">
+        <i class="fa fa-edit" title="编辑本文"></i>
+    </a>
+    <a class="btn pull-right" aria-label="GitHub" href="https://github.com/ahyangnb/flutter-advanced-book">
+        <i class="fa fa-github" title="查看本书开源项目"></i>
+    </a>
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.1：生命周期</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x751F;&#x547D;&#x5468;&#x671F;">&#x751F;&#x547D;&#x5468;&#x671F;</h1>
+<p>Flutter&#x751F;&#x547D;&#x5468;&#x671F;&#x76F8;&#x5BF9;&#x4E8E;android&#x7684;Activity&#xFF0C;ta&#x5B58;&#x5728;&#x4E8E;<code>framework.dart</code>&#x7684;State&#x7C7B;&#xFF0C;
+<img src="../img/StateFul.png" alt=""></p>
+<h1 id="&#x5B9E;&#x6D4B;">&#x5B9E;&#x6D4B;</h1>
+<p>&#x5199;&#x4E2A;&#x6709;&#x72B6;&#x6001;&#x7C7B;&#x5E76;&#x6DF7;&#x5165;WidgetsBindingObserver&#x914D;&#x5408;&#x76D1;&#x542C;&#x7279;&#x6B8A;&#x72B6;&#x6001;&#x53CA;&#x5176;&#x4E00;&#x4E2A;&#x6309;&#x94AE;&#xFF0C;&#x8C03;&#x7528;setState&#xFF0C;
+&#x7ED9;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x65B9;&#x6CD5;&#x65B0;&#x589E;&#x6253;&#x5370;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">import</span> <span class="token string">&apos;package:flutter/material.dart&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">&apos;&#x751F;&#x547D;&#x5468;&#x671F;&apos;</span><span class="token punctuation">,</span>
+      home<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">LiftCycle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">LiftCycle</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  _LiftCycleState <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_LiftCycleState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">_LiftCycleState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>LiftCycle<span class="token operator">&gt;</span> <span class="token keyword">with</span> WidgetsBindingObserver <span class="token punctuation">{</span>
+  int count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    WidgetsBinding<span class="token punctuation">.</span>instance<span class="token punctuation">.</span><span class="token function">addObserver</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x521D;&#x59CB;&#x5316; initState&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">didUpdateWidget</span><span class="token punctuation">(</span>LiftCycle oldWidget<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">didUpdateWidget</span><span class="token punctuation">(</span>oldWidget<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x7EC4;&#x4EF6;&#x66F4;&#x65B0; didUpdateWidget&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">reassemble</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">reassemble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x91CD;&#x65B0;&#x5B89;&#x88C5; reassemble&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">deactivate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">deactivate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x505C;&#x7528;  deactivate&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    WidgetsBinding<span class="token punctuation">.</span>instance<span class="token punctuation">.</span><span class="token function">removeObserver</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x9500;&#x6BC1; dispose&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">didChangeAppLifecycleState</span><span class="token punctuation">(</span>AppLifecycleState state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">didChangeAppLifecycleState</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x7279;&#x6B8A;&#x72B6;&#x6001; state&#xFF1A;$state&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">setState</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x72B6;&#x6001;&#x5237;&#x65B0; setState&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&apos;&#x751F;&#x547D;&#x5468;&#x671F;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Center</span><span class="token punctuation">(</span>
+        child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">FlatButton</span><span class="token punctuation">(</span>
+          onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&apos;$count&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">didChangeDependencies</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">didChangeDependencies</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x4F9D;&#x8D56;&#x6539;&#x53D8; didChangeDependencies&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x6765;&#x770B;&#x770B;&#x6253;&#x5370;&#x6D41;&#x7A0B;&#xFF0C;&#x6B63;&#x5E38;&#x6253;&#x5F00;App&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x6253;&#x5370;&#x4E86;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter (15867): &#x521D;&#x59CB;&#x5316; initState
+I/flutter (15867): &#x4F9D;&#x8D56;&#x6539;&#x53D8; didChangeDependencies
+I/flutter (15867): &#x91CD;&#x65B0;&#x5B89;&#x88C5; reassemble
+I/flutter (15867): &#x7EC4;&#x4EF6;&#x66F4;&#x65B0; didUpdateWidget
+</code></pre><p>&#x70ED;&#x91CD;&#x8F7D;&#x6253;&#x5370;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter (16141): &#x91CD;&#x65B0;&#x5B89;&#x88C5; reassemble
+I/flutter (16141): &#x7EC4;&#x4EF6;&#x66F4;&#x65B0; didUpdateWidget
+Reloaded 0 of 468 libraries in 186ms.
+</code></pre><p>&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x6253;&#x5370;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter (16141): &#x72B6;&#x6001;&#x5237;&#x65B0; setState
+// count&#x4E5F;+1&#x4E86;&#xFF0C;&#x8BF4;&#x660E;&#x91CD;&#x65B0;&#x8C03;&#x7528;&#x8FC7;build&#x3002;
+</code></pre><h1 id="&#x6D41;&#x7A0B;&#x56FE;">&#x6D41;&#x7A0B;&#x56FE;</h1>
+<p><img src="../chart/life_cycle.png" alt=""></p>
+<p>&#x56FE;&#x89E3;&#x4E3B;&#x8981;&#x90E8;&#x5206;&#xFF1A;</p>
+<ul>
+<li>1.&#x6784;&#x5EFA;<code>&#xFF08;build&#xFF09;</code>&#xFF1B;</li>
+<li>2.&#x5982;&#x679C;&#x7528;&#x6237;&#x8C03;&#x7528;&#x4E86;<code>setState</code>&#x65F6;&#x5219;&#x72B6;&#x6001;&#x5237;&#x65B0;&#xFF0C;&#x91CD;&#x65B0;build&#xFF1B;</li>
+<li>3.&#x5982;&#x679C;&#x9500;&#x6BC1;&#x5148;&#x505C;&#x7528;&#x7136;&#x540E;<code>dispose</code>&#x9500;&#x6BC1;&#x518D;&#x7ED3;&#x675F;&#xFF1B;</li>
+</ul>
+<h4 id="&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6784;&#x9020;&#x51FD;&#x6570;</h4>
+<p>&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E0D;&#x5C5E;&#x4E8E;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x5FC5;&#x7136;&#x662F;&#x8981;&#x7B2C;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x524D;State&#x7684;widget&#x5C5E;&#x6027;&#x4E3A;&#x7A7A;&#x3002;</p>
+<h4 id="initstate-&#x521D;&#x59CB;&#x5316;">initState &#x521D;&#x59CB;&#x5316;</h4>
+<p>&#x5F53;&#x6B64;&#x5BF9;&#x8C61;&#x63D2;&#x5165;&#x6811;&#x4E2D;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x6846;&#x67B6;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x6B64;&#x65B9;&#x6CD5;&#x5E76;&#x4E0D;&#x4F1A;&#x518D;&#x6B21;&#x91CD;&#x590D;&#x6267;&#x884C;&#xFF0C;
+&#x5982;&#x679C;<code>[State]</code>&#x7684;<code>[build]</code>&#x65B9;&#x6CD5;&#x4F9D;&#x8D56;&#x4E8E;&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x72B6;&#x6001;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4F8B;&#x5982;<code>[ChangeNotifier]</code>&#x6216;<code>[Stream]</code>&#xFF0C;
+&#x6216;&#x8005;&#x67D0;&#x4E9B;&#x5176;&#x4ED6;&#x53EF;&#x4EE5;&#x8BA2;&#x9605;&#x7684;&#x5BF9;&#x8C61;&#x63A5;&#x6536;&#x901A;&#x77E5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x65B9;&#x6CD5;&#x8BA2;&#x9605;&#xFF0C;&#x4F46;&#x8BB0;&#x5F97;&#x53BB;dispose&#x53D6;&#x6D88;&#x8BA2;&#x9605;&#xFF1B;</p>
+<h4 id="didchangedependencies-&#x4F9D;&#x8D56;&#x6539;&#x53D8;">didChangeDependencies &#x4F9D;&#x8D56;&#x6539;&#x53D8;</h4>
+<p>&#x6545;&#x540D;&#x601D;&#x610F;&#xFF0C;&#x4F9D;&#x8D56;&#x9879;&#x66F4;&#x6539;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x4E5F;&#x4F1A;&#x5728;initState&#x4E4B;&#x540E;&#x8C03;&#x7528;&#xFF0C;
+&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8C03;&#x7528;<code>[BuildContext.inheritFromWidgetOfExactType]</code>&#x662F;&#x5B89;&#x5168;&#x7684;&#x3002;</p>
+<h4 id="build-&#x6784;&#x5EFA;">build &#x6784;&#x5EFA;</h4>
+<p>&#x4F1A;&#x5728;&#x4EE5;&#x4E0B;&#x573A;&#x666F;&#x8C03;&#x7528;&#xFF1A;</p>
+<ul>
+<li><code>initState()</code>&#x4E4B;&#x540E;&#xFF1B;</li>
+<li><code>didUpdateWidget()</code>&#x4E4B;&#x540E;&#xFF1B;</li>
+<li><code>setState()</code>&#x4E4B;&#x540E;&#x3002;</li>
+<li><code>didChangeDependencies()</code>&#x4E4B;&#x540E;&#x3002;</li>
+<li>State&#x5BF9;&#x8C61;&#x4ECE;&#x6811;&#x4E2D;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x79FB;&#x9664;&#x540E;&#x4F1A;&#x8C03;&#x7528;<code>deactivate</code>&#xFF0C;&#x7136;&#x540E;&#x53C8;&#x91CD;&#x65B0;&#x63D2;&#x5165;&#x5230;&#x6811;&#x7684;&#x5176;&#x5B83;&#x4F4D;&#x7F6E;&#x4E4B;&#x540E;&#x3002;</li>
+</ul>
+<h4 id="reassemble-&#x91CD;&#x65B0;&#x5B89;&#x88C5;">reassemble &#x91CD;&#x65B0;&#x5B89;&#x88C5;</h4>
+<p>&#x4E13;&#x95E8;&#x4E3A;&#x4E86;&#x5F00;&#x53D1;&#x8C03;&#x8BD5;&#x800C;&#x63D0;&#x4F9B;&#x7684;&#xFF0C;&#x5728;&#x70ED;&#x91CD;&#x8F7D;(hot reload)&#x65F6;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x6B64;&#x56DE;&#x8C03;&#x5728;Release&#x6A21;&#x5F0F;&#x4E0B;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="didupdatewidget--&#x7EC4;&#x4EF6;&#x66F4;&#x65B0;">didUpdateWidget  &#x7EC4;&#x4EF6;&#x66F4;&#x65B0;</h4>
+<p>&#x5F53;&#x7EC4;&#x4EF6;&#x7684;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x8C03;&#x7528;<code>didUpdateWidget()</code>,&#x6BD4;&#x5982;&#x8C03;&#x7528;&#x4E86;<code>setState()</code>&#xFF0C;
+&#x5728;widget&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x65F6;&#xFF0C;Flutter framework&#x4F1A;&#x8C03;&#x7528;<code>Widget.canUpdate</code>&#x6765;&#x68C0;&#x6D4B;Widget&#x6811;&#x4E2D;&#x540C;&#x4E00;&#x4F4D;&#x7F6E;&#x7684;&#x65B0;&#x65E7;&#x8282;&#x70B9;&#xFF0C;
+&#x7136;&#x540E;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x65B0;&#xFF0C;&#x5982;&#x679C;<code>Widget.canUpdate</code>&#x8FD4;&#x56DE;true&#x5219;&#x4F1A;&#x8C03;&#x7528;&#x6B64;&#x56DE;&#x8C03;&#x3002;&#x6B63;&#x5982;&#x4E4B;&#x524D;&#x6240;&#x8FF0;&#xFF0C;<code>Widget.canUpdate</code>&#x4F1A;&#x5728;
+&#x65B0;&#x65E7;widget&#x7684;key&#x548C;runtimeType&#x540C;&#x65F6;&#x76F8;&#x7B49;&#x65F6;&#x4F1A;&#x8FD4;&#x56DE;true&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5728;&#x65B0;&#x65E7;widget&#x7684;key&#x548C;runtimeType&#x540C;&#x65F6;&#x76F8;&#x7B49;&#x65F6;<code>didUpdateWidget()</code>&#x5C31;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="deactivate-&#x6682;&#x505C;">deactivate &#x6682;&#x505C;</h4>
+<p>State&#x5BF9;&#x8C61;&#x4ECE;&#x6811;&#x4E2D;&#x88AB;&#x79FB;&#x9664;&#x65F6;&#xFF08;&#x5728;dispose&#x4E4B;&#x524D;&#xFF09;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x5C06;&#x5BF9;&#x8C61;&#x6682;&#x505C;&#x3002;</p>
+<h4 id="dispose-&#x9500;&#x6BC1;">dispose &#x9500;&#x6BC1;</h4>
+<p>&#x5F53;State&#x5BF9;&#x8C61;&#x88AB;&#x9500;&#x6BC1;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x6B64;&#x56DE;&#x8C03;&#x4E2D;&#x91CA;&#x653E;&#x8D44;&#x6E90;&#x548C;&#x79FB;&#x9664;&#x76D1;&#x542C;&#x3002;</p>
+<h1 id="&#x3010;-&#x7279;&#x6B8A;&#x72B6;&#x6001;-&#x3011;">&#x3010; &#x7279;&#x6B8A;&#x72B6;&#x6001; &#x3011;</h1>
+<p>&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;&#x7684;State&#x7C7B;&#x6DF7;&#x5165;&#x4E86;<code>WidgetsBindingObserver</code>&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4ED6;&#x7684;&#x6682;&#x505C;&#x548C;&#x6062;&#x590D;&#xFF0C;</p>
+<p>&#x521D;&#x59CB;&#x5316;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token metadata symbol">@override</span>
+<span class="token keyword">void</span> <span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ WidgetsBinding<span class="token punctuation">.</span>instance<span class="token punctuation">.</span><span class="token function">addObserver</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x5728;&#x8FD9;&#x521D;&#x59CB;&#x5316;&#x4E86;</span>
+ <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x521D;&#x59CB;&#x5316; initState&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x9500;&#x6BC1;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token metadata symbol">@override</span>
+<span class="token keyword">void</span> <span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  WidgetsBinding<span class="token punctuation">.</span>instance<span class="token punctuation">.</span><span class="token function">removeObserver</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x5728;&#x8FD9;&#x9500;&#x6BC1;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x9500;&#x6BC1; dispose&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token metadata symbol">@override</span>
+<span class="token keyword">void</span> <span class="token function">didChangeAppLifecycleState</span><span class="token punctuation">(</span>AppLifecycleState state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">didChangeAppLifecycleState</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x7279;&#x6B8A;&#x72B6;&#x6001; state&#xFF1A;$state&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;<code>didChangeAppLifecycleState</code>&#x662F;<code>WidgetsBindingObserver</code>&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;
+&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x7684;&#x72B6;&#x6001;&#x662F;&#x5728;&#x524D;&#x53F0;&#x8FD8;&#x662F;&#x540E;&#x53F0;&#x3002;</p>
+<h5 id="&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;applifecyclestate&#x7C7B;&#x578B;&#x7684;&#x679A;&#x4E3E;&#xFF1A;">&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;<code>AppLifecycleState</code>&#x7C7B;&#x578B;&#x7684;&#x679A;&#x4E3E;&#xFF1A;</h5>
+<table>
+<thead>
+<tr>
+<th>&#x679A;&#x4E3E;&#x503C;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resumed</td>
+<td>&#x7A0B;&#x5E8F;&#x53EF;&#x89C1;&#xFF0C;&#x5E76;&#x54CD;&#x5E94;&#x7528;&#x6237;&#x8F93;&#x5165;&#x3002;</td>
+</tr>
+<tr>
+<td>inactive</td>
+<td>&#x5904;&#x4E8E;&#x975E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#xFF0C;&#x672A;&#x6536;&#x5230;&#x7528;&#x6237;&#x8F93;&#x5165;&#x3002;</td>
+</tr>
+<tr>
+<td>paused</td>
+<td>&#x7A0B;&#x5E8F;&#x5F53;&#x524D;&#x4E0D;&#x53EF;&#x89C1;&#xFF0C;&#x4E0D;&#x54CD;&#x5E94;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x3002;</td>
+</tr>
+<tr>
+<td>suspending</td>
+<td>&#x7A0B;&#x5E8F;&#x5C06;&#x6682;&#x65F6;&#x6682;&#x505C;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="applifecyclestate&#x5B9E;&#x6D4B;">AppLifecycleState&#x5B9E;&#x6D4B;</h5>
+<p>&#x5F53;App&#x8FD4;&#x56DE;&#x5230;&#x684C;&#x9762;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x4E0D;&#x53EF;&#x89C1;&#x72B6;&#x6001;&#xFF0C;&#x4F46;&#x5E76;&#x672A;&#x7ED3;&#x675F;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter ( 2428): &#x7279;&#x6B8A;&#x72B6;&#x6001; state&#xFF1A;AppLifecycleState.inactive
+I/flutter ( 2428): &#x7279;&#x6B8A;&#x72B6;&#x6001; state&#xFF1A;AppLifecycleState.paused
+</code></pre><p>&#x5F53;App&#x56DE;&#x5230;&#x53EF;&#x89C1;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter ( 2428): &#x7279;&#x6B8A;&#x72B6;&#x6001; state&#xFF1A;AppLifecycleState.inactive
+I/flutter ( 2428): &#x7279;&#x6B8A;&#x72B6;&#x6001; state&#xFF1A;AppLifecycleState.resumed
+</code></pre><p>&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;</p>
+<p><img src="../chart/AppLifecycleState.png" alt=""></p>
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 第一章：进阶篇">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="partial_refresh.html" class="navigation navigation-next " aria-label="Next page: 1.2：局部刷新优化性能">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.1：生命周期","level":"1.2.1","depth":2,"next":{"title":"1.2：局部刷新优化性能","level":"1.2.2","depth":2,"path":"chapter1/partial_refresh.md","ref":"chapter1/partial_refresh.md","articles":[]},"previous":{"title":"第一章：进阶篇","level":"1.2","depth":1,"path":"chapter1/index.md","ref":"chapter1/index.md","articles":[{"title":"1.1：生命周期","level":"1.2.1","depth":2,"path":"chapter1/life_cycle.md","ref":"chapter1/life_cycle.md","articles":[]},{"title":"1.2：局部刷新优化性能","level":"1.2.2","depth":2,"path":"chapter1/partial_refresh.md","ref":"chapter1/partial_refresh.md","articles":[]},{"title":"1.3：屏幕适配之组件应用","level":"1.2.3","depth":2,"path":"chapter1/screen_widget.md","ref":"chapter1/screen_widget.md","articles":[]},{"title":"1.4：屏幕适配之屏幕算法","level":"1.2.4","depth":2,"path":"chapter1/screen_algorithm.md","ref":"chapter1/screen_algorithm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter1/life_cycle.md","mtime":"2020-01-09T12:34:57.313Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-09T14:16:16.719Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+
+
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+
+<script>
+    var _hmt = _hmt || [];
+    $("#bd").remove();
+
+
+    function init() {
+        var p = location.pathname;
+        _hmt.push(['_trackPageview', p]);
+        if (p[p.length - 1] === '/') {
+            p += "index.md"
+        } else {
+            p = p.split(".")[0] + ".md";
+        }
+        p = "https://github.com/ahyangnb/flutter-advanced-book/blob/master/docs" + p;
+        $(".pull-right .fa-edit").parent("a").attr("href", p);
+        $("table").wrap("<div style='overflow: auto'></div>");
+
+        $(".copyright").remove();
+        $("<div class='copyright'> 有错误欢迎提出，作者马上改进并红包奖赏。</div>").appendTo(".page-inner");
+    }
+
+    function hookAPI(api, ob, fn) {
+        return function () {
+            var result = api.apply(ob, [].slice.call(arguments));
+            setTimeout(fn, 1000);
+            return result;
+        }
+    }
+
+    function addAD() {
+        if (location.href !== 'http://book.flutterj.com/' && $("#book-search-results .ad").length == 0) {
+            var id=Math.ceil(Math.random()*10)%2;
+            $(".ad"+id).clone().hide().fadeIn().prependTo("#book-search-results")
+            setTimeout(function () {
+                $(".body-inner").animate({scrollTop: 0}, 200)
+            }, 800);
+        }
+    }
+
+    function _track(p,url) {
+        _hmt.push(['_trackEvent', 'ad', 'click', p]);
+        setTimeout(function () {
+            location.href = url
+        }, 100);
+    }
+
+    // setInterval(addAD, 300);
+
+    init();
+
+    if (history.pushState) {
+        history.pushState = hookAPI(history.pushState, history, init);
+    }
+
+</script>
+</body>
+
+</html>
+
