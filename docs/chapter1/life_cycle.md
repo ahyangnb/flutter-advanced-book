@@ -130,7 +130,7 @@ I/flutter (16141): 状态刷新 setState
 或者某些其他可以订阅的对象接收通知，可以在此方法订阅，但记得去dispose取消订阅；
 
 #### didChangeDependencies 依赖改变
-故名思意，依赖项更改时调用，但也会在initState之后调用，
+顾名思义，依赖项更改时调用，但也会在initState之后调用，
 在这个方法调用`[BuildContext.inheritFromWidgetOfExactType]`是安全的。
 
 #### build 构建
