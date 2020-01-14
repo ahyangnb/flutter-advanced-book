@@ -8,6 +8,7 @@
     * [1.3：屏幕适配之组件应用](chapter1/screen_widget.md)
     * [1.4：屏幕适配之屏幕算法](chapter1/screen_algorithm.md)
     * [1.5：根据控件位置弹出对话框](chapter1/widget_offset.md)
+    * [1.6：App主题色控制](chapter1/theme.md)
     
 *  [第二章：原理篇](chapter2/index.md)
     * [1.1：setState更新原理和流程](chapter2/setstate.md)

@@ -1,0 +1,637 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>1.6：App主题色控制 · 《Flutter高级进阶》</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="baidu-site-verification" content="Y34sAqDKUH"/>
+    <meta name="theme-color" content="#ffffff">
+    <!--<meta name="description" content="">-->
+    <meta name="description" content="《Flutter高级进阶》是Flutter教程网开源的电子书，主要帮助开发者进阶深入学习flutter。">
+    <meta name="keywords" content="flutter实战,flutter书籍,flutter电子书,flutter进阶 ">
+    <meta name="generator" content="GitBook 3.2.3">
+    
+    <meta name="author" content="q1 zonggeu@163.com">
+    
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+    
+    
+    
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../chapter2/" />
+    
+    
+    <link rel="prev" href="widget_offset.html" />
+    
+
+    <style>
+        .pull-right > i {
+            font-size: 25px;
+            color: #777 !important;
+            cursor: pointer;
+
+        }
+
+        .pull-right > i:hover {
+            color: #777 !important;
+        }
+
+        body {
+            font-size: 15px !important;
+        }
+
+        a[href='../todo.html'], a[href='todo.html'] {
+            color: #888 !important;
+        }
+
+        .copyright {
+            text-align: center;
+            margin: 80px 16px 30px 16px;
+            padding-top: 16px;
+            border-top: #eee 1px solid;
+            color: grey;
+            font-size: .9em;
+        }
+
+        .ad {
+            color: white;
+            text-align: center;
+            background: url(https://img.alicdn.com/tfs/TB1Huu7vMmTBuNjy1XbXXaMrVXa-2880-400.png);
+            background-size: cover;
+            cursor: pointer;
+            margin-bottom: 30px;
+            padding: 18px
+        }
+
+        .ad:hover {
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.flutterj.com/" target="_blank" class="custom-link"><div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div></a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一章：进阶篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="life_cycle.html">
+            
+                <a href="life_cycle.html">
+            
+                    
+                    1.1：生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="partial_refresh.html">
+            
+                <a href="partial_refresh.html">
+            
+                    
+                    1.2：局部刷新优化性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="screen_widget.html">
+            
+                <a href="screen_widget.html">
+            
+                    
+                    1.3：屏幕适配之组件应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="screen_algorithm.html">
+            
+                <a href="screen_algorithm.html">
+            
+                    
+                    1.4：屏幕适配之屏幕算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="widget_offset.html">
+            
+                <a href="widget_offset.html">
+            
+                    
+                    1.5：根据控件位置弹出对话框
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6" data-path="theme.html">
+            
+                <a href="theme.html">
+            
+                    
+                    1.6：App主题色控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter2/">
+            
+                <a href="../chapter2/">
+            
+                    
+                    第二章：原理篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter2/setstate.html">
+            
+                <a href="../chapter2/setstate.html">
+            
+                    
+                    1.1：setState更新原理和流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter2/run_app.html">
+            
+                <a href="../chapter2/run_app.html">
+            
+                    
+                    1.2：runApp入口执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://github.com/ahyangnb/flutter_interview">
+            
+                    
+                    Flutter面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+    <a class="btn pull-right" aria-label="GitHub">
+        <i class="fa fa-edit" title="编辑本文"></i>
+    </a>
+    <a class="btn pull-right" aria-label="GitHub" href="https://github.com/ahyangnb/flutter-advanced-book">
+        <i class="fa fa-github" title="查看本书开源项目"></i>
+    </a>
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.6：App主题色控制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="app&#x4E3B;&#x9898;&#x8272;&#x63A7;&#x5236;">App&#x4E3B;&#x9898;&#x8272;&#x63A7;&#x5236;</h1>
+<ul>
+<li><p>Theme&#x6709;&#x4E24;&#x79CD;&#xFF1A;
+&#x5168;&#x5C40;Theme&#x548C;&#x5C40;&#x90E8;Theme&#x3002; &#x5168;&#x5C40;Theme&#x662F;&#x7531;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6839;MaterialApp&#x521B;&#x5EFA;&#x7684;Theme &#x3002;</p>
+</li>
+<li><p>Theme&#x4F5C;&#x7528;&#xFF1A;
+&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;Widget&#x7684;&#x4E3B;&#x9898;&#xFF0C;&#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x548C;&#x901F;&#x5EA6;&#xFF0C;&#x4FDD;&#x6301;App&#x4E3B;&#x9898;&#x7EDF;&#x4E00;&#x6027;&#x6216;&#x67D0;&#x79CD;&#x4E00;&#x81F4;&#x6027;&#x3002;</p>
+</li>
+</ul>
+<h1 id="theme">Theme</h1>
+<p>Theme&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x4E3A;Material APP&#x5B9A;&#x4E49;&#x4E3B;&#x9898;&#x6570;&#x636E;&#xFF08;ThemeData&#xFF09;&#x3002;Material&#x7EC4;&#x4EF6;&#x5E93;&#x91CC;&#x5F88;&#x591A;&#x7EC4;&#x4EF6;&#x90FD;&#x4F7F;&#x7528;&#x4E86;&#x4E3B;&#x9898;&#x6570;&#x636E;&#xFF0C;
+&#x5982;&#x5BFC;&#x822A;&#x680F;&#x989C;&#x8272;&#x3001;&#x6807;&#x9898;&#x5B57;&#x4F53;&#x3001;Icon&#x6837;&#x5F0F;&#x7B49;&#x3002;Theme&#x5185;&#x4F1A;&#x4F7F;&#x7528;InheritedWidget&#x6765;&#x4E3A;&#x5176;&#x5B50;&#x6811;&#x5171;&#x4EAB;&#x6837;&#x5F0F;&#x6570;&#x636E;&#x3002;</p>
+<h1 id="themedata&#xFF08;color&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#xFF09;&#xFF1A;">ThemeData&#xFF08;Color&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#xFF09;&#xFF1A;</h1>
+<ul>
+<li>accentColor - &#x524D;&#x666F;&#x8272;&#xFF08;&#x6587;&#x672C;&#x3001;&#x6309;&#x94AE;&#x7B49;&#xFF09;</li>
+<li>backgroundColor - &#x4E0E;<code>primaryColor</code>&#x5BF9;&#x6BD4;&#x7684;&#x989C;&#x8272;(&#x4F8B;&#x5982; &#x7528;&#x4F5C;&#x8FDB;&#x5EA6;&#x6761;&#x7684;&#x5269;&#x4F59;&#x90E8;&#x5206;)&#x3002;</li>
+<li>bottomAppBarColor - <code>BottomAppBar</code>&#x7684;&#x9ED8;&#x8BA4;&#x989C;&#x8272;&#x3002;</li>
+<li>buttonColor - <code>Material</code>&#x4E2D;<code>RaisedButtons</code>&#x4F7F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x586B;&#x5145;&#x8272;&#x3002;</li>
+<li>canvasColor - <code>MaterialType.canvas Material</code>&#x7684;&#x9ED8;&#x8BA4;&#x989C;&#x8272;&#x3002;</li>
+<li>cardColor - <code>Material</code>&#x88AB;&#x7528;&#x4F5C;<code>Card</code>&#x65F6;&#x7684;&#x989C;&#x8272;&#x3002;</li>
+<li>dialogBackgroundColor - <code>Dialog</code>&#x5143;&#x7D20;&#x7684;&#x80CC;&#x666F;&#x8272;&#x3002;</li>
+<li>disabledColor - &#x7528;&#x4E8E;<code>Widget</code>&#x65E0;&#x6548;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x65E0;&#x8BBA;&#x4EFB;&#x4F55;&#x72B6;&#x6001;&#x3002;&#x4F8B;&#x5982;&#x7981;&#x7528;&#x590D;&#x9009;&#x6846;&#x3002;</li>
+<li>dividerColor - <code>Dividers&#x548C;PopupMenuDividers</code>&#x7684;&#x989C;&#x8272;&#xFF0C;&#x4E5F;&#x7528;&#x4E8E;<code>ListTiles</code>&#x4E2D;&#x95F4;&#xFF0C;&#x548C;DataTables&#x7684;&#x6BCF;&#x884C;&#x4E2D;&#x95F4;.</li>
+<li>errorColor - &#x7528;&#x4E8E;&#x8F93;&#x5165;&#x9A8C;&#x8BC1;&#x9519;&#x8BEF;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x4F8B;&#x5982;&#x5728;<code>TextField</code>&#x4E2D;&#x3002;</li>
+<li>highlightColor - &#x7528;&#x4E8E;&#x7C7B;&#x4F3C;&#x58A8;&#x6C34;&#x55B7;&#x6E85;&#x52A8;&#x753B;&#x6216;&#x6307;&#x793A;&#x83DC;&#x5355;&#x88AB;&#x9009;&#x4E2D;&#x7684;&#x9AD8;&#x4EAE;&#x989C;&#x8272;&#x3002;</li>
+<li>hintColor - &#x7528;&#x4E8E;&#x63D0;&#x793A;&#x6587;&#x672C;&#x6216;&#x5360;&#x4F4D;&#x7B26;&#x6587;&#x672C;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x4F8B;&#x5982;&#x5728;<code>TextField</code>&#x4E2D;&#x3002;</li>
+<li>indicatorColor - <code>TabBar</code>&#x4E2D;&#x9009;&#x9879;&#x9009;&#x4E2D;&#x7684;&#x6307;&#x793A;&#x5668;&#x989C;&#x8272;&#x3002;</li>
+<li>primaryColor - App&#x4E3B;&#x8981;&#x90E8;&#x5206;&#x7684;&#x80CC;&#x666F;&#x8272;&#xFF08;<code>ToolBar</code>,<code>TabBar</code>&#x7B49;&#xFF09;&#x3002;</li>
+<li>primaryColorDark - <code>primaryColor</code>&#x7684;&#x8F83;&#x6697;&#x7248;&#x672C;&#x3002;</li>
+<li>primaryColorLight - <code>primaryColor</code>&#x7684;&#x8F83;&#x4EAE;&#x7248;&#x672C;&#x3002;</li>
+<li>scaffoldBackgroundColor - &#x4F5C;&#x4E3A;<code>Scaffold</code>&#x57FA;&#x7840;&#x7684;<code>Material</code>&#x9ED8;&#x8BA4;&#x989C;&#x8272;&#xFF0C;&#x5178;&#x578B;<code>Material</code>&#x5E94;&#x7528;&#x6216;&#x5E94;&#x7528;&#x5185;&#x9875;&#x9762;&#x7684;&#x80CC;&#x666F;&#x989C;&#x8272;&#x3002;</li>
+<li>secondaryHeaderColor - &#x6709;&#x9009;&#x5B9A;&#x884C;&#x65F6;<code>PaginatedDataTable</code>&#x6807;&#x9898;&#x7684;&#x989C;&#x8272;&#x3002;</li>
+<li>selectedRowColor - &#x9009;&#x4E2D;&#x884C;&#x65F6;&#x7684;&#x9AD8;&#x4EAE;&#x989C;&#x8272;&#x3002;</li>
+<li>splashColor - &#x58A8;&#x6C34;&#x55B7;&#x6E85;&#x7684;&#x989C;&#x8272;&#x3002;</li>
+<li>textSelectionColor - &#x6587;&#x672C;&#x5B57;&#x6BB5;&#x4E2D;&#x9009;&#x4E2D;&#x6587;&#x672C;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x4F8B;&#x5982;<code>TextField</code>&#x3002;</li>
+<li>textSelectionHandleColor - &#x7528;&#x4E8E;&#x8C03;&#x6574;&#x5F53;&#x524D;&#x6587;&#x672C;&#x7684;&#x54EA;&#x4E2A;&#x90E8;&#x5206;&#x7684;&#x53E5;&#x67C4;&#x989C;&#x8272;&#x3002;</li>
+<li>toggleableActiveColor - &#x7528;&#x4E8E;&#x7A81;&#x51FA;&#x663E;&#x793A;&#x5207;&#x6362;<code>Widget</code>&#xFF08;&#x5982;<code>Switch</code>&#xFF0C;<code>Radio</code>&#x548C;<code>Checkbox</code>&#xFF09;&#x7684;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#x7684;&#x989C;&#x8272;&#x3002;</li>
+<li>unselectedWidgetColor - &#x7528;&#x4E8E;<code>Widget</code>&#x5904;&#x4E8E;&#x975E;&#x6D3B;&#x52A8;&#xFF08;&#x4F46;&#x5DF2;&#x542F;&#x7528;&#xFF09;&#x72B6;&#x6001;&#x7684;&#x989C;&#x8272;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x672A;&#x9009;&#x4E2D;&#x7684;&#x590D;&#x9009;&#x6846;&#x3002; &#x901A;&#x5E38;&#x4E0E;<code>accentColor</code>&#x5F62;&#x6210;&#x5BF9;&#x6BD4;&#x3002;</li>
+<li>focusColor - &#x7126;&#x70B9;&#x83B7;&#x53D6;&#x65F6;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E9B;&#x6309;&#x94AE;&#x7126;&#x70B9;&#x3001;&#x8F93;&#x5165;&#x6846;&#x7126;&#x70B9;&#x3002;</li>
+<li>hoverColor - &#x70B9;&#x51FB;&#x4E4B;&#x540E;&#x5F98;&#x5F8A;&#x4E2D;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x6309;&#x94AE;&#x957F;&#x6309;&#xFF0C;&#x6309;&#x4F4F;&#x4E4B;&#x540E;&#x7684;&#x989C;&#x8272;&#x3002;</li>
+<li>cursorColor - &#x8F93;&#x5165;&#x6846;&#x5149;&#x6807;&#x989C;&#x8272;&#x3002;</li>
+</ul>
+<h1 id="themedata&#xFF08;theme&#x76F8;&#x5173;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#xFF09;&#xFF1A;">ThemeData&#xFF08;Theme&#x76F8;&#x5173;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#xFF09;&#xFF1A;</h1>
+<ul>
+<li>accentIconTheme - <code>IconThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x4E0E;&#x7A81;&#x51FA;&#x989C;&#x8272;&#x5BF9;&#x7167;&#x7684;&#x56FE;&#x7247;&#x4E3B;&#x9898;&#x3002;</li>
+<li>accentTextTheme - <code>TextTheme</code>&#x7C7B;&#x578B;&#xFF0C;&#x4E0E;&#x7A81;&#x51FA;&#x989C;&#x8272;&#x5BF9;&#x7167;&#x7684;&#x6587;&#x672C;&#x4E3B;&#x9898;&#x3002;</li>
+<li>chipTheme - <code>ChipThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x7528;&#x4E8E;&#x6E32;&#x67D3;<code>Chip</code>&#x7684;&#x989C;&#x8272;&#x548C;&#x6837;&#x5F0F;&#x3002;</li>
+<li>buttonTheme - <code>ButtonThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x6309;&#x94AE;&#x7B49;&#x63A7;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#xFF0C;&#x50CF;<code>RaisedButton</code>&#x548C;<code>FlatButton</code>&#x3002;</li>
+<li>primaryIconTheme - <code>IconThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x4E2A;&#x4E0E;&#x4E3B;&#x8272;&#x5BF9;&#x6BD4;&#x7684;&#x56FE;&#x7247;&#x4E3B;&#x9898;&#x3002;</li>
+<li>primaryTextTheme - <code>TextThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x4E2A;&#x4E0E;&#x4E3B;&#x8272;&#x5BF9;&#x6BD4;&#x7684;&#x6587;&#x672C;&#x4E3B;&#x9898;&#x3002;</li>
+<li>iconTheme - <code>IconThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x4E0E;&#x5361;&#x7247;&#x548C;&#x753B;&#x5E03;&#x989C;&#x8272;&#x5F62;&#x6210;&#x5BF9;&#x6BD4;&#x7684;&#x56FE;&#x6807;&#x4E3B;&#x9898;&#x3002;</li>
+<li>inputDecorationTheme - <code>InputDecorationTheme</code>&#x7C7B;&#x578B;&#xFF0C;<code>InputDecorator</code>&#xFF0C;<code>TextField</code>&#x548C;<code>TextFormField</code>&#x7684;&#x9ED8;&#x8BA4;<code>InputDecoration</code>&#x503C;&#x57FA;&#x4E8E;&#x6B64;&#x4E3B;&#x9898;&#x3002;</li>
+<li>sliderTheme - <code>SliderThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x7528;&#x4E8E;&#x6E32;&#x67D3;<code>Slider</code>&#x7684;&#x989C;&#x8272;&#x548C;&#x5F62;&#x72B6;&#x3002;</li>
+<li>textTheme - <code>TextTheme</code>&#x7C7B;&#x578B;&#xFF0C;&#x4E0E;&#x5361;&#x7247;&#x548C;&#x753B;&#x5E03;&#x5BF9;&#x6BD4;&#x7684;&#x6587;&#x672C;&#x989C;&#x8272;&#x3002;</li>
+<li>toggleButtonsTheme - <code>ToggleButtonsThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x200B;Flutter 1.9 &#x5168;&#x65B0;&#x7EC4;&#x4EF6; <code>ToggleButtons</code> &#x7684;&#x4E3B;&#x9898;&#x3002;</li>
+<li>tabBarTheme - <code>TabBarTheme</code>&#x7C7B;&#x578B;&#xFF0C;<code>TabBar</code>&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>tooltipTheme - <code>TooltipThemeData</code>&#x7C7B;&#x578B;&#xFF0C;<code>tooltip</code>&#x63D0;&#x793A;&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>cardTheme - <code>CardTheme</code>&#x7C7B;&#x578B;&#xFF0C;&#x5361;&#x7247;&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>pageTransitionsTheme - <code>PageTransitionsTheme</code>&#x7C7B;&#x578B;&#xFF0C;&#x9875;&#x9762;&#x8F6C;&#x573A;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>appBarTheme - <code>AppBarTheme</code>&#x7C7B;&#x578B;&#xFF0C;<code>AppBar</code>&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>bottomAppBarTheme - <code>BottomAppBarTheme</code>&#x7C7B;&#x578B;&#xFF0C;&#x5E95;&#x90E8;&#x5BFC;&#x822A;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>dialogTheme - <code>DialogTheme</code>&#x7C7B;&#x578B;&#xFF0C;&#x5BF9;&#x8BDD;&#x6846;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>floatingActionButtonTheme - <code>FloatingActionButtonThemeData</code>&#x7C7B;&#x578B;&#xFF0C;<code>FloatingActionButton</code>&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<code>Scaffold</code>&#x5C5E;&#x6027;&#x7684;&#x90A3;&#x4E2A;&#x3002;</li>
+<li>cupertinoOverrideTheme - <code>CupertinoThemeData</code>&#x7C7B;&#x578B;&#xFF0C;<code>cupertino</code>&#x8986;&#x76D6;&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>snackBarTheme - <code>SnackBarThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x5F39;&#x51FA;&#x7684;<code>snackBar</code>&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>bottomSheetTheme - <code>BottomSheetThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x5E95;&#x90E8;&#x6ED1;&#x51FA;&#x5BF9;&#x8BDD;&#x6846;&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>popupMenuTheme - <code>PopupMenuThemeData</code>&#x7C7B;&#x578B;&#xFF0C;&#x5F39;&#x51FA;&#x83DC;&#x5355;&#x5BF9;&#x8BDD;&#x6846;&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>bannerTheme - <code>MaterialBannerThemeData</code>&#x7C7B;&#x578B;&#xFF0C;<code>Material</code>&#x6750;&#x8D28;&#x7684;<code>Banner</code>&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x3002;</li>
+<li>dividerTheme - <code>DividerThemeData</code>&#x7C7B;&#x578B;&#xFF0C;<code>Divider</code>&#x7EC4;&#x4EF6;&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x90A3;&#x4E2A;&#x6A2A;&#x5411;&#x7EBF;&#x6761;&#x7EC4;&#x4EF6;&#x3002;</li>
+</ul>
+<h1 id="themedata&#xFF08;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#xFF09;&#xFF1A;">ThemeData&#xFF08;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#xFF09;&#xFF1A;</h1>
+<ul>
+<li>accentColorBrightness - <code>Brightness</code>&#x7C7B;&#x578B;&#xFF0C;<code>accentColor</code>&#x7684;&#x4EAE;&#x5EA6;&#x3002; &#x7528;&#x4E8E;&#x786E;&#x5B9A;&#x653E;&#x7F6E;&#x5728;&#x7A81;&#x51FA;&#x989C;&#x8272;&#x9876;&#x90E8;&#x7684;&#x6587;&#x672C;&#x548C;&#x56FE;&#x6807;&#x7684;&#x989C;&#x8272;&#xFF08;&#x4F8B;&#x5982;<code>FloatingButton</code>&#x4E0A;&#x7684;&#x56FE;&#x6807;&#xFF09;&#x3002;</li>
+<li>brightness - <code>Brightness</code>&#x7C7B;&#x578B;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6574;&#x4F53;&#x4E3B;&#x9898;&#x7684;&#x4EAE;&#x5EA6;&#x3002; &#x7531;&#x6309;&#x94AE;&#x7B49;<code>Widget</code>&#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x786E;&#x5B9A;&#x5728;&#x4E0D;&#x4F7F;&#x7528;&#x4E3B;&#x8272;&#x6216;&#x5F3A;&#x8C03;&#x8272;&#x65F6;&#x8981;&#x9009;&#x62E9;&#x7684;&#x989C;&#x8272;&#x3002;</li>
+<li>platform - <code>TargetPlatform</code>&#x7C7B;&#x578B;&#xFF0C;<code>Widget</code>&#x9700;&#x8981;&#x9002;&#x914D;&#x7684;&#x76EE;&#x6807;&#x7C7B;&#x578B;&#x3002;</li>
+<li>splashFactory - <code>InteractiveInkFeatureFactory</code>&#x7C7B;&#x578B;&#xFF0C;&#x5B9A;&#x4E49;<code>InkWall</code>&#x548C;<code>InkResponse</code>&#x751F;&#x6210;&#x7684;&#x58A8;&#x6C34;&#x55B7;&#x6E85;&#x7684;&#x5916;&#x89C2;&#x3002;</li>
+<li>primaryColorBrightness - <code>Brightness</code>&#x7C7B;&#x578B;&#xFF0C;<code>primaryColor</code>&#x7684;&#x4EAE;&#x5EA6;&#x3002;</li>
+<li>fontFamily - <code>String</code>&#x7C7B;&#x578B;&#xFF0C;&#x5B57;&#x4F53;&#x6837;&#x5F0F;&#x3002;</li>
+<li>applyElevationOverlayColor <code>bool</code>&#x7C7B;&#x578B;&#xFF0C;&#x662F;&#x5426;&#x5E94;&#x7528;<code>elevation</code>&#x8986;&#x76D6;&#x989C;&#x8272;&#x3002;</li>
+<li>materialTapTargetSize - <code>MaterialTapTargetSize</code>&#x7C7B;&#x578B;&#xFF0C;<code>Chip</code>&#x7B49;&#x7EC4;&#x4EF6;&#x7684;&#x5C3A;&#x5BF8;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;&#xFF0C;&#x5982;&#xFF1A;&#x8BBE;&#x7F6E;&#x4E3A;<code>MaterialTapTargetSize.shrinkWrap</code>&#x65F6;&#xFF0C;<code>clip</code>&#x8DDD;&#x9876;&#x90E8;&#x8DDD;&#x79BB;&#x4E3A;0&#xFF1B;&#x8BBE;&#x7F6E;&#x4E3A;<code>MaterialTapTargetSize.padded</code>&#x65F6;&#x8DDD;&#x9876;&#x90E8;&#x6709;&#x4E00;&#x4E2A;&#x8DDD;&#x79BB;</li>
+<li>colorScheme - <code>ColorScheme</code>&#x7C7B;&#x578B;&#xFF0C;scheme&#x7EC4;&#x989C;&#x8272;&#xFF0C;&#x4E00;&#x7EC4;13&#x79CD;&#x989C;&#x8272;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x5927;&#x591A;&#x6570;&#x7EC4;&#x4EF6;&#x7684;&#x989C;&#x8272;&#x5C5E;&#x6027;&#x3002;</li>
+<li>typography - <code>Typography</code>&#x7C7B;&#x578B;,&#x7528;&#x4E8E;&#x914D;&#x7F6E;<code>TextTheme</code>&#x3001;<code>primaryTextTheme</code>&#x548C;<code>accentTextTheme</code>&#x7684;&#x989C;&#x8272;&#x548C;&#x51E0;&#x4F55;&#x6587;&#x672C;&#x4E3B;&#x9898;&#x503C;&#x3002;</li>
+</ul>
+<p>&#x66F4;&#x65B0;&#x4E2D;&#x3002;&#x3002;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="widget_offset.html" class="navigation navigation-prev " aria-label="Previous page: 1.5：根据控件位置弹出对话框">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../chapter2/" class="navigation navigation-next " aria-label="Next page: 第二章：原理篇">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.6：App主题色控制","level":"1.2.6","depth":2,"next":{"title":"第二章：原理篇","level":"1.3","depth":1,"path":"chapter2/index.md","ref":"chapter2/index.md","articles":[{"title":"1.1：setState更新原理和流程","level":"1.3.1","depth":2,"path":"chapter2/setstate.md","ref":"chapter2/setstate.md","articles":[]},{"title":"1.2：runApp入口执行","level":"1.3.2","depth":2,"path":"chapter2/run_app.md","ref":"chapter2/run_app.md","articles":[]}]},"previous":{"title":"1.5：根据控件位置弹出对话框","level":"1.2.5","depth":2,"path":"chapter1/widget_offset.md","ref":"chapter1/widget_offset.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter1/theme.md","mtime":"2020-01-14T10:31:20.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T10:31:34.859Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+
+
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+
+<script>
+    var _hmt = _hmt || [];
+    $("#bd").remove();
+
+
+    function init() {
+        var p = location.pathname;
+        _hmt.push(['_trackPageview', p]);
+        if (p[p.length - 1] === '/') {
+            p += "index.md"
+        } else {
+            p = p.split(".")[0] + ".md";
+        }
+        p = "https://github.com/ahyangnb/flutter-advanced-book/blob/master/docs" + p;
+        $(".pull-right .fa-edit").parent("a").attr("href", p);
+        $("table").wrap("<div style='overflow: auto'></div>");
+
+        $(".copyright").remove();
+        $("<div class='copyright'> 有错误欢迎提出，作者马上改进并红包奖赏。</div>").appendTo(".page-inner");
+    }
+
+    function hookAPI(api, ob, fn) {
+        return function () {
+            var result = api.apply(ob, [].slice.call(arguments));
+            setTimeout(fn, 1000);
+            return result;
+        }
+    }
+
+    function addAD() {
+        if (location.href !== 'http://book.flutterj.com/' && $("#book-search-results .ad").length == 0) {
+            var id=Math.ceil(Math.random()*10)%2;
+            $(".ad"+id).clone().hide().fadeIn().prependTo("#book-search-results")
+            setTimeout(function () {
+                $(".body-inner").animate({scrollTop: 0}, 200)
+            }, 800);
+        }
+    }
+
+    function _track(p,url) {
+        _hmt.push(['_trackEvent', 'ad', 'click', p]);
+        setTimeout(function () {
+            location.href = url
+        }, 100);
+    }
+
+    // setInterval(addAD, 300);
+
+    init();
+
+    if (history.pushState) {
+        history.pushState = hookAPI(history.pushState, history, init);
+    }
+
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</body>
+
+</html>
+
