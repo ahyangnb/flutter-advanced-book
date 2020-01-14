@@ -149,4 +149,7 @@ Flutter的Color中大多数颜色从100到900，增量为100，加上颜色50，
 
 ##### 栗子：
 
-![](../img/color.jpeg)
+![](../img/color.png)
+
+##### 推荐站点(Material design)：
+[https://material.io/resources/color](https://material.io/resources/color)
