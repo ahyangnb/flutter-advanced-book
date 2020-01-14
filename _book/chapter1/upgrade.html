@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>1.5：根据控件位置弹出对话框 · 《Flutter高级进阶》</title>
+    <title>1.7：App内更新并自动打开安装 · 《Flutter高级进阶》</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="baidu-site-verification" content="Y34sAqDKUH"/>
     <meta name="theme-color" content="#ffffff">
@@ -73,10 +73,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="theme.html" />
+    <link rel="next" href="../chapter2/" />
     
     
-    <link rel="prev" href="screen_algorithm.html" />
+    <link rel="prev" href="theme.html" />
     
 
     <style>
@@ -236,7 +236,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.5" data-path="widget_offset.html">
+        <li class="chapter " data-level="1.2.5" data-path="widget_offset.html">
             
                 <a href="widget_offset.html">
             
@@ -262,7 +262,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="upgrade.html">
+        <li class="chapter active" data-level="1.2.7" data-path="upgrade.html">
             
                 <a href="upgrade.html">
             
@@ -380,7 +380,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >1.5：根据控件位置弹出对话框</a>
+        <a href=".." >1.7：App内更新并自动打开安装</a>
     </h1>
 </div>
 
@@ -395,38 +395,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6839;&#x636E;&#x63A7;&#x4EF6;&#x4F4D;&#x7F6E;&#x5F39;&#x51FA;&#x5BF9;&#x8BDD;&#x6846;">&#x6839;&#x636E;&#x63A7;&#x4EF6;&#x4F4D;&#x7F6E;&#x5F39;&#x51FA;&#x5BF9;&#x8BDD;&#x6846;</h1>
-<h5 id="&#x5B9E;&#x73B0;&#x6548;&#x679C;">&#x5B9E;&#x73B0;&#x6548;&#x679C;</h5>
-<p><img src="../img/offset_widget.gif" width="30%"></p>
-<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x8981;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x63A7;&#x4EF6;&#x5C3A;&#x5BF8;&#x548C;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;</p>
-<ul>
-<li>&#x63D2;&#x4EF6;&#x5FC5;&#x987B;&#x6E32;&#x67D3;&#x597D;,</li>
-</ul>
-<pre class="language-"><code class="lang-dart"><span class="token keyword">final</span> RenderBox box <span class="token operator">=</span> globalKey<span class="token punctuation">.</span>currentContext<span class="token punctuation">.</span><span class="token function">findRenderObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">final</span> size <span class="token operator">=</span> box<span class="token punctuation">.</span>size<span class="token punctuation">;</span>  <span class="token comment">// &#x83B7;&#x53D6;&#x5C3A;&#x5BF8;</span>
-<span class="token keyword">final</span> topLeftPosition <span class="token operator">=</span> box<span class="token punctuation">.</span><span class="token function">localToGlobal</span><span class="token punctuation">(</span>Offset<span class="token punctuation">.</span>zero<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">return</span> topLeftPosition<span class="token punctuation">.</span>dy<span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>context.size</code>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x63A7;&#x4EF6;&#x7684;&#x5C3A;&#x5BF8;&#x548C;&#x4F4D;&#x7F6E;offset&#x4FE1;&#x606F;</li>
-</ul>
-<p>&#x4E0B;&#x9762;&#x662F;&#x793A;&#x4F8B;&#xFF0C;&#x901A;&#x8FC7;<code>context.size.height</code>&#x53EF;&#x4EE5;&#x62FF;&#x5230;child&#x63A7;&#x4EF6;&#x7684;&#x9AD8;&#x5EA6;</p>
-<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">HeightReporter</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
-  <span class="token keyword">final</span> Widget child<span class="token punctuation">;</span>
-
-  <span class="token function">HeightReporter</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>child<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  <span class="token metadata symbol">@override</span>
-  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// &#x624B;&#x52BF;&#x8BC6;&#x522B;&#x7EC4;&#x4EF6;&#x5305;&#x88F9;&#x4E00;&#x4E2A;Widget&#x5B69;&#x5B50;</span>
-    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">GestureDetector</span><span class="token punctuation">(</span>
-      child<span class="token punctuation">:</span> child<span class="token punctuation">,</span>  <span class="token comment">// &#x83B7;&#x53D6;&#x5C3A;&#x5BF8;&#x9AD8;&#x5EA6;&#x5E76;&#x6253;&#x5370;</span>
-      onTap<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;Height is ${context.size.height}&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>&#x6B63;&#x5728;&#x66F4;&#x65B0;&#x4E2D;&#x3002;&#x3002;&#x3002;&#x3002;</p>
+                                <h1 id="app&#x5185;&#x66F4;&#x65B0;&#x5E76;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x5B89;&#x88C5;">App&#x5185;&#x66F4;&#x65B0;&#x5E76;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x5B89;&#x88C5;</h1>
+<p>&#x66F4;&#x65B0;&#x4E2D;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;</p>
 
                                 
                                 </section>
@@ -454,12 +424,12 @@
 
             
                 
-                <a href="screen_algorithm.html" class="navigation navigation-prev " aria-label="Previous page: 1.4：屏幕适配之屏幕算法">
+                <a href="theme.html" class="navigation navigation-prev " aria-label="Previous page: 1.6：App主题色控制">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="theme.html" class="navigation navigation-next " aria-label="Next page: 1.6：App主题色控制">
+                <a href="../chapter2/" class="navigation navigation-next " aria-label="Next page: 第二章：原理篇">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -470,7 +440,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.5：根据控件位置弹出对话框","level":"1.2.5","depth":2,"next":{"title":"1.6：App主题色控制","level":"1.2.6","depth":2,"path":"chapter1/theme.md","ref":"chapter1/theme.md","articles":[]},"previous":{"title":"1.4：屏幕适配之屏幕算法","level":"1.2.4","depth":2,"path":"chapter1/screen_algorithm.md","ref":"chapter1/screen_algorithm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter1/widget_offset.md","mtime":"2020-01-13T12:27:10.848Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T12:37:02.567Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.7：App内更新并自动打开安装","level":"1.2.7","depth":2,"next":{"title":"第二章：原理篇","level":"1.3","depth":1,"path":"chapter2/index.md","ref":"chapter2/index.md","articles":[{"title":"1.1：setState更新原理和流程","level":"1.3.1","depth":2,"path":"chapter2/setstate.md","ref":"chapter2/setstate.md","articles":[]},{"title":"1.2：runApp入口执行","level":"1.3.2","depth":2,"path":"chapter2/run_app.md","ref":"chapter2/run_app.md","articles":[]}]},"previous":{"title":"1.6：App主题色控制","level":"1.2.6","depth":2,"path":"chapter1/theme.md","ref":"chapter1/theme.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter1/upgrade.md","mtime":"2020-01-14T12:36:28.278Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T12:37:02.567Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
