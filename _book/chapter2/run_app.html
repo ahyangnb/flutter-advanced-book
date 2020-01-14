@@ -1,0 +1,775 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>1.2：runApp入口执行 · 《Flutter高级进阶》</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="baidu-site-verification" content="Y34sAqDKUH"/>
+    <meta name="theme-color" content="#ffffff">
+    <!--<meta name="description" content="">-->
+    <meta name="description" content="《Flutter高级进阶》是Flutter教程网开源的电子书，主要帮助开发者进阶深入学习flutter。">
+    <meta name="keywords" content="flutter实战,flutter书籍,flutter电子书,flutter进阶 ">
+    <meta name="generator" content="GitBook 3.2.3">
+    
+    <meta name="author" content="q1 zonggeu@163.com">
+    
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+    
+    
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+    
+    
+    
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="setstate.html" />
+    
+
+    <style>
+        .pull-right > i {
+            font-size: 25px;
+            color: #777 !important;
+            cursor: pointer;
+
+        }
+
+        .pull-right > i:hover {
+            color: #777 !important;
+        }
+
+        body {
+            font-size: 15px !important;
+        }
+
+        a[href='../todo.html'], a[href='todo.html'] {
+            color: #888 !important;
+        }
+
+        .copyright {
+            text-align: center;
+            margin: 80px 16px 30px 16px;
+            padding-top: 16px;
+            border-top: #eee 1px solid;
+            color: grey;
+            font-size: .9em;
+        }
+
+        .ad {
+            color: white;
+            text-align: center;
+            background: url(https://img.alicdn.com/tfs/TB1Huu7vMmTBuNjy1XbXXaMrVXa-2880-400.png);
+            background-size: cover;
+            cursor: pointer;
+            margin-bottom: 30px;
+            padding: 18px
+        }
+
+        .ad:hover {
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.flutterj.com/" target="_blank" class="custom-link"><div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div></a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1/">
+            
+                <a href="../chapter1/">
+            
+                    
+                    第一章：进阶篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter1/life_cycle.html">
+            
+                <a href="../chapter1/life_cycle.html">
+            
+                    
+                    1.1：生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter1/partial_refresh.html">
+            
+                <a href="../chapter1/partial_refresh.html">
+            
+                    
+                    1.2：局部刷新优化性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter1/screen_widget.html">
+            
+                <a href="../chapter1/screen_widget.html">
+            
+                    
+                    1.3：屏幕适配之组件应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter1/screen_algorithm.html">
+            
+                <a href="../chapter1/screen_algorithm.html">
+            
+                    
+                    1.4：屏幕适配之屏幕算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../chapter1/widget_offset.html">
+            
+                <a href="../chapter1/widget_offset.html">
+            
+                    
+                    1.5：根据控件位置弹出对话框
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第二章：原理篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="setstate.html">
+            
+                <a href="setstate.html">
+            
+                    
+                    1.1：setState更新原理和流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="run_app.html">
+            
+                <a href="run_app.html">
+            
+                    
+                    1.2：runApp入口执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://github.com/ahyangnb/flutter_interview">
+            
+                    
+                    Flutter面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+    <a class="btn pull-right" aria-label="GitHub">
+        <i class="fa fa-edit" title="编辑本文"></i>
+    </a>
+    <a class="btn pull-right" aria-label="GitHub" href="https://github.com/ahyangnb/flutter-advanced-book">
+        <i class="fa fa-github" title="查看本书开源项目"></i>
+    </a>
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.2：runApp入口执行</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="runapp">runApp</h1>
+<p>&#x6211;&#x4EEC;&#x5E73;&#x5E38;&#x7684;App&#x5165;&#x53E3;&#x90FD;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token function">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x90A3;runApp&#x5230;&#x5E95;&#x505A;&#x4E86;&#x4EC0;&#x4E48;&#xFF0C;&#x600E;&#x4E48;&#x6765;&#x6267;&#x884C;&#x8FD9;&#x4E2A;MyApp&#x7684;&#xFF1F;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">runApp</span><span class="token punctuation">(</span>Widget app<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  WidgetsFlutterBinding<span class="token punctuation">.</span><span class="token function">ensureInitialized</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//&#x786E;&#x4FDD;&#x521D;&#x59CB;&#x5316;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">attachRootWidget</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span> <span class="token comment">//&#x9644;&#x52A0;&#x6839;&#x5C0F;&#x90E8;&#x4EF6;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">scheduleWarmUpFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x5B89;&#x6392;&#x70ED;&#x8EAB;&#x5E27;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>runApp&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E00;&#x4E2A;Widget&#x7C7B;&#x578B;app&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x663E;&#x793A;&#x7684;&#x754C;&#x9762;Widget&#xFF0C;
+&#x7136;&#x540E;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x8C03;&#x7528;&#x4E86;<code>WidgetsFlutterBinding.ensureInitialized()</code>&#xFF0C;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// WidgetsFlutterBinding(&apos;flutter/lib/src/widgets/binding.dart&apos;)</span>
+<span class="token keyword">class</span> <span class="token class-name">WidgetsFlutterBinding</span> <span class="token keyword">extends</span> <span class="token class-name">BindingBase</span> 
+<span class="token keyword">with</span> GestureBinding<span class="token punctuation">,</span> ServicesBinding<span class="token punctuation">,</span> SchedulerBinding<span class="token punctuation">,</span> PaintingBinding<span class="token punctuation">,</span>
+ SemanticsBinding<span class="token punctuation">,</span> RendererBinding<span class="token punctuation">,</span> WidgetsBinding <span class="token punctuation">{</span>
+
+  <span class="token keyword">static</span> WidgetsBinding <span class="token function">ensureInitialized</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>WidgetsBinding<span class="token punctuation">.</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+      <span class="token function">WidgetsFlutterBinding</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> WidgetsBinding<span class="token punctuation">.</span>instance<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;WidgetsFlutterBinding&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x7C7B;&#xFF0C;WidgetsFlutterBinding&#x7EE7;&#x627F;&#x4E86;BindingBase&#x5E76;&#x4E14;with&#x4E86;&#x5927;&#x91CF;&#x7684;mixin,
+&#x5B98;&#x65B9;&#x7ED9;&#x7684;&#x6CE8;&#x91CA;&#xFF1A;</p>
+<pre class="language-"><code>&#x57FA;&#x4E8E;Widgets&#x6846;&#x67B6;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5177;&#x4F53;&#x7ED1;&#x5B9A;&#x3002;
+&#x8FD9;&#x662F;&#x5C06;&#x6846;&#x67B6;&#x7ED1;&#x5B9A;&#x5230;Flutter&#x5F15;&#x64CE;&#x7684;&#x7C98;&#x5408;&#x5242;&#x3002;
+
+&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8FD9;&#x4E2A;&#x7C7B;&#x662F;&#x5C06;Widget&#x67B6;&#x6784;&#x548C;Flutter&#x5E95;&#x5C42;Engine&#x8FDE;&#x63A5;&#x7684;&#x6865;&#x6881;&#x3002;
+&#x90A3;&#x4E48; ensureInitialized() &#x5C31;&#x662F;&#x8D1F;&#x8D23;&#x521D;&#x59CB;&#x5316;&#x4EE5;&#x53CA;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x7684;&#x3002;
+</code></pre><h1 id="widget&#x5230;element&#x5230;renderobject&#x7684;&#x6D41;&#x7A0B;">Widget&#x5230;Element&#x5230;RenderObject&#x7684;&#x6D41;&#x7A0B;</h1>
+<p>&#x521D;&#x59CB;&#x5316;&#x540E;&#x5C31;&#x4F1A;&#x7EE7;&#x7EED;&#x8C03;&#x7528;attachRootWidget(app)&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// WidgetsBinding (flutter/lib/src/widgets/binding.dart)</span>
+<span class="token comment">// &#x53D6;&#x5F97;&#x4E00;&#x4E2A;&#x5C0F;&#x90E8;&#x4EF6;&#x5E76;&#x5C06;&#x5176;&#x9644;&#x52A0;&#x5230;[renderViewElement]</span>
+<span class="token comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x5B8C;&#x6210;&#x4E86;Widget&#x5230;Element&#x5230;RenderObject&#x7684;&#x6574;&#x4E2A;&#x5173;&#x8054;&#x8FC7;&#x7A0B;</span>
+<span class="token keyword">void</span> <span class="token function">attachRootWidget</span><span class="token punctuation">(</span>Widget rootWidget<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _renderViewElement <span class="token operator">=</span> RenderObjectToWidgetAdapter<span class="token operator">&lt;</span>RenderBox<span class="token operator">&gt;</span><span class="token punctuation">(</span>
+      container<span class="token punctuation">:</span> renderView<span class="token punctuation">,</span>
+      debugShortDescription<span class="token punctuation">:</span> <span class="token string">&apos;[root]&apos;</span><span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> rootWidget<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attachToRenderTree</span><span class="token punctuation">(</span>buildOwner<span class="token punctuation">,</span> renderViewElement<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x770B;&#x4E0B;&#x4E2A;&#x65B9;&#x6CD5;&#x8BB2;&#x89E3;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5C31;&#x662F;&#x5C06;&#x4F20;&#x5165;&#x7684;Widget&#x5305;&#x88C5;&#x5230;<code>RenderObjectToWidgetAdapter</code>&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x81EA;<code>RenderObjectWidget</code>&#xFF0C;
+&#x8D1F;&#x8D23;&#x5C06;<code>Widget</code>&#x3001;<code>Element</code>&#x3001;<code>RenderObject</code>&#x4E09;&#x8005;&#x5173;&#x8054;&#x8D77;&#x6765;&#xFF0C;&#x5176;&#x4E2D;&#x7684;<code>RenderObject</code>&#x5BF9;&#x5E94;&#x524D;&#x9762;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x4E2D;&#x521B;&#x5EFA;&#x7684;<code>renderView</code>&#x3002;
+&#x5176;&#x4E2D;<code>renderView</code>&#x548C;<code>_renderViewElement</code>&#x4E3A;<code>WidgetsFlutterBinding</code>&#x7684;&#x6210;&#x5458;&#xFF0C;
+&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6BCF;&#x4E2A;app&#x53EA;&#x5B58;&#x5728;&#x4E00;&#x4E2A;<code>renderViewElement</code>&#x548C;<code>renderView</code>&#xFF0C;&#x5E76;&#x4E14;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x3002;</p>
+<h3 id="attachtorendertree">attachToRenderTree</h3>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// RenderObjectToWidgetAdapter&#xFF08;flutter/lib/src/widgets/binding.dart&#xFF09;</span>
+<span class="token comment">// &#x6B64;&#x65B9;&#x6CD5;&#x8D1F;&#x8D23;&#x521B;&#x5EFA;&#x6839;Element&#xFF0C;&#x4E5F;&#x5C31;&#x662F;RenderObjectToWidgetElement</span>
+
+<span class="token comment">/// &#x5B98;&#x65B9;&#x6CE8;&#x91CA;&#xFF1A;</span>
+<span class="token comment">///&#x7ED9;&#x8FD9;&#x4E2A;&#x5C0F;&#x90E8;&#x4EF6;&#x5145;&#x6C14;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x7ED3;&#x679C;[RenderObject]&#x8BBE;&#x7F6E;&#x4E3A;</span>
+<span class="token comment">/// [container]&#x7684;&#x5B50;&#x7EA7;&#x3002;</span>
+<span class="token comment">///&#x5982;&#x679C;`element`&#x4E3A;null&#xFF0C;&#x5219;&#x6B64;&#x51FD;&#x6570;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5143;&#x7D20;&#x3002; &#x9664;&#x6B64;&#x4EE5;&#x5916;&#xFF0C;</span>
+<span class="token comment">///&#x7ED9;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x5C06;&#x5B89;&#x6392;&#x66F4;&#x65B0;&#x4EE5;&#x5207;&#x6362;&#x5230;&#x6B64;&#x5C0F;&#x90E8;&#x4EF6;&#x3002;</span>
+<span class="token comment">///&#x53EF;&#x4EE5;&#x770B;&#x51FA;Element&#x53EA;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x6B21;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x8FDB;&#x884C;&#x590D;&#x7528;</span>
+<span class="token comment">///</span>
+<span class="token comment">/// [runApp]&#x7528;&#x4E8E;&#x5F15;&#x5BFC;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</span>
+RenderObjectToWidgetElement<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> attachToRenderTree
+<span class="token punctuation">(</span>BuildOwner owner<span class="token punctuation">,</span> <span class="token punctuation">[</span> RenderObjectToWidgetElement<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> element <span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5982;&#x679C;`element`&#x4E3A;null</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>element <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x521B;&#x5EFA;&#x6839;Element&#xFF0C;RenderObjectToWidgetElement</span>
+      owner<span class="token punctuation">.</span><span class="token function">lockState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        element <span class="token operator">=</span> <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">assert</span><span class="token punctuation">(</span>element <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        element<span class="token punctuation">.</span><span class="token function">assignOwner</span><span class="token punctuation">(</span>owner<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      owner<span class="token punctuation">.</span><span class="token function">buildScope</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x8FD9;&#x91CC;&#x4F1A;&#x6839;&#x636E;WidgetTree&#x6784;&#x5EFA;ElementTree</span>
+        element<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x770B;&#x4E0B;&#x9762;&#x7684;mount&#x65B9;&#x6CD5;&#x8BB2;&#x89E3;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">// &#x5219;&#x6B64;&#x51FD;&#x6570;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5143;&#x7D20;</span>
+      element<span class="token punctuation">.</span>_newWidget <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+      element<span class="token punctuation">.</span><span class="token function">markNeedsBuild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// markNeedsBuild&#x5728;setState&#x66F4;&#x65B0;&#x539F;&#x7406;&#x548C;&#x6D41;&#x7A0B;&#x6709;&#x8BB2;&#x5230;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> element<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="mount">mount</h3>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// RenderObjectToWidgetAdapter&#xFF08;flutter/lib/src/widgets/binding.dart&#xFF09;</span>
+<span class="token metadata symbol">@override</span>
+  <span class="token keyword">void</span> <span class="token function">mount</span><span class="token punctuation">(</span>Element parent<span class="token punctuation">,</span> <span class="token keyword">dynamic</span> newSlot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">assert</span><span class="token punctuation">(</span>parent <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x65AD;&#x8A00;&#x63A5;&#x6536;&#x7684;parent&#x7B49;&#x4E8E;&#x7A7A;</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span>parent<span class="token punctuation">,</span> newSlot<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token function">_rebuild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="rebuild">_rebuild</h3>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// RenderObjectToWidgetAdapter&#xFF08;flutter/lib/src/widgets/binding.dart&#xFF09;</span>
+<span class="token keyword">void</span> <span class="token function">_rebuild</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8C03;&#x7528;updateChild&#x66F4;&#x65B0;ElementTree</span>
+      _child <span class="token operator">=</span> <span class="token function">updateChild</span><span class="token punctuation">(</span>_child<span class="token punctuation">,</span> widget<span class="token punctuation">.</span>child<span class="token punctuation">,</span> _rootChildSlot<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x67E5;&#x770B;&#x3010;updateChild&#x3011;</span>
+      <span class="token keyword">assert</span><span class="token punctuation">(</span>_child <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>exception<span class="token punctuation">,</span> stack<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x7EA2;&#x5C4F;&#x4EA7;&#x751F;&#x7684;&#x5730;&#x65B9;</span>
+      <span class="token keyword">final</span> FlutterErrorDetails details <span class="token operator">=</span> <span class="token function">FlutterErrorDetails</span><span class="token punctuation">(</span>
+        exception<span class="token punctuation">:</span> exception<span class="token punctuation">,</span>
+        stack<span class="token punctuation">:</span> stack<span class="token punctuation">,</span>
+        <span class="token keyword">library</span><span class="token punctuation">:</span> <span class="token string">&apos;widgets library&apos;</span><span class="token punctuation">,</span>
+        context<span class="token punctuation">:</span> <span class="token function">ErrorDescription</span><span class="token punctuation">(</span><span class="token string">&apos;attaching to the render tree&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// &#x8FD9;&#x91CC;&#x6253;&#x5370;&#x4E86;&#x9519;&#x8BEF;&#x6808;</span>
+      FlutterError<span class="token punctuation">.</span><span class="token function">reportError</span><span class="token punctuation">(</span>details<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// &#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x4E86;&#x7EA2;&#x5C4F;&#x7684;Widget&#xFF0C;&#x663E;&#x793A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;</span>
+      <span class="token comment">// &#x81EA;&#x5B9A;&#x4E49;ErrorWidget&#x770B;&#x4E0B;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;</span>
+      <span class="token keyword">final</span> Widget error <span class="token operator">=</span> ErrorWidget<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span>details<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      _child <span class="token operator">=</span> <span class="token function">updateChild</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> error<span class="token punctuation">,</span> _rootChildSlot<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// &#x67E5;&#x770B;&#x3010;updateChild&#x3011;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;errorwidget&#x62A5;&#x9519;&#x9875;&#x9762;">&#x81EA;&#x5B9A;&#x4E49;ErrorWidget&#x62A5;&#x9519;&#x9875;&#x9762;</h3>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token function">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/// &#x81EA;&#x5B9A;&#x4E49;&#x62A5;&#x9519;&#x9875;&#x9762;</span>
+  ErrorWidget<span class="token punctuation">.</span>builder <span class="token operator">=</span> <span class="token punctuation">(</span>FlutterErrorDetails flutterErrorDetails<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">debugPrint</span><span class="token punctuation">(</span>flutterErrorDetails<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Center</span><span class="token punctuation">(</span>child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;App&#x9519;&#x8BEF;&#xFF0C;&#x5FEB;&#x53BB;&#x53CD;&#x9988;&#x7ED9;&#x4F5C;&#x8005;!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="updatechild-&#x66F4;&#x65B0;elementtree">updateChild() &#x66F4;&#x65B0;ElementTree</h3>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x8BE5;&#x65B9;&#x6CD5;&#x53EA;&#x6267;&#x884C;&#x4E86;updateChild()&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x81F3;&#x5173;&#x91CD;&#x8981;&#xFF0C;ElementTree&#x7684;&#x751F;&#x6210;&#x4E3B;&#x8981;&#x5C31;&#x5728;&#x65B9;&#x6CD5;&#x4E2D;&#x5B9E;&#x73B0;&#xFF0C;
+&#x6211;&#x4EEC;&#x6765;&#x7EC6;&#x770B;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x6CE8;&#x610F;&#x4EE3;&#x7801;&#x4E2D;&#x6DFB;&#x52A0;&#x7684;&#x6CE8;&#x91CA;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// child&#x8868;&#x793A;&#x8981;&#x66F4;&#x65B0;&#x7684;Element&#xFF0C;newWidget&#x8868;&#x793A;&#x5BF9;&#x5E94;Element&#x7684;Widget&#xFF0C;</span>
+<span class="token comment">// newSlot&#x7528;&#x6765;&#x6807;&#x8BC6;Element&#x7684;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#xFF0C;&#x8FD4;&#x56DE;&#x8BE5;&#x4F4D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x65B0;Element</span>
+<span class="token metadata symbol">@protected</span>
+Element <span class="token function">updateChild</span><span class="token punctuation">(</span>Element child<span class="token punctuation">,</span> Widget newWidget<span class="token punctuation">,</span> <span class="token keyword">dynamic</span> newSlot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Debug&#x4E0B;&#x4FDD;&#x8BC1;&#x4E00;&#x4E2A;GlobalKey&#x53EA;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;Widget</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newWidget <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> newWidget<span class="token punctuation">.</span>key <span class="token operator">is</span> GlobalKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">final</span> GlobalKey key <span class="token operator">=</span> newWidget<span class="token punctuation">.</span>key<span class="token punctuation">;</span>
+      key<span class="token punctuation">.</span><span class="token function">_debugReserveFor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>newWidget <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5982;&#x679C;newWidget&#x4E3A;&#x7A7A;&#xFF0C;child&#x975E;&#x7A7A;&#x8868;&#x793A;&#x9700;&#x8981;&#x79FB;&#x9664;&#x65E7;Element</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>child <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token function">deactivateChild</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// &#x5C06;&#x6B64;Element&#x7684;&#x4F4D;&#x7F6E;&#x8BBE;&#x4E3A;null</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>child <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x90FD;&#x4E0D;&#x4E3A;&#x7A7A;&#x4E14;&#x662F;&#x76F8;&#x540C;Widget&#xFF0C;&#x66F4;&#x65B0;&#x4F4D;&#x7F6E;&#x6807;&#x8BC6;&#x5373;&#x53EF;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>widget <span class="token operator">==</span> newWidget<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>slot <span class="token operator">!=</span> newSlot<span class="token punctuation">)</span> <span class="token function">updateSlotForChild</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span> newSlot<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// &#x66F4;&#x65B0;&#x540E;&#x8FD4;&#x56DE;&#x539F;Element</span>
+      <span class="token keyword">return</span> child<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// &#x82E5;&#x4E0D;&#x662F;&#x76F8;&#x540C;Widget&#x5219;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&#x76F8;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x76F8;&#x540C;&#x7684;Key&#xFF0C;&#x662F;&#x7684;&#x8BDD;&#x5219;&#x66F4;&#x65B0;Widget&#x4FE1;&#x606F;&#x5230;Element</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Widget<span class="token punctuation">.</span><span class="token function">canUpdate</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>widget<span class="token punctuation">,</span> newWidget<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>slot <span class="token operator">!=</span> newSlot<span class="token punctuation">)</span> <span class="token function">updateSlotForChild</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span> newSlot<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      child<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>newWidget<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">assert</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>widget <span class="token operator">==</span> newWidget<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        child<span class="token punctuation">.</span>owner<span class="token punctuation">.</span><span class="token function">_debugElementWasRebuilt</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// &#x66F4;&#x65B0;&#x540E;&#x8FD4;&#x56DE;&#x539F;Element</span>
+      <span class="token keyword">return</span> child<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// &#x82E5;&#x4E0D;&#x7B26;&#x5408;&#x66F4;&#x65B0;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x5219;&#x629B;&#x5F03;&#x6389;&#x539F;Element&#xFF0C;&#x629B;&#x5F03;&#x6389;&#x7684;Element&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#x5230;`_inactiveElements`&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x88AB;&#x9500;&#x6BC1;</span>
+    <span class="token function">deactivateChild</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">assert</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>_parent <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// &#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x4E0B;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x65B0;&#x7684;Element</span>
+  <span class="token keyword">return</span> <span class="token function">inflateWidget</span><span class="token punctuation">(</span>newWidget<span class="token punctuation">,</span> newSlot<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x67E5;&#x770B;&#x3010;inflateWidget&#x3011;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x603B;&#x7ED3;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:left"><strong>newWidget&#x7B49;&#x4E8E;&#x7A7A;</strong></th>
+<th style="text-align:left"><strong>newWidget&#x4E0D;&#x7B49;&#x4E8E;&#x7A7A;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>child&#x7B49;&#x4E8E;&#x7A7A;</strong></td>
+<td style="text-align:left">&#x8FD4;&#x56DE;null.</td>
+<td style="text-align:left">&#x8FD4;&#x56DE;&#x65B0; [Element].</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>child&#x4E0D;&#x7B49;&#x4E8E;&#x7A7A;</strong></td>
+<td style="text-align:left">&#x65E7;child&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x8FD4;&#x56DE;&#x7A7A;.</td>
+<td style="text-align:left">&#x53EF;&#x80FD;&#x4F1A;&#x66F4;&#x65B0;&#x65E7;&#x7684;&#x5B50;&#x7EA7;&#xFF0C;&#x8FD4;&#x56DE;&#x5B50;&#x7EA7;&#x6216;&#x65B0;&#x7684;[Element].</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inflatewidget">inflateWidget</h3>
+<pre class="language-"><code class="lang-dart"><span class="token comment">///&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x5C0F;&#x90E8;&#x4EF6;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x4E3A;&#x8BE5;&#x5143;&#x7D20;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x7ED9;&#x5B9A;&#x63D2;&#x69FD;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;</span>
+<span class="token comment">///</span>
+<span class="token comment">///&#x6B64;&#x65B9;&#x6CD5;&#x901A;&#x5E38;&#x7531;[updateChild]&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x76F4;&#x63A5;&#x7531;&#x9700;&#x8981;&#x66F4;&#x7CBE;&#x7EC6;&#x5730;&#x63A7;&#x5236;&#x521B;&#x5EFA;&#x7684;&#x5B50;&#x7C7B;&#x5143;&#x7D20;&#x3002;</span>
+<span class="token comment">///</span>
+<span class="token comment">///&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x7684;&#x5C0F;&#x90E8;&#x4EF6;&#x5177;&#x6709;&#x5168;&#x5C40;&#x952E;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6709;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x8BE5;&#x5168;&#x5C40;&#x952E;&#x7684;&#x5C0F;&#x90E8;&#x4EF6;&#xFF0C;&#x6B64;&#x51FD;&#x6570;&#x5C06;&#x91CD;&#x7528;&#x8BE5;&#x5143;&#x7D20;</span>
+<span class="token comment">///&#xFF08;&#x53EF;&#x80FD;&#x4ECE;&#x6811;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x79FB;&#x690D;&#x6216;&#x91CD;&#x65B0;&#x6FC0;&#x6D3B;&#x4ECE;&#x65E0;&#x6548;&#x5143;&#x7D20;&#x5217;&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#xFF09;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5143;&#x7D20;&#x3002;</span>
+<span class="token comment">///</span>
+<span class="token comment">///&#x6B64;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x5143;&#x7D20;&#x5C06;&#x5DF2;&#x7ECF;&#x88AB;&#x6302;&#x8F7D;&#x5E76;&#x5C06;&#x5904;&#x4E8E;&#x201C;&#x6D3B;&#x52A8;&#x201D;&#x751F;&#x547D;&#x5468;&#x671F;&#x72B6;&#x6001;&#x3002;</span>
+<span class="token metadata symbol">@protected</span>
+Element <span class="token function">inflateWidget</span><span class="token punctuation">(</span>Widget newWidget<span class="token punctuation">,</span> <span class="token keyword">dynamic</span> newSlot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span>newWidget <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">final</span> Key key <span class="token operator">=</span> newWidget<span class="token punctuation">.</span>key<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">is</span> GlobalKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5148;&#x4F7F;&#x7528;key&#x53BB;&#x88AB;&#x56DE;&#x6536;&#x7684;&#x5217;&#x8868;&#x4E2D;&#x770B;&#x770B;&#x662F;&#x5426;&#x6709;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#x7684;Element</span>
+    <span class="token keyword">final</span> Element newChild <span class="token operator">=</span> <span class="token function">_retakeInactiveElement</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> newWidget<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newChild <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">assert</span><span class="token punctuation">(</span>newChild<span class="token punctuation">.</span>_parent <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">_debugCheckForCycles</span><span class="token punctuation">(</span>newChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      newChild<span class="token punctuation">.</span><span class="token function">_activateWithParent</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> newSlot<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// &#x627E;&#x5230;&#x540E;&#x5C31;&#x590D;&#x7528;&#x88AB;&#x56DE;&#x6536;&#x7684;Element&#xFF0C;&#x5E76;&#x4E14;&#x66F4;&#x65B0;&#x5B83;&#x7684;Child</span>
+      <span class="token keyword">final</span> Element updatedChild <span class="token operator">=</span> <span class="token function">updateChild</span><span class="token punctuation">(</span>newChild<span class="token punctuation">,</span> newWidget<span class="token punctuation">,</span> newSlot<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">assert</span><span class="token punctuation">(</span>newChild <span class="token operator">==</span> updatedChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> updatedChild<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// &#x6CA1;&#x6709;&#x53EF;&#x4EE5;&#x590D;&#x7528;&#x7684;Element&#x4E86;&#xFF0C;&#x521B;&#x5EFA;&#x65B0;&#x7684;</span>
+  <span class="token keyword">final</span> Element newChild <span class="token operator">=</span> newWidget<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">_debugCheckForCycles</span><span class="token punctuation">(</span>newChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// mount&#x5B89;&#x88C5;&#x65B0;&#x7684;Element</span>
+  newChild<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> newSlot<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span>newChild<span class="token punctuation">.</span>_debugLifecycleState <span class="token operator">==</span> _ElementLifecycle<span class="token punctuation">.</span>active<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// &#x8FD4;&#x56DE;&#x65B0;&#x7684;child</span>
+  <span class="token keyword">return</span> newChild<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x65B0;&#x521B;&#x5EFA;&#x7684;<code>Element</code>&#x7EE7;&#x7EED;&#x8C03;&#x7528;<code>mount</code>&#xFF0C;&#x4E8E;&#x662F;&#x53C8;&#x4F1A;&#x89E6;&#x53D1;&#x65B0;&#x4E00;&#x8F6E;&#x7684;<code>updateChild</code>&#xFF0C;
+&#x6700;&#x7EC8;&#x5BF9;&#x5E94;<code>WidgetTree</code>&#x7684;&#x6574;&#x4E2A;<code>ElementTree</code>&#x5C31;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<p>&#x66F4;&#x65B0;&#x4E2D;&#x3002;&#x3002;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="setstate.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 1.1：setState更新原理和流程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2：runApp入口执行","level":"1.3.2","depth":2,"next":{"title":"Flutter面试题","level":"2.1","depth":1,"url":"https://github.com/ahyangnb/flutter_interview","ref":"https://github.com/ahyangnb/flutter_interview","articles":[]},"previous":{"title":"1.1：setState更新原理和流程","level":"1.3.1","depth":2,"path":"chapter2/setstate.md","ref":"chapter2/setstate.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/run_app.md","mtime":"2020-01-14T03:04:36.310Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T03:04:54.861Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+
+
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+
+<script>
+    var _hmt = _hmt || [];
+    $("#bd").remove();
+
+
+    function init() {
+        var p = location.pathname;
+        _hmt.push(['_trackPageview', p]);
+        if (p[p.length - 1] === '/') {
+            p += "index.md"
+        } else {
+            p = p.split(".")[0] + ".md";
+        }
+        p = "https://github.com/ahyangnb/flutter-advanced-book/blob/master/docs" + p;
+        $(".pull-right .fa-edit").parent("a").attr("href", p);
+        $("table").wrap("<div style='overflow: auto'></div>");
+
+        $(".copyright").remove();
+        $("<div class='copyright'> 有错误欢迎提出，作者马上改进并红包奖赏。</div>").appendTo(".page-inner");
+    }
+
+    function hookAPI(api, ob, fn) {
+        return function () {
+            var result = api.apply(ob, [].slice.call(arguments));
+            setTimeout(fn, 1000);
+            return result;
+        }
+    }
+
+    function addAD() {
+        if (location.href !== 'http://book.flutterj.com/' && $("#book-search-results .ad").length == 0) {
+            var id=Math.ceil(Math.random()*10)%2;
+            $(".ad"+id).clone().hide().fadeIn().prependTo("#book-search-results")
+            setTimeout(function () {
+                $(".body-inner").animate({scrollTop: 0}, 200)
+            }, 800);
+        }
+    }
+
+    function _track(p,url) {
+        _hmt.push(['_trackEvent', 'ad', 'click', p]);
+        setTimeout(function () {
+            location.href = url
+        }, 100);
+    }
+
+    // setInterval(addAD, 300);
+
+    init();
+
+    if (history.pushState) {
+        history.pushState = hookAPI(history.pushState, history, init);
+    }
+
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</body>
+
+</html>
+

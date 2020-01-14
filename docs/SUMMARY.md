@@ -11,6 +11,7 @@
     
 *  [第二章：原理篇](chapter2/index.md)
     * [1.1：setState更新原理和流程](chapter2/setstate.md)
+    * [1.2：runApp入口执行](chapter2/run_app.md)
     
 ---
 *  [Flutter面试题](https://github.com/ahyangnb/flutter_interview)
