@@ -10,7 +10,7 @@
 Theme组件可以为Material APP定义主题数据（ThemeData）。Material组件库里很多组件都使用了主题数据，
 如导航栏颜色、标题字体、Icon样式等。Theme内会使用InheritedWidget来为其子树共享样式数据。
 
-# ThemeData（Color类型属性）：
+### ThemeData（Color类型属性）：
 
 * accentColor - 前景色（文本、按钮等）
 * backgroundColor - 与`primaryColor`对比的颜色(例如 用作进度条的剩余部分)。
@@ -41,7 +41,7 @@ Theme组件可以为Material APP定义主题数据（ThemeData）。Material组�
 * cursorColor - 输入框光标颜色。
 
 
-# ThemeData（Theme相关类型属性）：
+### ThemeData（Theme相关类型属性）：
 
 * accentIconTheme - `IconThemeData`类型，与突出颜色对照的图片主题。
 * accentTextTheme - `TextTheme`类型，与突出颜色对照的文本主题。
@@ -69,7 +69,7 @@ Theme组件可以为Material APP定义主题数据（ThemeData）。Material组�
 * bannerTheme - `MaterialBannerThemeData`类型，`Material`材质的`Banner`主题样式。
 * dividerTheme - `DividerThemeData`类型，`Divider`组件的主题样式，也就是那个横向线条组件。
 
-# ThemeData（其他类型属性）：
+### ThemeData（其他类型属性）：
 
 * accentColorBrightness - `Brightness`类型，`accentColor`的亮度。 用于确定放置在突出颜色顶部的文本和图标的颜色（例如`FloatingButton`上的图标）。
 * brightness - `Brightness`类型，应用程序整体主题的亮度。 由按钮等`Widget`使用，以确定在不使用主色或强调色时要选择的颜色。
@@ -82,5 +82,71 @@ Theme组件可以为Material APP定义主题数据（ThemeData）。Material组�
 * colorScheme - `ColorScheme`类型，scheme组颜色，一组13种颜色，可用于配置大多数组件的颜色属性。
 * typography - `Typography`类型,用于配置`TextTheme`、`primaryTextTheme`和`accentTextTheme`的颜色和几何文本主题值。
 
+# 设置主题
+##### 全局：
+```dart
+/// 全局主题在MaterialApp的theme属性
+/// 全局生效
+new MaterialApp(
+  title: 'demo',
+  theme: new ThemeData( // 这里就是参数
+    brightness: Brightness.dark,
+    primaryColor: Colors.lightBlue[800],
+    accentColor: Colors.cyan[600],
+  ),
+);
+```
+##### 局部：
+```dart
+/// 假如我们要给FloatingActionButton设置主题样式
+/// 直接写个Theme包裹FloatingActionButton组件
+/// 然后设置data，接收类型依然是ThemeData，里面填写我们的参数
+/// （如果没有设置局部主题则默认使用全局主题）
+new Theme(
+  data: new ThemeData(
+    accentColor: Colors.yellow,
+  ),
+  child: new FloatingActionButton(
+    onPressed: () {},
+    child: new Icon(Icons.add),
+  ),
+);
+```
 
-更新中。。。
+##### 扩展父主题：
+```dart
+/// 扩展父主题时无需覆盖所有的主题属性，可以通过使用copyWith方法来实现
+new Theme(
+  data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+  child: new FloatingActionButton(
+    onPressed: null,
+    child: new Icon(Icons.add),
+  ),
+);
+```
+`Theme.of(context)`将查找Widget树并返回树中最近的Theme。如果Widget之上有一个单独的Theme定义，
+则返回该值。如果不是，则返回App主题。
+
+##### 判断平台显示指定主题：
+```dart
+/// defaultTargetPlatform在foundation包里。
+/// 
+/// 我们也可以使用io包里的Platform来进行判断。
+/// 那么判断就是
+/// theme: Platform.isIOS ? iOSTheme : AndroidTheme,
+new MaterialApp(
+  theme: defaultTargetPlatform == TargetPlatform.iOS
+      ? iOSTheme
+      : AndroidTheme,
+  title: 'Flutter Theme',
+  home: new MyHomePage(),
+);
+```
+
+##### Tips:
+Flutter的Color中大多数颜色从100到900，增量为100，加上颜色50，数字越小颜色越浅，
+数字越大颜色越深。强调色调只有100、200、400和700。
+
+##### 栗子：
+
+![](../img/color.jpeg)
