@@ -18,5 +18,9 @@
     * [2.1：setState更新原理和流程](chapter2/setstate.md)
     * [2.2：runApp入口执行](chapter2/run_app.md)
     
+*  [第3章：架构篇](chapter3/index.md)
+    * [3.1：MVVM架构搭建](chapter3/mvvm.md)
+    * [3.2：MVC架构搭建](chapter3/mvc.md)
+    
 ---
 *  [Flutter面试题](https://github.com/ahyangnb/flutter_interview)
