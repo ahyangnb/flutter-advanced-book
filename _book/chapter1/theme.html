@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>1.6：App主题色控制 · 《Flutter高级进阶》</title>
+    <title>1.6：App主题色控制及夜间模式 · 《Flutter高级进阶》</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="baidu-site-verification" content="Y34sAqDKUH"/>
     <meta name="theme-color" content="#ffffff">
@@ -254,7 +254,7 @@
                 <a href="theme.html">
             
                     
-                    1.6：App主题色控制
+                    1.6：App主题色控制及夜间模式
             
                 </a>
             
@@ -380,7 +380,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >1.6：App主题色控制</a>
+        <a href=".." >1.6：App主题色控制及夜间模式</a>
     </h1>
 </div>
 
@@ -541,7 +541,128 @@
 <li>typography - <code>Typography</code>&#x7C7B;&#x578B;,&#x7528;&#x4E8E;&#x914D;&#x7F6E;<code>TextTheme</code>&#x3001;<code>primaryTextTheme</code>&#x548C;<code>accentTextTheme</code>&#x7684;&#x989C;&#x8272;&#x548C;&#x51E0;&#x4F55;&#x6587;&#x672C;&#x4E3B;&#x9898;&#x503C;&#x3002;</li>
 </ul>
 <h1 id="&#x9002;&#x914D;&#x591C;&#x95F4;&#x6A21;&#x5F0F;">&#x9002;&#x914D;&#x591C;&#x95F4;&#x6A21;&#x5F0F;</h1>
-<p>&#x66F4;&#x65B0;&#x4E2D;&#x3002;&#x3002;&#x3002;</p>
+<h5 id="&#x5B9E;&#x73B0;&#x6548;&#x679C;&#xFF1A;">&#x5B9E;&#x73B0;&#x6548;&#x679C;&#xFF1A;</h5>
+<p><img src="../img/theme_dark.gif" width="30%"></p>
+<h5 id="&#x5206;&#x6790;&#xFF1A;">&#x5206;&#x6790;&#xFF1A;</h5>
+<p>&#x8FD9;&#x6B21;&#x662F;&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x54EA;&#x4E2A;&#x9875;&#x9762;&#x9700;&#x8981;&#x540C;&#x6B65;&#x5C31;&#x52A0;&#x4E2A;Theme&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x5168;&#x5C40;&#x4E5F;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF0C;&#x4E3B;&#x4F53;&#x4EE3;&#x7801;&#x4E0D;&#x5230;100&#x884C;&#x3002;</p>
+<h5 id="&#x4EE3;&#x7801;&#xFF1A;">&#x4EE3;&#x7801;&#xFF1A;</h5>
+<p>&#x9996;&#x5148;&#x5199;&#x4E2A;&#x914D;&#x7F6E;&#x7C7B;&#xFF0C;&#x4E3B;&#x8981;&#x914D;&#x7F6E;&#x4E3B;&#x9898;&#x7684;&#x662F;&#x5426;&#x4E3A;&#x9ED1;&#x591C;&#x6A21;&#x5F0F;&#x548C;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">Config</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> bool dark <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// &#x662F;&#x5426;&#x4E3A;&#x9ED1;&#x591C;&#x6A21;&#x5F0F;</span>
+  <span class="token keyword">static</span> ThemeData themeData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThemeData<span class="token punctuation">.</span>dark</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x4E3B;&#x9898;&#x4E3A;&#x6697;&#x8272;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6B63;&#x5E38;&#x7684;&#x6267;&#x884C;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">import</span> <span class="token string">&apos;package:flutter/material.dart&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;global_config.dart&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token string">&quot;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;&quot;</span><span class="token punctuation">,</span> home<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">MyScaffold</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyScaffold</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  _MyScaffoldState <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_MyScaffoldState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">_MyScaffoldState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>MyScaffold<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">/*
+  * &#x4E3B;&#x9898;&#x6539;&#x53D8;
+  * */</span>
+  <span class="token function">changeTheme</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Config<span class="token punctuation">.</span>dark<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Config<span class="token punctuation">.</span>themeData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThemeData</span><span class="token punctuation">(</span>
+        primaryColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>white<span class="token punctuation">,</span>
+        scaffoldBackgroundColor<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Color</span><span class="token punctuation">(</span><span class="token number">0xFFEBEBEB</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Config<span class="token punctuation">.</span>dark <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      Config<span class="token punctuation">.</span>themeData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThemeData<span class="token punctuation">.</span>dark</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Config<span class="token punctuation">.</span>dark <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  Widget <span class="token function">body</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ListView</span><span class="token punctuation">(</span>
+      children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">Container</span><span class="token punctuation">(</span>
+          width<span class="token punctuation">:</span> MediaQuery<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">.</span>width <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token comment">// &#x6574;&#x5BBD;&#x9664;4</span>
+          child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">GestureDetector</span><span class="token punctuation">(</span>
+            onTap<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">changeTheme</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// &#x89E6;&#x53D1;&#x66F4;&#x6362;&#x4E3B;&#x9898;&#x7684;&#x4E8B;&#x4EF6;</span>
+            child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Column</span><span class="token punctuation">(</span>
+              children<span class="token punctuation">:</span> <span class="token operator">&lt;</span>Widget<span class="token operator">&gt;</span><span class="token punctuation">[</span>
+                <span class="token keyword">new</span> <span class="token class-name">FlutterLogo</span><span class="token punctuation">(</span>
+                  size<span class="token punctuation">:</span> <span class="token number">150.0</span><span class="token punctuation">,</span>
+                  style<span class="token punctuation">:</span> FlutterLogoStyle<span class="token punctuation">.</span>horizontal<span class="token punctuation">,</span>
+                  duration<span class="token punctuation">:</span> <span class="token function">Duration</span><span class="token punctuation">(</span>milliseconds<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                  textColor<span class="token punctuation">:</span> Theme<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span>colorScheme<span class="token punctuation">.</span>background<span class="token punctuation">,</span> <span class="token comment">// &#x4ECE;&#x4E0A;&#x4E0B;&#x6587;&#x62FF;&#x5230;&#x80CC;&#x666F;</span>
+                <span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span> <span class="token comment">// &#x5982;&#x679C;&#x4E3A;&#x9ED1;&#x591C;&#x6A21;&#x5F0F;&#x5219;&#x6309;&#x94AE;&#x6587;&#x5B57;&#x4E3A;&#x767D;&#x5929;&#x6A21;&#x5F0F;&#xFF0C;&#x5426;&#x5219;&#x6587;&#x5B57;&#x663E;&#x793A;&#x4E3A;&#x9ED1;&#x591C;&#x6A21;&#x5F0F;</span>
+                  <span class="token string">&apos;&#x70B9;&#x51FB;Logo&#x66F4;&#x6362;${Config.dark ? &quot;&#x767D;&#x5929;&#x6A21;&#x5F0F;&quot; : &quot;&#x9ED1;&#x591C;&#x6A21;&#x5F0F;&quot;}&apos;</span><span class="token punctuation">,</span>
+                  style<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">TextStyle</span><span class="token punctuation">(</span>fontSize<span class="token punctuation">:</span> <span class="token number">25.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">MaterialButton</span><span class="token punctuation">(</span> <span class="token comment">// &#x8DF3;&#x8F6C;&#x6309;&#x94AE;</span>
+          onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Navigator<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MaterialPageRoute</span><span class="token punctuation">(</span>
+                builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">NewPage</span><span class="token punctuation">(</span><span class="token string">&apos;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;&#x9875;&#x9762;&#x4E8C;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&apos;&#x8DF3;&#x8F6C;&#x5230;&#x65B0;&#x9875;&#x9762;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Theme</span><span class="token punctuation">(</span> <span class="token comment">// &#x4E3B;&#x9898;&#x7EC4;&#x4EF6;&#xFF0C;&#x53EF;&#x8BBE;&#x7F6E;&#x5C40;&#x90E8;&#x7684;&#x4E3B;&#x9898;&#x6837;&#x5F0F;</span>
+      data<span class="token punctuation">:</span> Config<span class="token punctuation">.</span>themeData<span class="token punctuation">,</span> <span class="token comment">// &#x8BBE;&#x7F6E;&#x4E3A;&#x914D;&#x7F6E;&#x7684;&#x4E3B;&#x9898;&#x6570;&#x636E;</span>
+      child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+        appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span>elevation<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        body<span class="token punctuation">:</span> <span class="token function">body</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// &#x8EAB;&#x4F53;&#x9875;&#x9762;body</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x518D;&#x628A;NewPage&#x6D4B;&#x8BD5;&#x9875;&#x9762;&#x5199;&#x4E0A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">NewPage</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> String title<span class="token punctuation">;</span> <span class="token comment">// &#x63A5;&#x6536;&#x7684;&#x6807;&#x9898;</span>
+
+  <span class="token function">NewPage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  _NewPageState <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">_NewPageState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x521B;&#x5EFA;&#x6709;&#x72B6;&#x6001;&#x9875;&#x9762;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">_NewPageState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>NewPage<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Theme</span><span class="token punctuation">(</span>
+      child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span> <span class="token comment">// title&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x6807;&#x9898;</span>
+        appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&apos;&#x9875;&#x9762;&#xFF1A;${widget.title}&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> elevation<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Center</span><span class="token punctuation">(</span>
+          child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span>
+            <span class="token string">&apos;&#x8FD9;&#x662F;${widget.title}&apos;</span><span class="token punctuation">,</span>
+            style<span class="token punctuation">:</span> <span class="token function">TextStyle</span><span class="token punctuation">(</span>fontSize<span class="token punctuation">:</span> <span class="token number">30.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      data<span class="token punctuation">:</span> Config<span class="token punctuation">.</span>themeData<span class="token punctuation">,</span> <span class="token comment">// &#x8BBE;&#x7F6E;&#x4E3A;&#x914D;&#x7F6E;&#x7684;&#x4E3B;&#x9898;&#x6570;&#x636E;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x76F4;&#x63A5;&#x590D;&#x5236;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#x5185;&#x5373;&#x53EF;&#x8FD0;&#x884C;&#x3002;</p>
 
                                 
                                 </section>
@@ -585,7 +706,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.6：App主题色控制","level":"1.2.6","depth":2,"next":{"title":"1.7：App内更新并自动打开安装","level":"1.2.7","depth":2,"path":"chapter1/upgrade.md","ref":"chapter1/upgrade.md","articles":[]},"previous":{"title":"1.5：根据控件位置弹出对话框","level":"1.2.5","depth":2,"path":"chapter1/widget_offset.md","ref":"chapter1/widget_offset.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter1/theme.md","mtime":"2020-01-15T00:53:05.997Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-15T00:53:56.845Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.6：App主题色控制及夜间模式","level":"1.2.6","depth":2,"next":{"title":"1.7：App内更新并自动打开安装","level":"1.2.7","depth":2,"path":"chapter1/upgrade.md","ref":"chapter1/upgrade.md","articles":[]},"previous":{"title":"1.5：根据控件位置弹出对话框","level":"1.2.5","depth":2,"path":"chapter1/widget_offset.md","ref":"chapter1/widget_offset.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter1/theme.md","mtime":"2020-01-15T08:16:46.062Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-15T08:17:16.225Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -160,4 +160,132 @@ Flutter的Color中大多数颜色从100到900，增量为100，加上颜色50，
 
 # 适配夜间模式
 
-更新中。。。
+##### 实现效果：
+
+<img src="../img/theme_dark.gif" width="30%">
+
+##### 分析：
+这次是使用局部的实现，哪个页面需要同步就加个Theme就行了，全局也是类似的实现方式，主体代码不到100行。
+
+##### 代码：
+
+首先写个配置类，主要配置主题的是否为黑夜模式和主题样式：
+```dart
+class Config {
+  static bool dark = true; // 是否为黑夜模式
+  static ThemeData themeData = new ThemeData.dark(); // 主题为暗色
+}
+```
+然后我们正常的执行代码：
+```dart
+import 'package:flutter/material.dart';
+import 'global_config.dart';
+
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(title: "Flutter高级进阶", home: new MyScaffold());
+  }
+}
+
+class MyScaffold extends StatefulWidget {
+  @override
+  _MyScaffoldState createState() => _MyScaffoldState();
+}
+
+class _MyScaffoldState extends State<MyScaffold> {
+  /*
+  * 主题改变
+  * */
+  changeTheme() {
+    if (Config.dark) {
+      Config.themeData = new ThemeData(
+        primaryColor: Colors.white,
+        scaffoldBackgroundColor: new Color(0xFFEBEBEB),
+      );
+      Config.dark = false;
+    } else {
+      Config.themeData = new ThemeData.dark();
+      Config.dark = true;
+    }
+    setState(() {});
+  }
+
+  Widget body(context) {
+    return new ListView(
+      children: <Widget>[
+        new Container(
+          width: MediaQuery.of(context).size.width / 4, // 整宽除4
+          child: new GestureDetector(
+            onTap: () => changeTheme(), // 触发更换主题的事件
+            child: new Column(
+              children: <Widget>[
+                new FlutterLogo(
+                  size: 150.0,
+                  style: FlutterLogoStyle.horizontal,
+                  duration: Duration(milliseconds: 100),
+                  textColor: Theme.of(context).colorScheme.background, // 从上下文拿到背景
+                ),
+                new Text( // 如果为黑夜模式则按钮文字为白天模式，否则文字显示为黑夜模式
+                  '点击Logo更换${Config.dark ? "白天模式" : "黑夜模式"}',
+                  style: new TextStyle(fontSize: 25.0),
+                ),
+              ],
+            ),
+          ),
+        ),
+        new MaterialButton( // 跳转按钮
+          onPressed: () {
+            Navigator.of(context).push(new MaterialPageRoute(
+                builder: (context) => new NewPage('Flutter高级进阶页面二')));
+          },
+          child: new Text('跳转到新页面'),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Theme( // 主题组件，可设置局部的主题样式
+      data: Config.themeData, // 设置为配置的主题数据
+      child: new Scaffold(
+        appBar: new AppBar(elevation: 0),
+        body: body(context), // 身体页面body
+      ),
+    );
+  }
+}
+```
+再把NewPage测试页面写上：
+```dart
+class NewPage extends StatefulWidget {
+  final String title; // 接收的标题
+
+  NewPage(this.title);
+
+  @override
+  _NewPageState createState() => new _NewPageState(); // 创建有状态页面
+}
+
+class _NewPageState extends State<NewPage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Theme(
+      child: new Scaffold( // title就是我们的标题
+        appBar: new AppBar(title: new Text('页面：${widget.title}'), elevation: 0),
+        body: new Center(
+          child: new Text(
+            '这是${widget.title}',
+            style: TextStyle(fontSize: 30.0),
+          ),
+        ),
+      ),
+      data: Config.themeData, // 设置为配置的主题数据
+    );
+  }
+}
+```
+直接复制到自己的项目内即可运行。
