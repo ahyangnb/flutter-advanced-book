@@ -633,7 +633,268 @@ Element <span class="token function">inflateWidget</span><span class="token punc
 </code></pre>
 <p>&#x65B0;&#x521B;&#x5EFA;&#x7684;<code>Element</code>&#x7EE7;&#x7EED;&#x8C03;&#x7528;<code>mount</code>&#xFF0C;&#x4E8E;&#x662F;&#x53C8;&#x4F1A;&#x89E6;&#x53D1;&#x65B0;&#x4E00;&#x8F6E;&#x7684;<code>updateChild</code>&#xFF0C;
 &#x6700;&#x7EC8;&#x5BF9;&#x5E94;<code>WidgetTree</code>&#x7684;&#x6574;&#x4E2A;<code>ElementTree</code>&#x5C31;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
-<p>&#x66F4;&#x65B0;&#x4E2D;&#x3002;&#x3002;&#x3002;</p>
+<h1 id="&#x6E32;&#x67D3;&#x56DE;&#x8C03;&#x7B49;&#x90E8;&#x5206;">&#x6E32;&#x67D3;&#x56DE;&#x8C03;&#x7B49;&#x90E8;&#x5206;</h1>
+<p>&#x6E32;&#x67D3;&#x4E3B;&#x8981;&#x662F;&#x5728;<code>WidgetsFlutterBinding</code>&#x7C7B;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x7684;&#xFF0C;runApp&#x65B9;&#x6CD5;&#x6700;&#x540E;&#x4E5F;&#x662F;&#x6267;&#x884C;&#x4E86;WidgetsFlutterBinding&#x7C7B;&#x7684;
+scheduleWarmUpFrame&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x7B2C;&#x4E00;&#x6B21;&#x7ED8;&#x5236;&#x3002;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">///&#x9501;&#x5B9A;&#x4E8B;&#x4EF6;&#x8C03;&#x5EA6;&#xFF0C;&#x76F4;&#x5230;&#x8C03;&#x5EA6;&#x7684;&#x6846;&#x67B6;&#x5B8C;&#x6210;&#x4E3A;&#x6B62;&#x3002;</span>
+<span class="token comment">///&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x6B21;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x5F00;&#x59CB;&#x7ED8;&#x5236;&#x5176;&#x4ED6;scheduledFrame&#x3002;</span>
+<span class="token comment">///&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;[scheduleFrame]&#x5B89;&#x6392;&#x4E86;&#x5E27;&#xFF0C;&#x6216;&#x8005;[scheduleForcedFrame]&#xFF0C;&#x6B64;&#x8C03;&#x7528;&#x53EF;&#x80FD;&#x4F1A;&#x5EF6;&#x8FDF;&#x8BE5;&#x5E27;&#x3002;</span>
+<span class="token comment">///&#x5982;&#x679C;&#x4EFB;&#x4F55;&#x9884;&#x5B9A;&#x7684;&#x5E27;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x6216;&#x5176;&#x4ED6;[scheduleWarmUpFrame]&#x5DF2;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x6B64;&#x8C03;&#x7528;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x3002;</span>
+<span class="token comment">///&#x9996;&#x9009;[scheduleFrame]&#x5728;&#x6B63;&#x5E38;&#x64CD;&#x4F5C;&#x4E0B;&#x66F4;&#x65B0;&#x663E;&#x793A;&#x3002;</span>
+<span class="token keyword">void</span> <span class="token function">scheduleWarmUpFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>_warmUpFrame <span class="token operator">||</span> schedulerPhase <span class="token operator">!=</span> SchedulerPhase<span class="token punctuation">.</span>idle<span class="token punctuation">)</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+    _warmUpFrame <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    Timeline<span class="token punctuation">.</span><span class="token function">startSync</span><span class="token punctuation">(</span><span class="token string">&apos;Warm-up frame&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">final</span> bool hadScheduledFrame <span class="token operator">=</span> _hasScheduledFrame<span class="token punctuation">;</span>
+    <span class="token comment">// &#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x8BA1;&#x65F6;&#x5668;&#x6765;&#x786E;&#x4FDD;&#x5FAE;&#x4EFB;&#x52A1;&#x5728;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x5237;&#x65B0;&#x3002;</span>
+    Timer<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">assert</span><span class="token punctuation">(</span>_warmUpFrame<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">handleBeginFrame</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x3010;&#x4E3B;&#x8981;&#x65B9;&#x6CD5;1&#x3011;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Timer<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">assert</span><span class="token punctuation">(</span>_warmUpFrame<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">handleDrawFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x3010;&#x4E3B;&#x8981;&#x65B9;&#x6CD5;2&#x3011;</span>
+      <span class="token comment">//&#x6211;&#x4EEC;&#x5728;&#x6B64;&#x5E27;&#x4E4B;&#x540E;&#x8C03;&#x7528;resetEpoch</span>
+      <span class="token function">resetEpoch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      _warmUpFrame <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>hadScheduledFrame<span class="token punctuation">)</span>
+        <span class="token function">scheduleFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x9501;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4EE5;&#x4FBF;&#x89E6;&#x6478;&#x4E8B;&#x4EF6;&#x7B49;&#x76F4;&#x5230;&#x9884;&#x5B9A;&#x7684;&#x5E27;&#x5DF2;&#x5B8C;&#x6210;&#x3002;</span>
+    <span class="token function">lockEvents</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> endOfFrame<span class="token punctuation">;</span>
+      Timeline<span class="token punctuation">.</span><span class="token function">finishSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5176;&#x5B9E;&#x7ED8;&#x5236;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x5230;&#x4E86;<code>handleBeginFrame()</code>&#x548C;<code>handleDrawFrame()</code>&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;
+&#x56E0;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7531;<code>scheduleFrameCallback</code>&#x547D;&#x4EE4;&#x6CE8;&#x518C;&#x7684;&#x6240;&#x6709;&#x9700;&#x8981;&#x7684;&#x56DE;&#x8C03;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x5EFA;&#x8BAE;&#x770B;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#x4E86;&#x89E3;&#x4E0B;<code>Frame</code>&#x548C;<code>FrameCallbacks</code>&#xFF1A;</p>
+<h5 id="frame">Frame</h5>
+<p><code>Frame</code>&#x5373;&#x6BCF;&#x4E00;&#x5E27;&#x7684;&#x7ED8;&#x5236;&#x8FC7;&#x7A0B;&#xFF0C;<code>engine</code>&#x901A;&#x8FC7;<code>VSync</code>&#x4FE1;&#x53F7;&#x4E0D;&#x65AD;&#x5730;&#x89E6;&#x53D1;<code>Frame</code>&#x7684;&#x7ED8;&#x5236;&#xFF0C;
+&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x8C03;&#x7528;<code>SchedulerBinding</code>&#x7C7B;&#x4E2D;&#x7684;<code>_handleBeginFrame()</code>&#x548C;<code>_handleDrawFrame()</code>&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;
+&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x5B8C;&#x6210;&#x52A8;&#x753B;&#x3001;&#x5E03;&#x5C40;&#x3001;&#x7ED8;&#x5236;&#x7B49;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h5 id="framecallbacks">FrameCallbacks</h5>
+<p><code>Frame</code>&#x7ED8;&#x5236;&#x671F;&#x95F4;&#xFF0C;&#x6709;&#x4E09;&#x4E2A;<code>callbacks</code>&#x5217;&#x8868;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x4E09;&#x4E2A;&#x5217;&#x8868;&#x662F;<code>SchedulerBinding</code>&#x7C7B;&#x4E2D;&#x7684;&#x6210;&#x5458;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x8C03;&#x7528;&#x987A;&#x5E8F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x987A;&#x5E8F;</th>
+<th>&#x5185;&#x5BB9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transientCallbacks</td>
+<td>&#x7531;Ticker&#x89E6;&#x53D1;&#x548C;&#x505C;&#x6B62;&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x52A8;&#x753B;&#x7684;&#x56DE;&#x8C03;</td>
+</tr>
+<tr>
+<td>persistentCallbacks</td>
+<td>&#x6C38;&#x4E45;callback&#xFF0C;&#x6DFB;&#x52A0;&#x540E;&#x65E0;&#x6CD5;&#x79FB;&#x9664;&#xFF0C;&#x7531;<code>WidgetsBinding.instance.addPersitentFrameCallback()</code>&#x6CE8;&#x518C;&#xFF0C;&#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x4E86;&#x5E03;&#x5C40;&#x4E0E;&#x7ED8;&#x5236;&#x5DE5;&#x4F5C;</td>
+</tr>
+<tr>
+<td>postFrameCallbacks</td>
+<td>&#x53EA;&#x8C03;&#x4E00;&#x6B21;&#xFF0C;&#x8C03;&#x7528;&#x540E;&#x4F1A;&#x88AB;&#x7CFB;&#x7EDF;&#x79FB;&#x9664;&#xFF0C;&#x53EF;&#x7531;<code>WidgetsBinding.instance.addPostFrameCallback()</code>&#x6CE8;&#x518C;&#xFF0C;&#x8BE5;&#x56DE;&#x8C03;&#x4E00;&#x822C;&#x7528;&#x4E8E;State&#x7684;&#x66F4;&#x65B0;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlebeginframe&#x65B9;&#x6CD5;">handleBeginFrame&#x65B9;&#x6CD5;</h3>
+<p>&#x4EE3;&#x7801;&#x5DF2;&#x5FFD;&#x7565;&#x65AD;&#x8A00;&#x90E8;&#x5206;&#x3002;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// SchedulerBinding(flutter/lib/src/scheduler/binding.dart)</span>
+<span class="token comment">/// &#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x4E3A;null&#xFF0C;&#x5219;&#x6700;&#x540E;&#x4E00;&#x5E27;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x4E3A;&#x91CD;&#x7528;&#x3002;</span>
+<span class="token keyword">void</span> <span class="token function">handleBeginFrame</span><span class="token punctuation">(</span>Duration rawTimeStamp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Timeline<span class="token punctuation">.</span><span class="token function">startSync</span><span class="token punctuation">(</span><span class="token string">&apos;Frame&apos;</span><span class="token punctuation">,</span> arguments<span class="token punctuation">:</span> timelineWhitelistArguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _firstRawTimeStampInEpoch <span class="token operator">?</span><span class="token operator">?</span><span class="token operator">=</span> rawTimeStamp<span class="token punctuation">;</span>
+  _currentFrameTimeStamp <span class="token operator">=</span> <span class="token function">_adjustForEpoch</span><span class="token punctuation">(</span>rawTimeStamp <span class="token operator">?</span><span class="token operator">?</span> _lastRawTimeStamp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>rawTimeStamp <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> _lastRawTimeStamp <span class="token operator">=</span> rawTimeStamp<span class="token punctuation">;</span>
+
+  _hasScheduledFrame <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// transientCallbacks&#x56DE;&#x8C03;</span>
+    Timeline<span class="token punctuation">.</span><span class="token function">startSync</span><span class="token punctuation">(</span><span class="token string">&apos;Animate&apos;</span><span class="token punctuation">,</span> arguments<span class="token punctuation">:</span> timelineWhitelistArguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _schedulerPhase <span class="token operator">=</span> SchedulerPhase<span class="token punctuation">.</span>transientCallbacks<span class="token punctuation">;</span>
+    <span class="token keyword">final</span> Map<span class="token operator">&lt;</span>int<span class="token punctuation">,</span> _FrameCallbackEntry<span class="token operator">&gt;</span> callbacks <span class="token operator">=</span> _transientCallbacks<span class="token punctuation">;</span>
+    _transientCallbacks <span class="token operator">=</span> <span class="token operator">&lt;</span>int<span class="token punctuation">,</span> _FrameCallbackEntry<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    callbacks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>int id<span class="token punctuation">,</span> _FrameCallbackEntry callbackEntry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>_removedIds<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token function">_invokeFrameCallback</span><span class="token punctuation">(</span>callbackEntry<span class="token punctuation">.</span>callback<span class="token punctuation">,</span> _currentFrameTimeStamp<span class="token punctuation">,</span>
+            callbackEntry<span class="token punctuation">.</span>debugStack<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _removedIds<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    _schedulerPhase <span class="token operator">=</span> SchedulerPhase<span class="token punctuation">.</span>midFrameMicrotasks<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x6267;&#x884C;&#x4E86;<code>transientCallbacks</code>&#x56DE;&#x8C03;&#x3002;</p>
+<h3 id="handledrawframe">handleDrawFrame</h3>
+<p>&#x6267;&#x884C;&#x4E86;<code>persistentCallbacks</code>&#x548C;<code>postFrameCallbacks</code>&#x56DE;&#x8C03;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x5728;&#x8FD9;&#x91CC;&#x3002;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/// handleBeginFrame&#x4E4B;&#x540E;&#x7ACB;&#x5373;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x3002; &#x89E6;&#x53D1;&#x5168;&#x90E8;addPersistentFrameCallback&#x6CE8;&#x518C;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x901A;&#x5E38;</span>
+<span class="token comment">///&#x9A71;&#x52A8;&#x6E32;&#x67D3;&#x7BA1;&#x9053;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;addPostFrameCallback&#x3002;</span>
+<span class="token keyword">void</span> <span class="token function">handleDrawFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span>_schedulerPhase <span class="token operator">==</span> SchedulerPhase<span class="token punctuation">.</span>midFrameMicrotasks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Timeline<span class="token punctuation">.</span><span class="token function">finishSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x7ED3;&#x675F;&#x201C;&#x52A8;&#x753B;&#x201D;&#x9636;&#x6BB5;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// persistentCallbacks&#x56DE;&#x8C03;</span>
+    _schedulerPhase <span class="token operator">=</span> SchedulerPhase<span class="token punctuation">.</span>persistentCallbacks<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>FrameCallback callback <span class="token keyword">in</span> _persistentCallbacks<span class="token punctuation">)</span>
+      <span class="token function">_invokeFrameCallback</span><span class="token punctuation">(</span>callback<span class="token punctuation">,</span> _currentFrameTimeStamp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// postFrameCallbacks&#x56DE;&#x8C03;</span>
+    _schedulerPhase <span class="token operator">=</span> SchedulerPhase<span class="token punctuation">.</span>postFrameCallbacks<span class="token punctuation">;</span>
+    <span class="token keyword">final</span> List<span class="token operator">&lt;</span>FrameCallback<span class="token operator">&gt;</span> localPostFrameCallbacks <span class="token operator">=</span>
+        List<span class="token operator">&lt;</span>FrameCallback<span class="token operator">&gt;</span><span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>_postFrameCallbacks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _postFrameCallbacks<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>FrameCallback callback <span class="token keyword">in</span> localPostFrameCallbacks<span class="token punctuation">)</span>
+      <span class="token function">_invokeFrameCallback</span><span class="token punctuation">(</span>callback<span class="token punctuation">,</span> _currentFrameTimeStamp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    _schedulerPhase <span class="token operator">=</span> SchedulerPhase<span class="token punctuation">.</span>idle<span class="token punctuation">;</span>
+    Timeline<span class="token punctuation">.</span><span class="token function">finishSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#x7ED3;&#x675F;&#x5E27;</span>
+    <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>debugPrintEndFrameBanner<span class="token punctuation">)</span> <span class="token function">debugPrint</span><span class="token punctuation">(</span><span class="token string">&apos;&#x2580;&apos;</span> <span class="token operator">*</span> _debugBanner<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      _debugBanner <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _currentFrameTimeStamp <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="&#x6E32;&#x67D3;&#x64CD;&#x4F5C;">&#x6E32;&#x67D3;&#x64CD;&#x4F5C;</h1>
+<p>&#x7CFB;&#x7EDF;&#x53EA;&#x5728;<code>persistentCallbacks</code>&#x6CE8;&#x518C;&#x4E86;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#xFF0C;
+&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x6267;&#x884C;<code>RenderBinding</code>&#x7C7B;&#x4E2D;&#x7684;<code>drawFrame()</code>&#x65B9;&#x6CD5;&#x4EE5;&#x53CA;&#x5176;&#x5B50;&#x7C7B;<code>WidgetsBinding</code>&#x7C7B;&#x4E2D;&#x7684;<code>drawFrame()</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token metadata symbol">@protected</span>
+<span class="token keyword">void</span> <span class="token function">drawFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    pipelineOwner<span class="token punctuation">.</span><span class="token function">flushLayout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x770B; &#x3010;2.2.1&#x3011;</span>
+    pipelineOwner<span class="token punctuation">.</span><span class="token function">flushCompositingBits</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x770B; &#x3010;2.2.2&#x3011;</span>
+    pipelineOwner<span class="token punctuation">.</span><span class="token function">flushPaint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x770B; &#x3010;2.2.3&#x3011;</span>
+    renderView<span class="token punctuation">.</span><span class="token function">compositeFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x770B; &#x3010;2.2.4&#x3011;</span>
+    pipelineOwner<span class="token punctuation">.</span><span class="token function">flushSemantics</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x770B; &#x3010;2.2.5&#x3011;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong> WidgetsBinding </strong> </p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/// &#x4EE3;&#x7801;&#x5FFD;&#x7565;&#x4E86;&#x65AD;&#x8A00;&#x548C;&#x5224;&#x65AD;</span>
+<span class="token metadata symbol">@override</span>
+<span class="token keyword">void</span> <span class="token function">drawFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>renderViewElement <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+      buildOwner<span class="token punctuation">.</span><span class="token function">buildScope</span><span class="token punctuation">(</span>renderViewElement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">drawFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    buildOwner<span class="token punctuation">.</span><span class="token function">finalizeTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+  _needToReportFirstFrame <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><code>buildOwner.buildScope()</code>&#x5728;&#x6211;&#x4EEC;&#x7684;&quot;setState&#x66F4;&#x65B0;&#x539F;&#x7406;&#x548C;&#x6D41;&#x7A0B;&quot;&#x6709;&#x8BB2;&#x5230;&#x8FC7;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x641C;&#x7D22;&#x3002;</p>
+<blockquote>
+<p>&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x5C06;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;dirty&#x7684;Element&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x3002;</p>
+</blockquote>
+<p>&#x56DE;&#x6536;&#x88AB;&#x629B;&#x5F03;&#x7684;Element&#x7684;&#x5217;&#x8868;_inactiveElements&#x6700;&#x540E;&#x4F1A;&#x8C03;&#x7528;buildOwner.finalizeTree()&#x5F7B;&#x5E95;&#x6E05;&#x9664;&#x6389;&#x3002;</p>
+<h3 id="221-pipelineownerflushlayout">2.2.1 pipelineOwner.flushLayout()</h3>
+<p>&#x8BE5;&#x65B9;&#x6CD5;&#x66F4;&#x65B0;&#x6240;&#x6709;&#x810F;&#x6E32;&#x67D3;&#x5BF9;&#x8C61;&#x7684;&#x5E03;&#x5C40;&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/// &#x5E03;&#x5C40;&#x4FE1;&#x606F;&#x5728;&#x7ED8;&#x5236;&#x4E4B;&#x524D;&#x5DF2;&#x6E05;&#x7406;&#xFF0C;&#x56E0;&#x6B64;&#x6E32;&#x67D3;&#x5BF9;&#x8C61;&#x5C06;&#x51FA;&#x73B0;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x6700;&#x65B0;&#x4F4D;&#x7F6E;&#x3002;</span>
+<span class="token comment">/// </span>
+<span class="token comment">/// &#x5F53;RenderObject&#x7684;&#x5BBD;&#x9AD8;&#x7B49;&#x5E03;&#x5C40;&#x76F8;&#x5173;&#x7684;&#x5C5E;&#x6027;&#x88AB;set&#x65F6;&#xFF08;&#x901A;&#x8FC7;&#x66F4;&#x6539;Widget&#x7684;&#x5C5E;&#x6027;&#xFF09;&#xFF0C;</span>
+<span class="token comment">/// &#x5B83;&#x4F1A;&#x88AB;&#x6DFB;&#x52A0;&#x5230;_nodesNeedingLayout&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x4EE5;&#x6807;&#x8BB0;&#x4E3A;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x8FDB;&#x884C;layout&#x3002;</span>
+<span class="token comment">/// &#x8FD9;&#x91CC;&#x904D;&#x5386;&#x4E86;&#x8BE5;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x8C03;&#x7528;_layoutWithoutResize()&#x8FDB;&#x884C;&#x5E03;&#x5C40;</span>
+<span class="token keyword">void</span> <span class="token function">flushLayout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>_nodesNeedingLayout<span class="token punctuation">.</span>isNotEmpty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">final</span> List<span class="token operator">&lt;</span>RenderObject<span class="token operator">&gt;</span> dirtyNodes <span class="token operator">=</span> _nodesNeedingLayout<span class="token punctuation">;</span>
+      _nodesNeedingLayout <span class="token operator">=</span> <span class="token operator">&lt;</span>RenderObject<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span>RenderObject node <span class="token keyword">in</span> dirtyNodes
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>RenderObject a<span class="token punctuation">,</span> RenderObject b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a<span class="token punctuation">.</span>depth <span class="token operator">-</span> b<span class="token punctuation">.</span>depth<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>_needsLayout <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>owner <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+          node<span class="token punctuation">.</span><span class="token function">_layoutWithoutResize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="222-flushcompositingbits">2.2.2 flushCompositingBits</h3>
+<p>&#x5728;flushLayout&#x4E4B;&#x540E;&#x548C;&#x4E4B;&#x524D;&#x4F5C;&#x4E3A;&#x6E32;&#x67D3;&#x7BA1;&#x9053;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x8C03;&#x7528;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/// &#x7528;&#x4E8E;&#x5224;&#x65AD;RenderObject&#x662F;&#x5426;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x7684;layer&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x4E86;&#xFF0C;&#x5C31;&#x4F1A;&#x5C06;&#x8BE5;RenderObject&#x6807;&#x8BB0;&#x4E3A;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x91CD;&#x7ED8;&#x7684;&#xFF0C;</span>
+<span class="token comment">/// &#x7136;&#x540E;&#x5728;&#x4E0B;&#x9762;flushPaint()&#x65B9;&#x6CD5;&#x4E2D;&#x8FDB;&#x884C;&#x91CD;&#x7ED8;&#x3002;</span>
+<span class="token keyword">void</span> <span class="token function">flushCompositingBits</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  _nodesNeedingCompositingBitsUpdate
+      <span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>RenderObject a<span class="token punctuation">,</span> RenderObject b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a<span class="token punctuation">.</span>depth <span class="token operator">-</span> b<span class="token punctuation">.</span>depth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>RenderObject node <span class="token keyword">in</span> _nodesNeedingCompositingBitsUpdate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>_needsCompositingBitsUpdate <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>owner <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+      node<span class="token punctuation">.</span><span class="token function">_updateCompositingBits</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  _nodesNeedingCompositingBitsUpdate<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="223-flushpaint">2.2.3 flushPaint</h3>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/// &#x8BE5;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5B83;&#x4E0D;&#x662F;&#x91CD;&#x7ED8;&#x4E86;&#x6240;&#x6709;RenderObject&#xFF0C;&#x800C;&#x662F;&#x53EA;&#x91CD;&#x7ED8;&#x4E86;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;dirty&#x7684;RenderObject&#xFF0C;</span>
+<span class="token comment">/// &#x8FD9;&#x4E9B;RenderObject&#x4F1A;&#x8C03;&#x7528;engine&#x4E0B;&#x7684;skia&#x5E93;&#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x3002;</span>
+<span class="token keyword">void</span> <span class="token function">flushPaint</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> List<span class="token operator">&lt;</span>RenderObject<span class="token operator">&gt;</span> dirtyNodes <span class="token operator">=</span> _nodesNeedingPaint<span class="token punctuation">;</span>
+  _nodesNeedingPaint <span class="token operator">=</span> <span class="token operator">&lt;</span>RenderObject<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token comment">// &#x4EE5;&#x76F8;&#x53CD;&#x7684;&#x987A;&#x5E8F;&#x5BF9;&#x810F;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF08;&#x6700;&#x6DF1;&#x7684;&#x4F18;&#x5148;&#xFF09;&#x3002;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>RenderObject node <span class="token keyword">in</span> dirtyNodes
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>RenderObject a<span class="token punctuation">,</span> RenderObject b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> b<span class="token punctuation">.</span>depth <span class="token operator">-</span> a<span class="token punctuation">.</span>depth<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">assert</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>_layer <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>_needsPaint <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>owner <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>_layer<span class="token punctuation">.</span>attached<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        PaintingContext<span class="token punctuation">.</span><span class="token function">repaintCompositedChild</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        node<span class="token punctuation">.</span><span class="token function">_skippedPaintingOnLayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="224-compositeframe">2.2.4 compositeFrame</h3>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// RenderView(flutter/lib/src/rendering/view.dart)</span>
+
+<span class="token comment">///&#x5C06;&#x5408;&#x6210;&#x7684;&#x5C42;&#x6811;&#x4E0A;&#x8F7D;&#x5230;&#x5F15;&#x64CE;&#x3002;</span>
+<span class="token comment">///&#x5B9E;&#x9645;&#x4E0A;&#x4F7F;&#x6E32;&#x67D3;&#x7BA1;&#x9053;&#x7684;&#x8F93;&#x51FA;&#x51FA;&#x73B0;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x3002;</span>
+<span class="token keyword">void</span> <span class="token function">compositeFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Timeline<span class="token punctuation">.</span><span class="token function">startSync</span><span class="token punctuation">(</span><span class="token string">&apos;Compositing&apos;</span><span class="token punctuation">,</span> arguments<span class="token punctuation">:</span> timelineWhitelistArguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">final</span> ui<span class="token punctuation">.</span>SceneBuilder builder <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">SceneBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">final</span> ui<span class="token punctuation">.</span>Scene scene <span class="token operator">=</span> layer<span class="token punctuation">.</span><span class="token function">buildScene</span><span class="token punctuation">(</span>builder<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>automaticSystemUiAdjustment<span class="token punctuation">)</span> <span class="token function">_updateSystemChrome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _window<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>scene<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    scene<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+    Timeline<span class="token punctuation">.</span><span class="token function">finishSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5C06;&#x753B;&#x597D;&#x7684;layer&#x4F20;&#x7ED9;engine&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;&#x624B;&#x673A;&#x5C4F;&#x5E55;&#x5C31;&#x4F1A;&#x663E;&#x793A;&#x51FA;&#x5185;&#x5BB9;&#x4E86;&#x3002;</p>
+<h3 id="225-flushsemantics">2.2.5 flushSemantics</h3>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/// Semantics&#x7528;&#x4E8E;&#x5C06;&#x4E00;&#x4E9B;Widget&#x7684;&#x4FE1;&#x606F;&#x4F20;&#x7ED9;&#x7CFB;&#x7EDF;&#x7528;&#x4E8E;&#x641C;&#x7D22;&#x3001;App&#x5185;&#x5BB9;&#x5206;&#x6790;&#x7B49;&#x573A;&#x666F;&#xFF0C;&#x8FD9;&#x4E0E;Flutter&#x7ED8;&#x5236;&#x6D41;&#x7A0B;&#x5173;&#x7CFB;&#x4E0D;&#x5927;&#x3002;</span>
+<span class="token keyword">void</span> <span class="token function">flushSemantics</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> List<span class="token operator">&lt;</span>RenderObject<span class="token operator">&gt;</span> nodesToProcess <span class="token operator">=</span> _nodesNeedingSemantics<span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span>RenderObject a<span class="token punctuation">,</span> RenderObject b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> a<span class="token punctuation">.</span>depth <span class="token operator">-</span> b<span class="token punctuation">.</span>depth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _nodesNeedingSemantics<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>RenderObject node <span class="token keyword">in</span> nodesToProcess<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>_needsSemanticsUpdate <span class="token operator">&amp;&amp;</span> node<span class="token punctuation">.</span>owner <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+      node<span class="token punctuation">.</span><span class="token function">_updateSemantics</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  _semanticsOwner<span class="token punctuation">.</span><span class="token function">sendSemanticsUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;Widget&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;<code>ElementTree</code>&#x548C;<code>RenderTree</code>&#xFF0C;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x9996;&#x5E27;&#x7684;&#x5E03;&#x5C40;&#x548C;&#x7ED8;&#x5236;&#x3002;
+&#x5176;&#x4E2D;<code>Widget</code>&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x9875;&#x9762;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5341;&#x5206;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x4E14;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x540C;&#x4E00;&#x4E2A;<code>Widget</code>&#x53EF;&#x4EE5;&#x63CF;&#x8FF0;&#x591A;&#x4E2A;<code>Element</code>&#x7684;&#x914D;&#x7F6E;&#xFF0C;
+<code>Element</code>&#x540C;&#x65F6;&#x6301;&#x6709;&#x4E86;<code>Widget&#x548C;RenderObject</code>&#xFF0C;&#x5B83;&#x6C47;&#x603B;&#x4E86;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;&#xFF0C;&#x91CD;&#x7ED8;&#x65F6;&#x53EA;&#x5C06;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x90E8;&#x5206;&#x901A;&#x77E5;&#x5230;<code>RenderObject</code>&#x3002;
+&#x5BF9;&#x4E8E;&#x666E;&#x901A;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x6700;&#x4E0A;&#x5C42;&#x7684;<code>Widget</code>&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x5341;&#x5206;&#x7B80;&#x5355;&#x9AD8;&#x6548;&#x3002;</p>
+<blockquote>
+<p>&#x7531;&#x4E8E;&#x672C;&#x4EBA;&#x80FD;&#x529B;&#x6709;&#x9650;&#xFF0C;&#x90E8;&#x5206;&#x8BB2;&#x89E3;&#x501F;&#x9274;&#x4E86;<code>&#x8D85;&#x4E36;&#x8D5B;&#x4E9A;&#x53FC;</code>&#x7684;&#xFF0C;&#x5728;&#x6B64;&#x81F4;&#x656C;&#x3002;</p>
+</blockquote>
 
                                 
                                 </section>
@@ -673,7 +934,7 @@ Element <span class="token function">inflateWidget</span><span class="token punc
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2：runApp入口执行","level":"1.3.2","depth":2,"next":{"title":"Flutter面试题","level":"2.1","depth":1,"url":"https://github.com/ahyangnb/flutter_interview","ref":"https://github.com/ahyangnb/flutter_interview","articles":[]},"previous":{"title":"2.1：setState更新原理和流程","level":"1.3.1","depth":2,"path":"chapter2/setstate.md","ref":"chapter2/setstate.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/run_app.md","mtime":"2020-01-14T03:05:01.770Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-15T12:47:00.690Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2：runApp入口执行","level":"1.3.2","depth":2,"next":{"title":"Flutter面试题","level":"2.1","depth":1,"url":"https://github.com/ahyangnb/flutter_interview","ref":"https://github.com/ahyangnb/flutter_interview","articles":[]},"previous":{"title":"2.1：setState更新原理和流程","level":"1.3.1","depth":2,"path":"chapter2/setstate.md","ref":"chapter2/setstate.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/run_app.md","mtime":"2020-01-15T14:46:55.256Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-15T14:47:09.768Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

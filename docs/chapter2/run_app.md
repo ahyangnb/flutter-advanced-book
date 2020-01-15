@@ -244,5 +244,270 @@ Element inflateWidget(Widget newWidget, dynamic newSlot) {
 新创建的`Element`继续调用`mount`，于是又会触发新一轮的`updateChild`，
 最终对应`WidgetTree`的整个`ElementTree`就构建完成了。
 
+# 渲染回调等部分
+渲染主要是在`WidgetsFlutterBinding`类开始执行的，runApp方法最后也是执行了WidgetsFlutterBinding类的
+scheduleWarmUpFrame方法进行第一次绘制。
+```dart
+///锁定事件调度，直到调度的框架完成为止。
+///也就是这次完成之后才会开始绘制其他scheduledFrame。
+///如果已经使用[scheduleFrame]安排了帧，或者[scheduleForcedFrame]，此调用可能会延迟该帧。
+///如果任何预定的帧已经开始或其他[scheduleWarmUpFrame]已被调用，此调用将被忽略。
+///首选[scheduleFrame]在正常操作下更新显示。
+void scheduleWarmUpFrame() {
+    if (_warmUpFrame || schedulerPhase != SchedulerPhase.idle)
+      return;
 
-更新中。。。
+    _warmUpFrame = true;
+    Timeline.startSync('Warm-up frame');
+    final bool hadScheduledFrame = _hasScheduledFrame;
+    // 我们在这里使用计时器来确保微任务在两者之间刷新。
+    Timer.run(() {
+      assert(_warmUpFrame);
+      handleBeginFrame(null); // 【主要方法1】
+    });
+    Timer.run(() {
+      assert(_warmUpFrame);
+      handleDrawFrame(); // 【主要方法2】
+      //我们在此帧之后调用resetEpoch
+      resetEpoch();
+      _warmUpFrame = false;
+      if (hadScheduledFrame)
+        scheduleFrame();
+    });
+    //锁定事件，以便触摸事件等直到预定的帧已完成。
+    lockEvents(() async {
+      await endOfFrame;
+      Timeline.finishSync();
+    });
+  }
+```
+
+其实绘制主要是用到了`handleBeginFrame()`和`handleDrawFrame()`两个方法，
+因为这两个方法调用由`scheduleFrameCallback`命令注册的所有需要的回调。
+
+所以建议看这两个方法之前了解下`Frame`和`FrameCallbacks`：
+
+##### Frame
+`Frame`即每一帧的绘制过程，`engine`通过`VSync`信号不断地触发`Frame`的绘制，
+实际上就是调用`SchedulerBinding`类中的`_handleBeginFrame()`和`_handleDrawFrame()`这两个方法，
+这个过程中会完成动画、布局、绘制等工作。
+
+##### FrameCallbacks
+`Frame`绘制期间，有三个`callbacks`列表会被调用，这三个列表是`SchedulerBinding`类中的成员，它们的调用顺序如下：
+
+|  顺序   | 内容  |
+|  ----  | ----  |
+| transientCallbacks  | 由Ticker触发和停止，一般用于动画的回调 |
+| persistentCallbacks  | 永久callback，添加后无法移除，由`WidgetsBinding.instance.addPersitentFrameCallback()`注册，这个回调处理了布局与绘制工作 |
+| postFrameCallbacks  | 只调一次，调用后会被系统移除，可由`WidgetsBinding.instance.addPostFrameCallback()`注册，该回调一般用于State的更新 |
+
+### handleBeginFrame方法
+代码已忽略断言部分。
+```dart
+// SchedulerBinding(flutter/lib/src/scheduler/binding.dart)
+/// 如果给定的时间戳为null，则最后一帧的时间戳为重用。
+void handleBeginFrame(Duration rawTimeStamp) {
+  Timeline.startSync('Frame', arguments: timelineWhitelistArguments);
+  _firstRawTimeStampInEpoch ??= rawTimeStamp;
+  _currentFrameTimeStamp = _adjustForEpoch(rawTimeStamp ?? _lastRawTimeStamp);
+  if (rawTimeStamp != null) _lastRawTimeStamp = rawTimeStamp;
+
+  _hasScheduledFrame = false;
+  try {
+    // transientCallbacks回调
+    Timeline.startSync('Animate', arguments: timelineWhitelistArguments);
+    _schedulerPhase = SchedulerPhase.transientCallbacks;
+    final Map<int, _FrameCallbackEntry> callbacks = _transientCallbacks;
+    _transientCallbacks = <int, _FrameCallbackEntry>{};
+    callbacks.forEach((int id, _FrameCallbackEntry callbackEntry) {
+      if (!_removedIds.contains(id))
+        _invokeFrameCallback(callbackEntry.callback, _currentFrameTimeStamp,
+            callbackEntry.debugStack);
+    });
+    _removedIds.clear();
+  } finally {
+    _schedulerPhase = SchedulerPhase.midFrameMicrotasks;
+  }
+}
+```
+这里主要执行了`transientCallbacks`回调。
+
+### handleDrawFrame
+执行了`persistentCallbacks`和`postFrameCallbacks`回调，主要的操作都在这里。
+```dart
+/// handleBeginFrame之后立即调用此方法。 触发全部addPersistentFrameCallback注册的回调，通常
+///驱动渲染管道，然后调用addPostFrameCallback。
+void handleDrawFrame() {
+  assert(_schedulerPhase == SchedulerPhase.midFrameMicrotasks);
+  Timeline.finishSync(); // 结束“动画”阶段
+  try {
+    // persistentCallbacks回调
+    _schedulerPhase = SchedulerPhase.persistentCallbacks;
+    for (FrameCallback callback in _persistentCallbacks)
+      _invokeFrameCallback(callback, _currentFrameTimeStamp);
+
+    // postFrameCallbacks回调
+    _schedulerPhase = SchedulerPhase.postFrameCallbacks;
+    final List<FrameCallback> localPostFrameCallbacks =
+        List<FrameCallback>.from(_postFrameCallbacks);
+    _postFrameCallbacks.clear();
+    for (FrameCallback callback in localPostFrameCallbacks)
+      _invokeFrameCallback(callback, _currentFrameTimeStamp);
+  } finally {
+    _schedulerPhase = SchedulerPhase.idle;
+    Timeline.finishSync(); //结束帧
+    assert(() {
+      if (debugPrintEndFrameBanner) debugPrint('▀' * _debugBanner.length);
+      _debugBanner = null;
+      return true;
+    }());
+    _currentFrameTimeStamp = null;
+  }
+}
+```
+
+# 渲染操作
+系统只在`persistentCallbacks`注册了一个回调，
+实际上是执行`RenderBinding`类中的`drawFrame()`方法以及其子类`WidgetsBinding`类中的`drawFrame()`方法：
+```dart
+@protected
+void drawFrame() {
+    pipelineOwner.flushLayout(); // 看 【2.2.1】
+    pipelineOwner.flushCompositingBits(); // 看 【2.2.2】
+    pipelineOwner.flushPaint(); // 看 【2.2.3】
+    renderView.compositeFrame(); // 看 【2.2.4】
+    pipelineOwner.flushSemantics(); // 看 【2.2.5】
+}
+```
+** WidgetsBinding ** 
+```dart
+/// 代码忽略了断言和判断
+@override
+void drawFrame() {
+  try {
+    if (renderViewElement != null)
+      buildOwner.buildScope(renderViewElement);
+    super.drawFrame();
+    buildOwner.finalizeTree();
+  } finally {
+    ...
+  }
+  _needToReportFirstFrame = false;
+}
+```
+`buildOwner.buildScope()`在我们的"setState更新原理和流程"有讲到过，可以直接搜索。
+> 该方法会将被标记为dirty的Element进行重新构建。
+
+回收被抛弃的Element的列表_inactiveElements最后会调用buildOwner.finalizeTree()彻底清除掉。
+
+### 2.2.1 pipelineOwner.flushLayout()
+该方法更新所有脏渲染对象的布局等信息。
+```dart
+/// 布局信息在绘制之前已清理，因此渲染对象将出现在屏幕上的最新位置。
+/// 
+/// 当RenderObject的宽高等布局相关的属性被set时（通过更改Widget的属性），
+/// 它会被添加到_nodesNeedingLayout列表中，以标记为需要重新进行layout。
+/// 这里遍历了该列表，并调用_layoutWithoutResize()进行布局
+void flushLayout() {
+  ...
+  try {
+    while (_nodesNeedingLayout.isNotEmpty) {
+      final List<RenderObject> dirtyNodes = _nodesNeedingLayout;
+      _nodesNeedingLayout = <RenderObject>[];
+      for (RenderObject node in dirtyNodes
+        ..sort((RenderObject a, RenderObject b) => a.depth - b.depth)) {
+        if (node._needsLayout && node.owner == this)
+          node._layoutWithoutResize();
+      }
+    }
+  } finally {
+    ...
+  }
+}
+```
+
+### 2.2.2 flushCompositingBits
+在flushLayout之后和之前作为渲染管道的一部分调用
+```dart
+/// 用于判断RenderObject是否拥有自己的layer，如果该状态变化了，就会将该RenderObject标记为需要进行重绘的，
+/// 然后在下面flushPaint()方法中进行重绘。
+void flushCompositingBits() {
+  ...
+  _nodesNeedingCompositingBitsUpdate
+      .sort((RenderObject a, RenderObject b) => a.depth - b.depth);
+  for (RenderObject node in _nodesNeedingCompositingBitsUpdate) {
+    if (node._needsCompositingBitsUpdate && node.owner == this)
+      node._updateCompositingBits();
+  }
+  _nodesNeedingCompositingBitsUpdate.clear();
+  ...
+}
+```
+
+### 2.2.3 flushPaint
+```dart
+/// 该方法就是进行绘制的地方，可以看出它不是重绘了所有RenderObject，而是只重绘了被标记为dirty的RenderObject，
+/// 这些RenderObject会调用engine下的skia库进行绘制。
+void flushPaint() {
+  final List<RenderObject> dirtyNodes = _nodesNeedingPaint;
+  _nodesNeedingPaint = <RenderObject>[];
+  // 以相反的顺序对脏节点进行排序（最深的优先）。
+  for (RenderObject node in dirtyNodes
+    ..sort((RenderObject a, RenderObject b) => b.depth - a.depth)) {
+    assert(node._layer != null);
+    if (node._needsPaint && node.owner == this) {
+      if (node._layer.attached) {
+        PaintingContext.repaintCompositedChild(node);
+      } else {
+        node._skippedPaintingOnLayer();
+      }
+    }
+  }
+  ...
+}
+```
+### 2.2.4 compositeFrame
+```dart
+// RenderView(flutter/lib/src/rendering/view.dart)
+
+///将合成的层树上载到引擎。
+///实际上使渲染管道的输出出现在屏幕上。
+void compositeFrame() {
+  Timeline.startSync('Compositing', arguments: timelineWhitelistArguments);
+  try {
+    final ui.SceneBuilder builder = ui.SceneBuilder();
+    final ui.Scene scene = layer.buildScene(builder);
+    if (automaticSystemUiAdjustment) _updateSystemChrome();
+    _window.render(scene);
+    scene.dispose();
+  } finally {
+    Timeline.finishSync();
+  }
+  ...
+}
+```
+将画好的layer传给engine，该方法调用结束之后，手机屏幕就会显示出内容了。
+
+### 2.2.5 flushSemantics
+```dart
+/// Semantics用于将一些Widget的信息传给系统用于搜索、App内容分析等场景，这与Flutter绘制流程关系不大。
+void flushSemantics() {
+  final List<RenderObject> nodesToProcess = _nodesNeedingSemantics.toList()
+    ..sort((RenderObject a, RenderObject b) => a.depth - b.depth);
+  _nodesNeedingSemantics.clear();
+  for (RenderObject node in nodesToProcess) {
+    if (node._needsSemanticsUpdate && node.owner == this)
+      node._updateSemantics();
+  }
+  _semanticsOwner.sendSemanticsUpdate();
+}
+```
+
+# 总结
+其实就是根据传入的Widget生成对应的`ElementTree`和`RenderTree`，之后开始进行首帧的布局和绘制。
+其中`Widget`用来描述页面的属性，这个对象是十分轻量级的且是不可变的，同一个`Widget`可以描述多个`Element`的配置，
+`Element`同时持有了`Widget和RenderObject`，它汇总了所有的属性信息，重绘时只将需要修改的部分通知到`RenderObject`。
+对于普通开发者，只需要关注最上层的`Widget`就可以了，十分简单高效。
+
+> 由于本人能力有限，部分讲解借鉴了`超丶赛亚叼 `的，在此致敬。
+
