@@ -109,3 +109,8 @@ class _TestRouteState extends State<TestRoute> {
 
 | ![](../img/wrap_item.png) | ![](../img/wrap_item_2.png) |
 | :-----| ----: | 
+
+# 原理：
+
+其实这就是最基本的屏幕算法，使用的是小学数学里的常用加减乘除，用了多少就用整个的减多少，
+很常见也很简单很实用，在企业开发中用到这套就已经能完全适配所有屏幕了，主要是灵活应变。

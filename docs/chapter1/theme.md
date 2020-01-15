@@ -1,14 +1,89 @@
 # App主题色控制
 
 * Theme有两种：
-全局Theme和局部Theme。 全局Theme是由应用程序根MaterialApp创建的Theme 。
+全局`Theme`和局部`Theme`。 全局`Theme`是由应用程序根`MaterialApp`创建的Theme 。
 
 * Theme作用：
-可以设置Widget的主题，提高开发效率和速度，保持App主题统一性或某种一致性。
+可以设置`Widget`的主题，提高开发效率和速度，保持App主题统一性或某种一致性。
 
 # Theme
-Theme组件可以为Material APP定义主题数据（ThemeData）。Material组件库里很多组件都使用了主题数据，
-如导航栏颜色、标题字体、Icon样式等。Theme内会使用InheritedWidget来为其子树共享样式数据。
+`Theme`组件可以为`material` `APP`定义主题数据（`ThemeData`）。`Material`组件库里很多组件都使用了主题数据，
+如导航栏颜色、标题字体、`Icon`样式等。Theme内会使用`InheritedWidget`来为其子树共享样式数据。
+
+# 设置主题栗子
+##### 全局：
+```dart
+/// 全局主题在MaterialApp的theme属性
+/// 全局生效
+new MaterialApp(
+  title: 'demo',
+  theme: new ThemeData( // 这里就是参数
+    brightness: Brightness.dark,
+    primaryColor: Colors.lightBlue[800],
+    accentColor: Colors.cyan[600],
+  ),
+);
+```
+##### 局部：
+```dart
+/// 假如我们要给FloatingActionButton设置主题样式
+/// 直接写个Theme包裹FloatingActionButton组件
+/// 然后设置data，接收类型依然是ThemeData，里面填写我们的参数
+/// （如果没有设置局部主题则默认使用全局主题）
+new Theme(
+  data: new ThemeData(
+    accentColor: Colors.yellow,
+  ),
+  child: new FloatingActionButton(
+    onPressed: () {},
+    child: new Icon(Icons.add),
+  ),
+);
+```
+
+##### 扩展父主题：
+```dart
+/// 扩展父主题时无需覆盖所有的主题属性，可以通过使用copyWith方法来实现
+new Theme(
+  data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+  child: new FloatingActionButton(
+    onPressed: null,
+    child: new Icon(Icons.add),
+  ),
+);
+```
+`Theme.of(context)`将查找Widget树并返回树中最近的Theme。如果Widget之上有一个单独的Theme定义，
+则返回该值。如果不是，则返回App主题。
+
+##### 判断平台显示指定主题：
+```dart
+/// defaultTargetPlatform在foundation包里。
+/// 
+/// 我们也可以使用io包里的Platform来进行判断。
+/// 那么判断就是
+/// theme: Platform.isIOS ? iOSTheme : AndroidTheme,
+new MaterialApp(
+  theme: defaultTargetPlatform == TargetPlatform.iOS
+      ? iOSTheme
+      : AndroidTheme,
+  title: 'Flutter Theme',
+  home: new MyHomePage(),
+);
+```
+
+##### Tips:
+Flutter的Color中大多数颜色从100到900，增量为100，加上颜色50，数字越小颜色越浅，
+数字越大颜色越深。强调色调只有100、200、400和700。
+
+##### 栗子：
+
+![](../img/material_color.png)
+
+##### 推荐站点(Material design)：
+
+[https://material.io/resources/color](https://material.io/resources/color),
+
+为你的UI创建共享调色板，并衡量任何颜色组合的可观性【非常实用的工具】。
 
 ### ThemeData（Color类型属性）：
 
@@ -82,74 +157,7 @@ Theme组件可以为Material APP定义主题数据（ThemeData）。Material组�
 * colorScheme - `ColorScheme`类型，scheme组颜色，一组13种颜色，可用于配置大多数组件的颜色属性。
 * typography - `Typography`类型,用于配置`TextTheme`、`primaryTextTheme`和`accentTextTheme`的颜色和几何文本主题值。
 
-# 设置主题
-##### 全局：
-```dart
-/// 全局主题在MaterialApp的theme属性
-/// 全局生效
-new MaterialApp(
-  title: 'demo',
-  theme: new ThemeData( // 这里就是参数
-    brightness: Brightness.dark,
-    primaryColor: Colors.lightBlue[800],
-    accentColor: Colors.cyan[600],
-  ),
-);
-```
-##### 局部：
-```dart
-/// 假如我们要给FloatingActionButton设置主题样式
-/// 直接写个Theme包裹FloatingActionButton组件
-/// 然后设置data，接收类型依然是ThemeData，里面填写我们的参数
-/// （如果没有设置局部主题则默认使用全局主题）
-new Theme(
-  data: new ThemeData(
-    accentColor: Colors.yellow,
-  ),
-  child: new FloatingActionButton(
-    onPressed: () {},
-    child: new Icon(Icons.add),
-  ),
-);
-```
 
-##### 扩展父主题：
-```dart
-/// 扩展父主题时无需覆盖所有的主题属性，可以通过使用copyWith方法来实现
-new Theme(
-  data: Theme.of(context).copyWith(accentColor: Colors.yellow),
-  child: new FloatingActionButton(
-    onPressed: null,
-    child: new Icon(Icons.add),
-  ),
-);
-```
-`Theme.of(context)`将查找Widget树并返回树中最近的Theme。如果Widget之上有一个单独的Theme定义，
-则返回该值。如果不是，则返回App主题。
+# 适配夜间模式
 
-##### 判断平台显示指定主题：
-```dart
-/// defaultTargetPlatform在foundation包里。
-/// 
-/// 我们也可以使用io包里的Platform来进行判断。
-/// 那么判断就是
-/// theme: Platform.isIOS ? iOSTheme : AndroidTheme,
-new MaterialApp(
-  theme: defaultTargetPlatform == TargetPlatform.iOS
-      ? iOSTheme
-      : AndroidTheme,
-  title: 'Flutter Theme',
-  home: new MyHomePage(),
-);
-```
-
-##### Tips:
-Flutter的Color中大多数颜色从100到900，增量为100，加上颜色50，数字越小颜色越浅，
-数字越大颜色越深。强调色调只有100、200、400和700。
-
-##### 栗子：
-
-![](../img/material_color.png)
-
-##### 推荐站点(Material design)：
-[https://material.io/resources/color](https://material.io/resources/color)
+更新中。。。

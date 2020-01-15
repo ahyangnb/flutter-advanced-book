@@ -172,3 +172,9 @@ new Column(
 <img src="../img/spacer_2.png" width="30%">
 
 如果flex设置为2则会为第一个的两倍间隔。
+
+# 提示
+
+Spacer设置在未知宽高的Row或者Column会无效或者报错，如果有设宽高就可以无需设置mainAxisAlignment就能实现
+我们想要的各种效果了，当然，在Row或者Column里使用Expanded包裹我们的组件也是上级的Row或者Column一定要有宽高，
+否则会报错，可滑动组件内不能直接放Expanded，例如："ListView里放Expanded"，具体大家可以自己去尝试。
