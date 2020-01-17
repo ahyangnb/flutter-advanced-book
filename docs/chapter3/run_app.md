@@ -372,11 +372,11 @@ void handleDrawFrame() {
 ```dart
 @protected
 void drawFrame() {
-    pipelineOwner.flushLayout(); // 看 【2.2.1】
-    pipelineOwner.flushCompositingBits(); // 看 【2.2.2】
-    pipelineOwner.flushPaint(); // 看 【2.2.3】
-    renderView.compositeFrame(); // 看 【2.2.4】
-    pipelineOwner.flushSemantics(); // 看 【2.2.5】
+    pipelineOwner.flushLayout(); // 看 【3.2.1】
+    pipelineOwner.flushCompositingBits(); // 看 【3.2.2】
+    pipelineOwner.flushPaint(); // 看 【3.2.3】
+    renderView.compositeFrame(); // 看 【3.2.4】
+    pipelineOwner.flushSemantics(); // 看 【3.2.5】
 }
 ```
 ** WidgetsBinding ** 
@@ -400,7 +400,7 @@ void drawFrame() {
 
 回收被抛弃的Element的列表_inactiveElements最后会调用buildOwner.finalizeTree()彻底清除掉。
 
-### 2.2.1 pipelineOwner.flushLayout()
+### 3.2.1 pipelineOwner.flushLayout()
 该方法更新所有脏渲染对象的布局等信息。
 ```dart
 /// 布局信息在绘制之前已清理，因此渲染对象将出现在屏幕上的最新位置。
@@ -426,7 +426,7 @@ void flushLayout() {
 }
 ```
 
-### 2.2.2 flushCompositingBits
+### 3.2.2 flushCompositingBits
 在flushLayout之后和之前作为渲染管道的一部分调用
 ```dart
 /// 用于判断RenderObject是否拥有自己的layer，如果该状态变化了，就会将该RenderObject标记为需要进行重绘的，
@@ -444,7 +444,7 @@ void flushCompositingBits() {
 }
 ```
 
-### 2.2.3 flushPaint
+### 3.2.3 flushPaint
 ```dart
 /// 该方法就是进行绘制的地方，可以看出它不是重绘了所有RenderObject，而是只重绘了被标记为dirty的RenderObject，
 /// 这些RenderObject会调用engine下的skia库进行绘制。
@@ -466,7 +466,7 @@ void flushPaint() {
   ...
 }
 ```
-### 2.2.4 compositeFrame
+### 3.2.4 compositeFrame
 ```dart
 // RenderView(flutter/lib/src/rendering/view.dart)
 
@@ -488,7 +488,7 @@ void compositeFrame() {
 ```
 将画好的layer传给engine，该方法调用结束之后，手机屏幕就会显示出内容了。
 
-### 2.2.5 flushSemantics
+### 3.2.5 flushSemantics
 ```dart
 /// Semantics用于将一些Widget的信息传给系统用于搜索、App内容分析等场景，这与Flutter绘制流程关系不大。
 void flushSemantics() {

@@ -18,7 +18,7 @@
 
 ## 章节介绍
 本书分为多个章节，不确定性，会一直更，直到完善，然后固定章节，目前已有章节：
-[进阶篇](chapter1)、[原理篇](chapter2)、[Flutter面试题](https://github.com/ahyangnb/flutter_interview)。
+[进阶篇](chapter1)、[原理篇](chapter3)、[Flutter面试题](https://github.com/ahyangnb/flutter_interview)。
 
 > 本书暂未想过发版实体书，主要发布电子版供大家学习参考。
 > 持续更新中。。。敬请期待！

@@ -1,3 +1,3 @@
 ## 本章目录   
-* [MVVM架构搭建](mvvm.md)
-* [MVC架构搭建](mvc.md)
+* [Flutter的setState更新原理和流程](setstate.md)
+* [runApp入口执行](run_app.md)
