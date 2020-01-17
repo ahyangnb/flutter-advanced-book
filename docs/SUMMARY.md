@@ -2,9 +2,11 @@
 
 * [简介](README.md)
 
-* [环境篇](chapter0/index.md)
-    * [Windows环境搭建](chapter0/windows.md)
-    * [Mac OS环境搭建](chapter0/mac_os.md)
+* [环境搭建](chapter0/index.md)
+#     * [Windows环境搭建](https://flutter.cn/docs/get-started/install/windows)
+#     * [Mac OS环境搭建](https://flutter.cn/docs/get-started/install/macos)
+#     * [Linux环境搭建](https://flutter.cn/docs/get-started/install/linux)
+    
 * [第1章：进阶篇](chapter1/index.md)
     * [1.1：生命周期](chapter1/life_cycle.md)
     * [1.2：局部刷新优化性能](chapter1/partial_refresh.md)
