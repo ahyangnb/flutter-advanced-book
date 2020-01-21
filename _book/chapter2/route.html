@@ -499,7 +499,327 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x8DEF;&#x7531;&#x7BA1;&#x7406;&#x63A7;&#x5236;">&#x8DEF;&#x7531;&#x7BA1;&#x7406;&#x63A7;&#x5236;</h1>
-<p>&#x4F5C;&#x8005;&#x6B63;&#x5728;&#x5077;&#x61D2;&#x3002;&#x3002;&#x3002;</p>
+<ul>
+<li>&#x8DEF;&#x7531;&#x662F;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x62BD;&#x8C61;&#x7684;&#x5C4F;&#x5E55;&#x6216;&#x9875;&#x9762;&#xFF1B;</li>
+<li>&#x8DEF;&#x7531;&#x7BA1;&#x7406;&#x5C31;&#x662F;&#x7BA1;&#x7406;&#x9875;&#x9762;&#x4E4B;&#x95F4;&#x5982;&#x4F55;&#x8DF3;&#x8F6C;&#xFF1B;</li>
+<li>&#x8DEF;&#x7531;&#x5165;&#x6808;&#x6307;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x65B0;&#x9875;&#x9762;&#xFF1B;</li>
+<li>&#x8DEF;&#x7531;&#x51FA;&#x6808;&#x6307;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5173;&#x95ED;&#x64CD;&#x4F5C;&#xFF1B;</li>
+<li>&#x8DEF;&#x7531;&#x7BA1;&#x7406;&#x6307;&#x5982;&#x4F55;&#x6765;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x6808;&#xFF1B;</li>
+<li>Navigator&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x7684;widget&#xFF1B;</li>
+<li>NavigatorKey&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x7684;Key&#xFF1B;</li>
+</ul>
+<p>&#x770B;&#x5B8C;&#x672C;&#x6587;&#x4F60;&#x5C06;&#x5B66;&#x4F1A;<code>&#x8DEF;&#x7531;&#x7684;&#x4F7F;&#x7528;</code>&#x3001;<code>&#x7BA1;&#x7406;&#x597D;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;</code>&#x3001;<code>&#x8DEF;&#x7531;&#x4F20;&#x53C2;</code>&#x3001;<code>&#x8DEF;&#x7531;&#x5E26;&#x53C2;&#x8FD4;&#x56DE;</code>&#x3001;
+<code>&#x8DEF;&#x7531;&#x8BB0;&#x5F55;</code>&#x3001;<code>&#x8FD4;&#x56DE;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;</code>&#xFF0C;
+&#x7136;&#x540E;&#x4F7F;&#x7528;pop&#x64CD;&#x4F5C;&#x6765;&#x8FDB;&#x884C;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x8DEF;&#x7531;&#xFF1B;</p>
+<h1 id="navigator">Navigator</h1>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;</th>
+<th>&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pushNamed</td>
+<td>&#x6309;&#x8DEF;&#x7531;&#x540D;&#x5B57;&#x8DEF;&#x7531;&#x5165;&#x6808;</td>
+</tr>
+<tr>
+<td>pushReplacementNamed</td>
+<td>&#x6309;&#x8DEF;&#x7531;&#x540D;&#x5B57;&#x66FF;&#x6362;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x6808;</td>
+</tr>
+<tr>
+<td>popAndPushNamed</td>
+<td>&#x5C06;&#x5F53;&#x524D;&#x8DEF;&#x7EBF;&#x4ECE;&#x5BFC;&#x822A;&#x5668;&#x4E2D;&#x5F39;&#x51FA;&#xFF0C;&#x5E76;&#x5728;&#x5176;&#x4E2D;&#x63A8;&#x5165;&#x5DF2;&#x547D;&#x540D;&#x7684;&#x8DEF;&#x7531;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td>pushNamedAndRemoveUntil</td>
+<td>&#x6309;&#x8DEF;&#x7531;&#x540D;&#x79F0;&#x5C06;&#x5177;&#x6709;&#x7ED9;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x8DEF;&#x7531;&#x63A8;&#x5165;&#x5BFC;&#x822A;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x5220;&#x9664;&#x6240;&#x6709;</td>
+</tr>
+<tr>
+<td>push</td>
+<td>&#x76F4;&#x63A5;&#x8DEF;&#x7531;&#x5165;&#x6808;</td>
+</tr>
+<tr>
+<td>pushReplacement</td>
+<td>&#x66FF;&#x6362;&#x5F53;&#x524D;&#x8DEF;&#x7531;&#x6808;</td>
+</tr>
+<tr>
+<td>pushAndRemoveUntil</td>
+<td>&#x5C06;&#x5177;&#x6709;&#x7ED9;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x8DEF;&#x7531;&#x63A8;&#x5165;&#x5BFC;&#x822A;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x5220;&#x9664;&#x6240;&#x6709;</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>&#x7528;&#x65B0;&#x8DEF;&#x7531;&#x66FF;&#x6362;&#x5BFC;&#x822A;&#x5668;&#x4E0A;&#x7684;&#x8DEF;&#x7531;</td>
+</tr>
+<tr>
+<td>replaceRouteBelow</td>
+<td>&#x7528;&#x65B0;&#x8DEF;&#x7531;&#x66FF;&#x6362;&#x5BFC;&#x822A;&#x5668;&#x4E0A;&#x7684;&#x8DEF;&#x7531;&#x3002; &#x8DEF;&#x7531;&#x662F;&#x66FF;&#x6362;&#x4E3A;&#x7ED9;&#x5B9A;<code>anchorRoute</code>&#x4E0B;&#x9762;&#x7684;&#x90A3;&#x4E2A;</td>
+</tr>
+<tr>
+<td>canPop</td>
+<td>&#x5BFC;&#x822A;&#x5668;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5F39;&#x51FA;&#x3002;</td>
+</tr>
+<tr>
+<td>maybePop</td>
+<td>&#x5BFC;&#x822A;&#x5668;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5F39;&#x51FA;&#xFF0C;&#x53EF;&#x4EE5;&#x7684;&#x8BDD;&#x5F39;&#x51FA;</td>
+</tr>
+<tr>
+<td>pop</td>
+<td>&#x5F39;&#x51FA;&#x8DEF;&#x7531;</td>
+</tr>
+<tr>
+<td>popUntil</td>
+<td>&#x4E00;&#x76F4;&#x5F39;&#x51FA;&#x76F4;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;</td>
+</tr>
+<tr>
+<td>removeRoute</td>
+<td>&#x5220;&#x9664;&#x6307;&#x5B9A;&#x8DEF;&#x7531;</td>
+</tr>
+<tr>
+<td>removeRouteBelow</td>
+<td>&#x7ACB;&#x5373;&#x4ECE;&#x5BFC;&#x822A;&#x5668;&#x4E2D;&#x5220;&#x9664;&#x4E00;&#x6761;&#x8DEF;&#x7531;&#xFF0C;&#x7136;&#x540E;[Route.dispose]&#x7684;&#x8981;&#x66FF;&#x6362;&#x7684;&#x8DEF;&#x7EBF;&#x662F;&#x7ED9;&#x5B9A;&#x7684;&#x201C; anchorRoute&#x201D;&#x4E0B;&#x65B9;&#x7684;&#x8DEF;&#x7EBF;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h1 id="&#x5F00;&#x59CB;&#x4E0A;&#x624B;">&#x5F00;&#x59CB;&#x4E0A;&#x624B;</h1>
+<p>&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E2A;&#x666E;&#x901A;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#xFF0C;&#x8DF3;&#x8F6C;&#x5230;&#x539F;&#x9875;&#x9762;&#xFF0C;&#x4F46;&#x662F;&#x6807;&#x9898;&#x7684;&#x6570;&#x91CF;&#x4F1A;+1&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5F53;&#x524D;&#x662F;push&#x5230;&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x9875;&#x9762;&#xFF1B;</p>
+<p>&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x4F20;&#x53C2;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">import</span> <span class="token string">&apos;package:flutter/material.dart&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token function">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">&apos;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;&apos;</span><span class="token punctuation">,</span>
+      home<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyHomePage</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token comment">// &#x63A5;&#x6536;&#x7684;num&#x53C2;&#x6570;</span>
+  <span class="token keyword">final</span> int num<span class="token punctuation">;</span>
+  <span class="token comment">// MyHomePage&#x4E0D;&#x5199;&#x53C2;&#x6570;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;1</span>
+  <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  _MyHomePageState <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_MyHomePageState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">_MyHomePageState</span> <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token operator">&lt;</span>MyHomePage<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+    <span class="token comment">// &#x663E;&#x793A;&#x63A5;&#x6536;&#x7684;num&#x53C2;&#x6570;</span>
+      appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&apos;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;${widget.num}&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">// &#x6309;&#x94AE;&#x70B9;&#x51FB;&#x6267;&#x884C;&#x8DF3;&#x8F6C;&#x65B9;&#x6CD5;</span>
+      body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">FlatButton</span><span class="token punctuation">(</span>child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;push&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment">// &#x62FF;&#x5230;&#x4F20;&#x8FC7;&#x6765;&#x7684;num&#x7136;&#x540E;+1 </span>
+    int num <span class="token operator">=</span> widget<span class="token punctuation">.</span>num <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x5BFC;&#x822A;&#x5230;&#x65B0;&#x8DEF;&#x7531;</span>
+    Navigator<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+      context<span class="token punctuation">,</span>
+      <span class="token function">MaterialPageRoute</span><span class="token punctuation">(</span>
+          <span class="token comment">// num&#x4F20;&#x7ED9;&#x4E0B;&#x4E00;&#x7EA7;</span>
+          builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span>num<span class="token punctuation">:</span> num<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6548;&#x679C;&#x56FE;&#xFF1A;</p>
+<p><img src="../img/push.gif" width="30%"></p>
+<h5 id="&#x9519;&#x8BEF;&#x793A;&#x4F8B;&#xFF1A;">&#x9519;&#x8BEF;&#x793A;&#x4F8B;&#xFF1A;</h5>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">&apos;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;&apos;</span><span class="token punctuation">,</span>
+      home<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+        appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">FlatButton</span><span class="token punctuation">(</span>child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;push&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">push</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">push</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x5BFC;&#x822A;&#x5230;&#x65B0;&#x8DEF;&#x7531;</span>
+    Navigator<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+      context<span class="token punctuation">,</span>
+      <span class="token function">MaterialPageRoute</span><span class="token punctuation">(</span>
+      <span class="token comment">// MyHomePage&#x4E0D;&#x5199;&#x53C2;&#x6570;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;1</span>
+          builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter (21935): &#x2550;&#x2550;&#x2561; EXCEPTION CAUGHT BY GESTURE &#x255E;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;
+I/flutter (21935): The following assertion was thrown while handling a gesture:
+I/flutter (21935): Navigator operation requested with a context that does not include a Navigator.
+I/flutter (21935): The context used to push or pop routes from the Navigator must be that of a widget that is a
+I/flutter (21935): descendant of a Navigator widget.
+I/flutter (21935): 
+I/flutter (21935): When the exception was thrown, this was the stack:
+I/flutter (21935): #0      Navigator.of.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span> <span class="token attr-name">closure</span><span class="token punctuation">&gt;</span></span> (package:flutter/src/widgets/navigator.dart:1475:9)
+I/flutter (21935): #1      Navigator.of (package:flutter/src/widgets/navigator.dart:1482:6)
+I/flutter (21935): #2      Navigator.push (package:flutter/src/widgets/navigator.dart:1107:22)
+I/flutter (21935): #3      MyApp.push (package:oc_project/main.dart:18:15)
+I/flutter (21935): #4      MyApp.build.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span> <span class="token attr-name">closure</span><span class="token punctuation">&gt;</span></span> (package:oc_project/main.dart:12:72)
+I/flutter (21935): #5      _InkResponseState._handleTap (package:flutter/src/material/ink_well.dart:654:14)
+I/flutter (21935): #6      _InkResponseState.build.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span> <span class="token attr-name">closure</span><span class="token punctuation">&gt;</span></span> (package:flutter/src/material/ink_well.dart:729:32)
+I/flutter (21935): #7      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:182:24)
+I/flutter (21935): #8      TapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:365:11)
+I/flutter (21935): #9      TapGestureRecognizer.handlePrimaryPointer (package:flutter/src/gestures/tap.dart:275:7)
+I/flutter (21935): #10     PrimaryPointerGestureRecognizer.handleEvent (package:flutter/src/gestures/recognizer.dart:455:9)
+I/flutter (21935): #11     PointerRouter._dispatch (package:flutter/src/gestures/pointer_router.dart:75:13)
+I/flutter (21935): #12     PointerRouter.route (package:flutter/src/gestures/pointer_router.dart:102:11)
+I/flutter (21935): #13     GestureBinding.handleEvent (package:flutter/src/gestures/binding.dart:218:19)
+I/flutter (21935): #14     GestureBinding.dispatchEvent (package:flutter/src/gestures/binding.dart:198:22)
+I/flutter (21935): #15     GestureBinding._handlePointerEvent (package:flutter/src/gestures/binding.dart:156:7)
+I/flutter (21935): #16     GestureBinding._flushPointerEventQueue (package:flutter/src/gestures/binding.dart:102:7)
+I/flutter (21935): #17     GestureBinding._handlePointerDataPacket (package:flutter/src/gestures/binding.dart:86:7)
+I/flutter (21935): #21     _invoke1 (dart:ui/hooks.dart:263:10)
+I/flutter (21935): #22     _dispatchPointerDataPacket (dart:ui/hooks.dart:172:5)
+I/flutter (21935): (elided 3 frames from package dart:async)
+I/flutter (21935): 
+I/flutter (21935): Handler: &quot;onTap&quot;
+I/flutter (21935): Recognizer:
+I/flutter (21935):   TapGestureRecognizer#72729
+</code></pre><p>&#x8FD9;&#x4E2A;&#x62A5;&#x9519;&#x662F;&#x56E0;&#x4E3A;&#x7528;&#x7684;&#x8FD9;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x662F;<code>MaterialApp</code>&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x4E0D;&#x5305;&#x542B;<code>Navigator</code>&#x5BFC;&#x822A;&#x5668;&#x64CD;&#x4F5C;&#xFF0C;
+&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x628A;<code>home</code>&#x7684;&#x90A3;&#x90E8;&#x5206;&#x62BD;&#x51FA;&#x6765;&#x653E;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#xFF1B;</p>
+<h1 id="&#x8DEF;&#x7531;&#x4F20;&#x503C;&#x5E76;&#x8FD4;&#x56DE;&#x503C;">&#x8DEF;&#x7531;&#x4F20;&#x503C;&#x5E76;&#x8FD4;&#x56DE;&#x503C;</h1>
+<blockquote>
+<p>&#x8DEF;&#x7531;&#x4F20;&#x53C2;&#x5728;&#x4E0A;&#x9762;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#xFF0C;num&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x663E;&#x793A;&#x5728;&#x6807;&#x9898;&#x4E0A;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x4E86;&#x3002;</p>
+</blockquote>
+<p>&#x8FD9;&#x8282;&#x6559;&#x5927;&#x5BB6;&#x8DEF;&#x7531;&#x4F20;&#x503C;&#x5E76;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x521B;&#x5EFA;&#x4E2A;<code>NewPage</code>&#xFF0C;&#x63A5;&#x6536;&#x4E2A;&#x6587;&#x672C;&#x503C;<code>text</code>&#xFF0C;&#x7136;&#x540E;&#x663E;&#x793A;&#x5728;&#x65B0;&#x9875;&#x9762;&#xFF0C;&#x65B0;&#x9875;&#x9762;&#x7ED9;&#x4E2A;&#x8FD4;&#x56DE;&#x6309;&#x94AE;&#xFF0C;
+&#x70B9;&#x51FB;&#x8FD4;&#x56DE;&#x6309;&#x94AE;&#x8FD4;&#x56DE;&#x5E76;&#x5E26;&#x56DE;&#x4E00;&#x4E32;&#x503C;&#x56DE;&#x53BB;&#x3002;</p>
+<p>NewPage&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">NewPage</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> String text<span class="token punctuation">;</span>
+
+  <span class="token function">NewPage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token metadata symbol">@required</span> <span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">,</span> <span class="token comment">// &#x63A5;&#x6536;&#x4E00;&#x4E2A;text&#x53C2;&#x6570;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;&#x65B0;&#x9875;&#x9762;&#xFF1A;$text&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">RaisedButton</span><span class="token punctuation">(</span>
+        onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Navigator<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token string">&quot;&#x6211;&#x662F;&#x8FD4;&#x56DE;&#x503C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8FD4;&#x56DE;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x4E4B;&#x524D;&#x5199;&#x597D;&#x7684;push&#x65B9;&#x6CD5;&#x6539;&#x4E0B;&#xFF0C;&#x7528;then&#x63A5;&#x6536;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//&#x5BFC;&#x822A;&#x5230;&#x65B0;&#x8DEF;&#x7531;</span>
+  Navigator<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+    context<span class="token punctuation">,</span>
+    <span class="token function">MaterialPageRoute</span><span class="token punctuation">(</span>
+      <span class="token comment">// &#x62FF;&#x5230;&#x4F20;&#x8FC7;&#x6765;&#x7684;num&#x7136;&#x540E;++&#x4F20;&#x7ED9;&#x4E0B;&#x4E00;&#x7EA7;</span>
+      builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">NewPage</span><span class="token punctuation">(</span>text<span class="token punctuation">:</span> <span class="token string">&apos;&#x53C2;&#x6570;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x63A5;&#x6536;&#x5230;&#x7684;&#x53C2;&#x6570;&#xFF1A;$value&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x80FD;push&#x5230;&#x65B0;&#x9875;&#x9762;&#x7136;&#x540E;&#x70B9;&#x51FB;&#x8FD4;&#x56DE;&#x6309;&#x94AE;&#x5C31;&#x80FD;&#x628A;&#x53C2;&#x6570;&#x8FD4;&#x56DE;&#x5230;push&#x5230;&#x5B83;&#x7684;&#x90A3;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x5728;then&#x6253;&#x5370;&#x51FA;&#x6765;&#x4E86;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter (21935): &#x63A5;&#x6536;&#x5230;&#x7684;&#x53C2;&#x6570;&#xFF1A;&#x6211;&#x662F;&#x8FD4;&#x56DE;&#x503C;
+</code></pre><p>&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x5DE6;&#x4E0A;&#x89D2;&#x90A3;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#x4F1A;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD9;&#x6837;&#x6253;&#x5370;&#x51FA;&#x6765;&#x7684;&#x5C31;&#x662F;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter (21935): &#x63A5;&#x6536;&#x5230;&#x7684;&#x53C2;&#x6570;&#xFF1A;null
+</code></pre><p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x5224;&#x65AD;&#xFF0C;&#x4E0D;&#x4E3A;&#x7A7A;&#x624D;&#x6267;&#x884C;&#x6253;&#x5370;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#x5C31;&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF1B;</p>
+<h1 id="&#x8DEF;&#x7531;&#x547D;&#x540D;">&#x8DEF;&#x7531;&#x547D;&#x540D;</h1>
+<p>&#x6211;&#x4EEC;&#x60F3;&#x6267;&#x884C;&#x8DDF;name&#x6709;&#x5173;&#x7684;Navigator&#x65B9;&#x6CD5;&#x5C31;&#x5FC5;&#x987B;&#x5148;&#x7ED9;&#x8DEF;&#x7531;&#x547D;&#x540D;&#xFF0C;&#x6BD4;&#x5982;<code>pushNamed</code>&#x65B9;&#x6CD5;,
+&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#x5728;<code>MaterialApp</code>&#x7684;<code>routes</code>&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x7684;&#x5B9A;&#x4E49;&#x4E3A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">final</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> WidgetBuilder<span class="token operator">&gt;</span> routes<span class="token punctuation">;</span>
+</code></pre>
+<h5 id="&#x6CE8;&#x518C;&#x793A;&#x4F8B;">&#x6CE8;&#x518C;&#x793A;&#x4F8B;</h5>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">&apos;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;&apos;</span><span class="token punctuation">,</span>
+      routes<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;newPage&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">NewPage</span><span class="token punctuation">(</span>text<span class="token punctuation">:</span> <span class="token string">&apos;&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#x540D;&#x7684;&#x65B0;&#x9875;&#x9762;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      home<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x7684;newPage&#x5C31;&#x6CE8;&#x518C;&#x597D;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x8BD5;&#x8BD5;<code>pushNamed</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Navigator<span class="token punctuation">.</span><span class="token function">pushNamed</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token string">&quot;newPage&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x63A5;&#x6536;&#x5230;&#x7684;&#x53C2;&#x6570;&#xFF1A;$value&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6548;&#x679C;&#x56FE;&#xFF1A;</p>
+<p><img src="../img/push2.gif" width="30%"></p>
+<h1 id="&#x8FD4;&#x56DE;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;">&#x8FD4;&#x56DE;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;</h1>
+<p>&#x8FD9;&#x8282;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<code>popUntil</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x8FD4;&#x56DE;&#x5230;&#x7684;&#x67D0;&#x4E2A;&#x8DEF;&#x7531;&#xFF0C;&#x9996;&#x5148;&#x518D;&#x6CE8;&#x518C;&#x4E24;&#x4E2A;&#x8DEF;&#x7531;&#x540D;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token metadata symbol">@override</span>
+Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+    title<span class="token punctuation">:</span> <span class="token string">&apos;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;&apos;</span><span class="token punctuation">,</span>
+    routes<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x65B0;&#x9875;&#x9762;&#x8DEF;&#x7531;&#x540D;</span>
+      <span class="token string">&quot;newPage&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">NewPage</span><span class="token punctuation">(</span>text<span class="token punctuation">:</span> <span class="token string">&apos;&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#x540D;&#x7684;&#x65B0;&#x9875;&#x9762;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">// &#x7B2C;&#x4E8C;&#x4E2A;&#x8DEF;&#x7531;&#x540D;</span>
+      <span class="token string">&quot;towPage&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">TowPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">// &#x9996;&#x9875;&#x8DEF;&#x7531;&#x540D;</span>
+      <span class="token string">&quot;/&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">new</span> <span class="token class-name">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token comment">//    home: new MyHomePage(), &#x8FD9;&#x4E2A;&#x5FC5;&#x987B;&#x6CE8;&#x91CA;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x6CE8;&#x518C;&#x4E86;&#x6839;&#x8DEF;&#x7531;&#x540D;&#xFF1A;&quot;/&quot;&#xFF0C;&#x5426;&#x5219;&#x62A5;&#x9519;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>TowPage:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">TowPage</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&apos;&#x9875;&#x9762;&#x4E8C;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">RaisedButton</span><span class="token punctuation">(</span>
+        onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Navigator<span class="token punctuation">.</span><span class="token function">popUntil</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> ModalRoute<span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span><span class="token string">&apos;/&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8FD4;&#x56DE;&#x5230;&#x9996;&#x9875;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7136;&#x540E;NewPage&#x628A;&#x8FD4;&#x56DE;&#x6539;&#x6210;<code>push</code>&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x9875;&#x9762;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">NewPage</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> String text<span class="token punctuation">;</span>
+
+  <span class="token function">NewPage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token metadata symbol">@required</span> <span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">,</span> <span class="token comment">// &#x63A5;&#x6536;&#x4E00;&#x4E2A;text&#x53C2;&#x6570;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;&#x65B0;&#x9875;&#x9762;&#xFF1A;$text&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">RaisedButton</span><span class="token punctuation">(</span>
+        onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Navigator<span class="token punctuation">.</span><span class="token function">pushNamed</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token string">&quot;towPage&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x9875;&#x9762;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6548;&#x679C;&#x56FE;&#xFF1A;</p>
+<p><img src="../img/push3.gif" width="30%"></p>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#x70B9;&#x51FB;&#x56DE;&#x5230;&#x9996;&#x9875;&#x6309;&#x94AE;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x5230;&#x9996;&#x9875;&#x4E86;&#x3002;</p>
 
                                 
                                 </section>
@@ -543,7 +863,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2：路由管理控制","level":"1.4.2","depth":2,"next":{"title":"2.3：开发路由管理框架","level":"1.4.3","depth":2,"path":"chapter2/my_route.md","ref":"chapter2/my_route.md","articles":[]},"previous":{"title":"2.1：局部刷新优化性能","level":"1.4.1","depth":2,"path":"chapter2/partial_refresh.md","ref":"chapter2/partial_refresh.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/route.md","mtime":"2020-01-17T09:36:05.888Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-17T09:38:46.699Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2：路由管理控制","level":"1.4.2","depth":2,"next":{"title":"2.3：开发路由管理框架","level":"1.4.3","depth":2,"path":"chapter2/my_route.md","ref":"chapter2/my_route.md","articles":[]},"previous":{"title":"2.1：局部刷新优化性能","level":"1.4.1","depth":2,"path":"chapter2/partial_refresh.md","ref":"chapter2/partial_refresh.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/route.md","mtime":"2020-01-21T08:24:56.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-21T08:25:19.428Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
