@@ -18,7 +18,8 @@
 *  [第2章：优化篇](chapter2/index.md)
     * [2.1：局部刷新优化性能](chapter2/partial_refresh.md)
     * [2.2：路由管理控制](chapter2/route.md)
-    * [2.3：开发路由管理框架](chapter2/my_route.md)
+    * [2.3：干掉context进行路由管理](chapter2/no_context_route.md)
+    * [2.4：开发路由管理框架](chapter2/my_route.md)
     
 *  [第3章：原理篇](chapter3/index.md)
     * [3.1：setState更新原理和流程](chapter3/setstate.md)
