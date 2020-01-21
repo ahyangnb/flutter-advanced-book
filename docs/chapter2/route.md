@@ -5,8 +5,8 @@
 * 路由入栈指打开一个新页面；
 * 路由出栈指一个页面关闭操作；
 * 路由管理指如何来管理路由栈；
-* Navigator是一个管理路由的widget；
-* NavigatorKey是一个管理路由的Key；
+* `Navigator`是一个管理路由的`widget`；
+* `NavigatorKey`是一个管理路由的`Key`；
 
 看完本文你将学会`路由的使用`、`管理好一个路由`、`路由传参`、`路由带参返回`、
 `路由记录`、`返回到指定路由`，
@@ -70,6 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: new FlatButton(child: new Text("push"), onPressed: () => push()),
     );
   }
+  /*
+   * 路由跳转方法
+   * */
   push() {
    // 拿到传过来的num然后+1 
     int num = widget.num + 1;
@@ -100,6 +103,9 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+  /*
+   * 路由跳转方法
+   * */
   push(context) {
     //导航到新路由
     Navigator.push(
@@ -179,6 +185,9 @@ class NewPage extends StatelessWidget {
 ```
 然后之前写好的push方法改下，用then接收：
 ```dart
+/*
+ * 路由跳转方法
+ * */
 push() {
   //导航到新路由
   Navigator.push(
@@ -225,6 +234,9 @@ class MyApp extends StatelessWidget {
 ```
 这样我们的newPage就注册好了，然后试试`pushNamed`方法：
 ```dart
+/*
+ * 路由跳转方法
+ * */
 push() {
   Navigator.pushNamed(context, "newPage").then((value) {
     if (value != null) print('接收到的参数：$value');

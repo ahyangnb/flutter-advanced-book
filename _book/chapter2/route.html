@@ -518,8 +518,8 @@
 <li>&#x8DEF;&#x7531;&#x5165;&#x6808;&#x6307;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x65B0;&#x9875;&#x9762;&#xFF1B;</li>
 <li>&#x8DEF;&#x7531;&#x51FA;&#x6808;&#x6307;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5173;&#x95ED;&#x64CD;&#x4F5C;&#xFF1B;</li>
 <li>&#x8DEF;&#x7531;&#x7BA1;&#x7406;&#x6307;&#x5982;&#x4F55;&#x6765;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x6808;&#xFF1B;</li>
-<li>Navigator&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x7684;widget&#xFF1B;</li>
-<li>NavigatorKey&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x7684;Key&#xFF1B;</li>
+<li><code>Navigator</code>&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x7684;<code>widget</code>&#xFF1B;</li>
+<li><code>NavigatorKey</code>&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x7684;<code>Key</code>&#xFF1B;</li>
 </ul>
 <p>&#x770B;&#x5B8C;&#x672C;&#x6587;&#x4F60;&#x5C06;&#x5B66;&#x4F1A;<code>&#x8DEF;&#x7531;&#x7684;&#x4F7F;&#x7528;</code>&#x3001;<code>&#x7BA1;&#x7406;&#x597D;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;</code>&#x3001;<code>&#x8DEF;&#x7531;&#x4F20;&#x53C2;</code>&#x3001;<code>&#x8DEF;&#x7531;&#x5E26;&#x53C2;&#x8FD4;&#x56DE;</code>&#x3001;
 <code>&#x8DEF;&#x7531;&#x8BB0;&#x5F55;</code>&#x3001;<code>&#x8FD4;&#x56DE;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;</code>&#xFF0C;
@@ -632,6 +632,9 @@
       body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">FlatButton</span><span class="token punctuation">(</span>child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;push&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
+  <span class="token comment">/*
+   * &#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65B9;&#x6CD5;
+   * */</span>
   <span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    <span class="token comment">// &#x62FF;&#x5230;&#x4F20;&#x8FC7;&#x6765;&#x7684;num&#x7136;&#x540E;+1 </span>
     int num <span class="token operator">=</span> widget<span class="token punctuation">.</span>num <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
@@ -659,6 +662,9 @@
       <span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
+  <span class="token comment">/*
+   * &#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65B9;&#x6CD5;
+   * */</span>
   <span class="token function">push</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">//&#x5BFC;&#x822A;&#x5230;&#x65B0;&#x8DEF;&#x7531;</span>
     Navigator<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
@@ -732,7 +738,10 @@ I/flutter (21935):   TapGestureRecognizer#72729
 <span class="token punctuation">}</span>
 </code></pre>
 <p>&#x7136;&#x540E;&#x4E4B;&#x524D;&#x5199;&#x597D;&#x7684;push&#x65B9;&#x6CD5;&#x6539;&#x4E0B;&#xFF0C;&#x7528;then&#x63A5;&#x6536;&#xFF1A;</p>
-<pre class="language-"><code class="lang-dart"><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/*
+ * &#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65B9;&#x6CD5;
+ * */</span>
+<span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">//&#x5BFC;&#x822A;&#x5230;&#x65B0;&#x8DEF;&#x7531;</span>
   Navigator<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
     context<span class="token punctuation">,</span>
@@ -770,7 +779,10 @@ I/flutter (21935):   TapGestureRecognizer#72729
 <span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x7684;newPage&#x5C31;&#x6CE8;&#x518C;&#x597D;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x8BD5;&#x8BD5;<code>pushNamed</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre class="language-"><code class="lang-dart"><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/*
+ * &#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65B9;&#x6CD5;
+ * */</span>
+<span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   Navigator<span class="token punctuation">.</span><span class="token function">pushNamed</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token string">&quot;newPage&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&apos;&#x63A5;&#x6536;&#x5230;&#x7684;&#x53C2;&#x6570;&#xFF1A;$value&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -876,7 +888,7 @@ Widget <span class="token function">build</span><span class="token punctuation">
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2：路由管理控制","level":"1.4.2","depth":2,"next":{"title":"2.3：干掉context进行路由管理","level":"1.4.3","depth":2,"path":"chapter2/no_context_route.md","ref":"chapter2/no_context_route.md","articles":[]},"previous":{"title":"2.1：局部刷新优化性能","level":"1.4.1","depth":2,"path":"chapter2/partial_refresh.md","ref":"chapter2/partial_refresh.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/route.md","mtime":"2020-01-21T08:24:56.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-21T08:35:09.232Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2：路由管理控制","level":"1.4.2","depth":2,"next":{"title":"2.3：干掉context进行路由管理","level":"1.4.3","depth":2,"path":"chapter2/no_context_route.md","ref":"chapter2/no_context_route.md","articles":[]},"previous":{"title":"2.1：局部刷新优化性能","level":"1.4.1","depth":2,"path":"chapter2/partial_refresh.md","ref":"chapter2/partial_refresh.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/route.md","mtime":"2020-01-21T08:56:33.907Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-21T09:06:27.910Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

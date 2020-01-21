@@ -512,7 +512,105 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5E72;&#x6389;context&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x7BA1;&#x7406;">&#x5E72;&#x6389;context&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x7BA1;&#x7406;</h1>
-<p>&#x4F5C;&#x8005;&#x6B63;&#x5728;&#x5077;&#x61D2;&#x3002;&#x3002;&#x3002;</p>
+<p>&#x770B;&#x4E0B;&#x6211;&#x4EEC;&#x4E0A;&#x8282;&#x8BFE;&#x7559;&#x7684;&#x62A5;&#x9519;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">&apos;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;&apos;</span><span class="token punctuation">,</span>
+      home<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+        appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">FlatButton</span><span class="token punctuation">(</span>child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;push&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">push</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/*
+   * &#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65B9;&#x6CD5;
+   * */</span>
+  <span class="token function">push</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//&#x5BFC;&#x822A;&#x5230;&#x65B0;&#x8DEF;&#x7531;</span>
+    Navigator<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+      context<span class="token punctuation">,</span>
+      <span class="token function">MaterialPageRoute</span><span class="token punctuation">(</span>
+      <span class="token comment">// MyHomePage&#x4E0D;&#x5199;&#x53C2;&#x6570;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;1</span>
+          builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre class="language-"><code>I/flutter (21935): &#x2550;&#x2550;&#x2561; EXCEPTION CAUGHT BY GESTURE &#x255E;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;
+I/flutter (21935): The following assertion was thrown while handling a gesture:
+I/flutter (21935): Navigator operation requested with a context that does not include a Navigator.
+I/flutter (21935): The context used to push or pop routes from the Navigator must be that of a widget that is a
+I/flutter (21935): descendant of a Navigator widget.
+I/flutter (21935): 
+I/flutter (21935): When the exception was thrown, this was the stack:
+I/flutter (21935): #0      Navigator.of.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span> <span class="token attr-name">closure</span><span class="token punctuation">&gt;</span></span> (package:flutter/src/widgets/navigator.dart:1475:9)
+I/flutter (21935): #1      Navigator.of (package:flutter/src/widgets/navigator.dart:1482:6)
+I/flutter (21935): #2      Navigator.push (package:flutter/src/widgets/navigator.dart:1107:22)
+I/flutter (21935): #3      MyApp.push (package:oc_project/main.dart:18:15)
+I/flutter (21935): #4      MyApp.build.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span> <span class="token attr-name">closure</span><span class="token punctuation">&gt;</span></span> (package:oc_project/main.dart:12:72)
+I/flutter (21935): #5      _InkResponseState._handleTap (package:flutter/src/material/ink_well.dart:654:14)
+I/flutter (21935): #6      _InkResponseState.build.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>anonymous</span> <span class="token attr-name">closure</span><span class="token punctuation">&gt;</span></span> (package:flutter/src/material/ink_well.dart:729:32)
+I/flutter (21935): #7      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:182:24)
+I/flutter (21935): #8      TapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:365:11)
+I/flutter (21935): #9      TapGestureRecognizer.handlePrimaryPointer (package:flutter/src/gestures/tap.dart:275:7)
+I/flutter (21935): #10     PrimaryPointerGestureRecognizer.handleEvent (package:flutter/src/gestures/recognizer.dart:455:9)
+I/flutter (21935): #11     PointerRouter._dispatch (package:flutter/src/gestures/pointer_router.dart:75:13)
+I/flutter (21935): #12     PointerRouter.route (package:flutter/src/gestures/pointer_router.dart:102:11)
+I/flutter (21935): #13     GestureBinding.handleEvent (package:flutter/src/gestures/binding.dart:218:19)
+I/flutter (21935): #14     GestureBinding.dispatchEvent (package:flutter/src/gestures/binding.dart:198:22)
+I/flutter (21935): #15     GestureBinding._handlePointerEvent (package:flutter/src/gestures/binding.dart:156:7)
+I/flutter (21935): #16     GestureBinding._flushPointerEventQueue (package:flutter/src/gestures/binding.dart:102:7)
+I/flutter (21935): #17     GestureBinding._handlePointerDataPacket (package:flutter/src/gestures/binding.dart:86:7)
+I/flutter (21935): #21     _invoke1 (dart:ui/hooks.dart:263:10)
+I/flutter (21935): #22     _dispatchPointerDataPacket (dart:ui/hooks.dart:172:5)
+I/flutter (21935): (elided 3 frames from package dart:async)
+I/flutter (21935): 
+I/flutter (21935): Handler: &quot;onTap&quot;
+I/flutter (21935): Recognizer:
+I/flutter (21935):   TapGestureRecognizer#72729
+</code></pre><p>&#x96BE;&#x9053;&#x6211;&#x4EEC;&#x53EA;&#x80FD;&#x628A;home&#x62BD;&#x51FA;&#x6210;&#x4E00;&#x4E2A;&#x7C7B;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5417;&#xFF1F;&#x5B9E;&#x9645;&#x4E0A;&#x8FD8;&#x6709;&#x53E6;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8FD9;&#x8282;&#x8981;&#x8BB2;&#x7684;&#x5E72;&#x6389;&#x90A3;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;<code>(context)</code>&#xFF0C;
+&#x6765;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x7BA1;&#x7406;&#xFF1B;</p>
+<h5 id="&#x5206;&#x6790;&#xFF1A;">&#x5206;&#x6790;&#xFF1A;</h5>
+<p>&#x4E0A;&#x8282;&#x6211;&#x63D0;&#x5230;<code>NavigatorKey</code>&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x7684;<code>Key</code>&#xFF0C;&#x548B;&#x4EEC;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E5F;&#x662F;&#x7528;&#x8FD9;&#x4E2A;<code>NavigatorKey</code>&#xFF1B;</p>
+<h5 id="&#x7075;&#x611F;&#x6765;&#x6E90;&#xFF1A;">&#x7075;&#x611F;&#x6765;&#x6E90;&#xFF1A;</h5>
+<p>&#x6211;&#x53BB;&#x67E5;&#x770B;<code>Navigator</code>&#x6E90;&#x7801;&#x7684;&#x65F6;&#x5019;&#x7A81;&#x7136;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;<code>NavigatorState</code>&#x7C7B;&#xFF0C;&#x800C;&#x4E14;&#x662F;&#x5177;&#x5907;<code>Navigator</code>&#x7684;&#x6240;&#x6709;&#x529F;&#x80FD;&#xFF1B;</p>
+<p><img src="../img/nav_state.png" width="50%"></p>
+<h1 id="&#x5F00;&#x59CB;&#x4E0A;&#x624B;">&#x5F00;&#x59CB;&#x4E0A;&#x624B;</h1>
+<p>&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>NavigatorKey</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<code>GlobalKey</code>&#x5168;&#x5C40;<code>Key</code>&#xFF0C;&#x7136;&#x540E;&#x8303;&#x578B;&#x662F;<code>NavigatorState</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">final</span> navGK <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GlobalKey</span><span class="token operator">&lt;</span>NavigatorState<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;<code>MaterialApp</code>&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;<code>Key</code>&#x4E3A;<code>navigatorKey</code>&#x7684;&#x503C;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">&apos;Flutter&#x9AD8;&#x7EA7;&#x8FDB;&#x9636;&apos;</span><span class="token punctuation">,</span>
+      navigatorKey<span class="token punctuation">:</span> navGK<span class="token punctuation">,</span><span class="token comment">// &#x8BBE;&#x7F6E;navigatorKey</span>
+      home<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+        appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">FlatButton</span><span class="token punctuation">(</span>child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;push&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;<code>Key</code>&#x6765;&#x8DF3;&#x8F6C;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//&#x5BFC;&#x822A;&#x5230;&#x65B0;&#x8DEF;&#x7531;</span>
+  navGK<span class="token punctuation">.</span>currentState<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+    <span class="token function">MaterialPageRoute</span><span class="token punctuation">(</span>
+      <span class="token comment">// MyHomePage&#x4E0D;&#x5199;&#x53C2;&#x6570;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;1</span>
+        builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6548;&#x679C;&#x56FE;&#xFF1A;</p>
+<p><img src="../img/route_no_context.gif" width="30%"></p>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x5B8C;&#x7F8E;&#x5E72;&#x6389;&#x4E0A;&#x4E0B;&#x6587;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x7BA1;&#x7406;&#x4E86;&#xFF1B;</p>
 
                                 
                                 </section>
@@ -556,7 +654,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3：干掉context进行路由管理","level":"1.4.3","depth":2,"next":{"title":"2.4：开发路由管理框架","level":"1.4.4","depth":2,"path":"chapter2/my_route.md","ref":"chapter2/my_route.md","articles":[]},"previous":{"title":"2.2：路由管理控制","level":"1.4.2","depth":2,"path":"chapter2/route.md","ref":"chapter2/route.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/no_context_route.md","mtime":"2020-01-21T08:35:01.379Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-21T08:35:09.232Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3：干掉context进行路由管理","level":"1.4.3","depth":2,"next":{"title":"2.4：开发路由管理框架","level":"1.4.4","depth":2,"path":"chapter2/my_route.md","ref":"chapter2/my_route.md","articles":[]},"previous":{"title":"2.2：路由管理控制","level":"1.4.2","depth":2,"path":"chapter2/route.md","ref":"chapter2/route.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/no_context_route.md","mtime":"2020-01-21T09:06:08.660Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-21T09:06:27.910Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
