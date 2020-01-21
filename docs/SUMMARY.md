@@ -25,9 +25,13 @@
     * [3.1：setState更新原理和流程](chapter3/setstate.md)
     * [3.2：runApp入口执行](chapter3/run_app.md)
     
-*  [第4章：架构篇](chapter4/index.md)
-    * [4.1：MVVM架构搭建](chapter4/mvvm.md)
-    * [4.2：MVC架构搭建](chapter4/mvc.md)
+*  [第4章：状态篇](chapter4/index.md)
+    * [4.1：Bloc-Stream入门](chapter4/steam.md)
+    * [4.2：Bloc-状态管理](chapter4/bloc.md)
+    
+*  [第5章：架构篇](chapter5/index.md)
+    * [5.1：MVVM架构搭建](chapter5/mvvm.md)
+    * [5.2：MVC架构搭建](chapter5/mvc.md)
     
 ---
 *  [Flutter面试题](https://github.com/ahyangnb/flutter_interview)
