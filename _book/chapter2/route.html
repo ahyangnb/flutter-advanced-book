@@ -567,7 +567,7 @@
 <li><code>NavigatorKey</code>&#x662F;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x7684;<code>Key</code>&#xFF1B;</li>
 </ul>
 <p>&#x770B;&#x5B8C;&#x672C;&#x6587;&#x4F60;&#x5C06;&#x5B66;&#x4F1A;<code>&#x8DEF;&#x7531;&#x7684;&#x4F7F;&#x7528;</code>&#x3001;<code>&#x7BA1;&#x7406;&#x597D;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;</code>&#x3001;<code>&#x8DEF;&#x7531;&#x4F20;&#x53C2;</code>&#x3001;<code>&#x8DEF;&#x7531;&#x5E26;&#x53C2;&#x8FD4;&#x56DE;</code>&#x3001;
-<code>&#x8DEF;&#x7531;&#x8BB0;&#x5F55;</code>&#x3001;<code>&#x8FD4;&#x56DE;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;</code>&#xFF0C;
+<code>&#x8DEF;&#x7531;&#x8BB0;&#x5F55;</code>&#x3001;<code>&#x8FD4;&#x56DE;&#x5230;&#x6307;&#x5B9A;&#x8DEF;&#x7531;</code>&#x3001;<code>&#x8DEF;&#x7531;&#x52A8;&#x753B;</code>&#xFF0C;
 &#x7136;&#x540E;&#x4F7F;&#x7528;pop&#x64CD;&#x4F5C;&#x6765;&#x8FDB;&#x884C;&#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E2A;&#x8DEF;&#x7531;&#xFF1B;</p>
 <h1 id="navigator">Navigator</h1>
 <table>
@@ -890,6 +890,99 @@ Widget <span class="token function">build</span><span class="token punctuation">
 <p>&#x6548;&#x679C;&#x56FE;&#xFF1A;</p>
 <p><img src="../img/push3.gif" width="30%"></p>
 <p>&#x8FD9;&#x6837;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#x70B9;&#x51FB;&#x56DE;&#x5230;&#x9996;&#x9875;&#x6309;&#x94AE;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x5230;&#x9996;&#x9875;&#x4E86;&#x3002;</p>
+<h1 id="&#x8DEF;&#x7531;&#x8BB0;&#x5F55;">&#x8DEF;&#x7531;&#x8BB0;&#x5F55;</h1>
+<p>&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x8DF3;&#x8F6C;&#x4E00;&#x4E2A;&#x65B0;&#x8DEF;&#x7531;&#x7136;&#x540E;&#x60F3;&#x8FD4;&#x56DE;&#x5230;&#x4E4B;&#x524D;&#x8DF3;&#x8F6C;&#x8FC7;&#x7684;&#x67D0;&#x4E2A;&#x8DEF;&#x7531;&#x96BE;&#x9053;&#x6BCF;&#x4E2A;&#x90FD;&#x8981;&#x6CE8;&#x518C;&#x8DEF;&#x7531;&#x540D;&#x5417;&#xFF1F;&#x90A3;&#x6837;&#x7684;&#x8BDD;&#x592A;&#x9EBB;&#x70E6;&#x4E86;&#xFF0C;
+&#x8FD9;&#x8282;&#x5C31;&#x6559;&#x5927;&#x5BB6;<code>&#x8DEF;&#x7531;&#x8BB0;&#x5F55;</code>&#xFF0C;&#x53EA;&#x8981;&#x6211;&#x4EEC;&#x8DF3;&#x8F6C;&#x8FC7;&#x67D0;&#x4E2A;&#x8DEF;&#x7531;&#x5C31;&#x8BB0;&#x5F55;&#x8D77;&#x6765;&#xFF0C;
+&#x7136;&#x540E;&#x6700;&#x540E;&#x9762;&#x7684;&#x8DEF;&#x7531;&#x60F3;&#x8FD4;&#x56DE;&#x5230;&#x524D;&#x9762;&#x7684;&#x4E09;&#x4E2A;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x90FD;&#x4E0D;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x540D;&#x5B57;&#x4E86;&#x3002;</p>
+<h5 id="&#x914D;&#x7F6E;&#xFF1A;">&#x914D;&#x7F6E;&#xFF1A;</h5>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/*
+ * &#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x65B9;&#x6CD5;
+ * */</span>
+<span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Navigator<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+    context<span class="token punctuation">,</span>
+    <span class="token function">MaterialPageRoute</span><span class="token punctuation">(</span>
+      builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      settings<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">RouteSettings</span><span class="token punctuation">(</span>
+        name<span class="token punctuation">:</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toStringShort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// &#x8BBE;&#x7F6E;&#x7684;&#x8DEF;&#x7531;&#x540D;</span>
+        isInitialRoute<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// &#x662F;&#x5426;&#x521D;&#x59CB;&#x8DEF;&#x7531;</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x628A;&#x6211;&#x4EEC;&#x8981;&#x8DF3;&#x8F6C;&#x5230;&#x7684;<code>MyHomePage</code>&#x8DF3;&#x8F6C;&#x4E86;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x8BB0;&#x5F55;&#x4E86;&#x8DEF;&#x7531;&#x540D;&#x5B57;&#xFF1B;</p>
+<h5 id="&#x4F7F;&#x7528;&#xFF1A;">&#x4F7F;&#x7528;&#xFF1A;</h5>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">class</span> <span class="token class-name">TowPage</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&apos;&#x9875;&#x9762;&#x4E8C;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">RaisedButton</span><span class="token punctuation">(</span>
+        onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Navigator<span class="token punctuation">.</span><span class="token function">popUntil</span><span class="token punctuation">(</span>
+          context<span class="token punctuation">,</span>
+          <span class="token comment">// &#x4F7F;&#x7528;&#x8BB0;&#x5F55;&#x597D;&#x7684;&#x8DEF;&#x7531;&#x540D;&#x5B57;</span>
+          ModalRoute<span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span><span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toStringShort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8FD4;&#x56DE;&#x5230;MyHomePage&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x7F8E;&#x7684;&#x8FD4;&#x56DE;&#x5230;<code>MyHomePage</code>&#x9875;&#x9762;&#x4E86;&#xFF0C;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x3002;</p>
+<h1 id="&#x8DEF;&#x7531;&#x52A8;&#x753B;&#x7406;&#x8BBA;">&#x8DEF;&#x7531;&#x52A8;&#x753B;&#x7406;&#x8BBA;</h1>
+<p>&#x8DEF;&#x7531;&#x52A8;&#x753B;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8DF3;&#x8F6C;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x6808;&#x7684;&#x65F6;&#x5019;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x8FC7;&#x5EA6;&#x52A8;&#x753B;&#xFF0C;&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x52A8;&#x753B;&#xFF1A;
+<code>MaterialPageRoute</code>&#x3001;<code>CupertinoPageRoute</code>&#xFF1B;</p>
+<h5 id="&#x89E3;&#x91CA;&#xFF1A;">&#x89E3;&#x91CA;&#xFF1A;</h5>
+<ul>
+<li>MaterialPageRoute&#xFF1A;&#x5B58;&#x5728;&#x4E8E;&#xFF1A;<code>import &apos;package:flutter/material.dart&apos;;</code>&#x5305;&#xFF1B;</li>
+<li>CupertinoPageRoute&#xFF1A;&#x5B58;&#x5728;&#x4E8E;&#xFF1A;<code>import &apos;package:flutter/cupertino.dart&apos;;</code>&#x5305;&#xFF1B;</li>
+</ul>
+<h5 id="&#x4F7F;&#x7528;&#xFF1A;">&#x4F7F;&#x7528;&#xFF1A;</h5>
+<p>&#x76F4;&#x63A5;&#x628A;&#x6211;&#x4EEC;&#x7528;&#x6765;push&#x7684;<code>MaterialPageRoute</code>&#x66F4;&#x6539;&#x4E3A;&#xFF1A;<code>CupertinoPageRoute</code>&#x5373;&#x53EF;&#x67E5;&#x770B;&#x52A8;&#x753B;&#x6548;&#x679C;&#xFF1B;</p>
+<h1 id="&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x52A8;&#x753B;">&#x81EA;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x52A8;&#x753B;</h1>
+<p>&#x9996;&#x5148;&#x7F16;&#x5199;&#x597D;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x52A8;&#x753B;&#xFF0C;&#x8DEF;&#x7531;&#x52A8;&#x753B;&#x5FC5;&#x987B;&#x7EE7;&#x627F;&#x81F3;<code>PageRouteBuilder</code>&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">/*
+* &#x6E10;&#x53D8;&#x52A8;&#x753B;
+* */</span>
+<span class="token keyword">class</span> <span class="token class-name">FadeRoute</span> <span class="token keyword">extends</span> <span class="token class-name">PageRouteBuilder</span> <span class="token punctuation">{</span>
+  <span class="token comment">// &#x4F20;&#x8FC7;&#x6765;&#x7684;&#x9875;&#x9762;page</span>
+  <span class="token keyword">final</span> Widget page<span class="token punctuation">;</span>
+  <span class="token comment">// &#x6784;&#x9020;</span>
+  <span class="token function">FadeRoute</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>
+    pageBuilder<span class="token punctuation">:</span> <span class="token punctuation">(</span>
+        BuildContext context<span class="token punctuation">,</span>
+        Animation<span class="token operator">&lt;</span>double<span class="token operator">&gt;</span> animation<span class="token punctuation">,</span>
+        Animation<span class="token operator">&lt;</span>double<span class="token operator">&gt;</span> secondaryAnimation<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+    page<span class="token punctuation">,</span>
+    transitionsBuilder<span class="token punctuation">:</span> <span class="token punctuation">(</span>
+        BuildContext context<span class="token punctuation">,</span>
+        Animation<span class="token operator">&lt;</span>double<span class="token operator">&gt;</span> animation<span class="token punctuation">,</span>
+        Animation<span class="token operator">&lt;</span>double<span class="token operator">&gt;</span> secondaryAnimation<span class="token punctuation">,</span>
+        Widget child<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+        <span class="token function">FadeTransition</span><span class="token punctuation">(</span>
+          opacity<span class="token punctuation">:</span> animation<span class="token punctuation">,</span> <span class="token comment">// &#x900F;&#x660E;&#x5EA6;</span>
+          child<span class="token punctuation">:</span> child<span class="token punctuation">,</span> <span class="token comment">// &#x9875;&#x9762;&#x5B58;&#x653E;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x7136;&#x540E;push&#x65B9;&#x6CD5;&#x76F4;&#x63A5;&#x66F4;&#x6539;&#x4E3A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-dart"><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Navigator<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+    context<span class="token punctuation">,</span>
+    <span class="token function">FadeRoute</span><span class="token punctuation">(</span>page<span class="token punctuation">:</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x66F4;&#x591A;&#x8DEF;&#x7531;&#x52A8;&#x753B;&#x76F4;&#x63A5;&#x770B;&#xFF1A;</p>
+<ul>
+<li><a href="https://github.com/fluttercandies/nav_router/tree/master/lib/routers" target="_blank">https://github.com/fluttercandies/nav_router/tree/master/lib/routers</a></li>
+</ul>
 
                                 
                                 </section>
@@ -933,7 +1026,7 @@ Widget <span class="token function">build</span><span class="token punctuation">
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2：路由管理控制","level":"1.4.2","depth":2,"next":{"title":"2.3：干掉context进行路由管理","level":"1.4.3","depth":2,"path":"chapter2/no_context_route.md","ref":"chapter2/no_context_route.md","articles":[]},"previous":{"title":"2.1：局部刷新优化性能","level":"1.4.1","depth":2,"path":"chapter2/partial_refresh.md","ref":"chapter2/partial_refresh.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/route.md","mtime":"2020-01-21T08:56:33.907Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-21T16:11:48.494Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2：路由管理控制","level":"1.4.2","depth":2,"next":{"title":"2.3：干掉context进行路由管理","level":"1.4.3","depth":2,"path":"chapter2/no_context_route.md","ref":"chapter2/no_context_route.md","articles":[]},"previous":{"title":"2.1：局部刷新优化性能","level":"1.4.1","depth":2,"path":"chapter2/partial_refresh.md","ref":"chapter2/partial_refresh.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","prism","donate","-highlight"],"root":"docs","styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"lang":{"shell":"bash"}},"ace":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"入群","title":"","wechat":"http://www.flutterj.com/content/uploadfile/201903/64821551854137.png","wechatText":"加入群聊交流"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"q1 zonggeu@163.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Flutter高级进阶》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"<div><img height=20 style='position:relative; top:5px; padding-right:5px ' src='http://www.flutterj.com/favicon.ico'/> Flutter教程网</div>":"http://www.flutterj.com/"}},"gitbook":"*","description":"记录Gitbook的配置和一些插件的使用"},"file":{"path":"chapter2/route.md","mtime":"2020-01-22T08:29:18.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-22T08:29:45.601Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

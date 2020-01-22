@@ -9,7 +9,7 @@
 * `NavigatorKey`是一个管理路由的`Key`；
 
 看完本文你将学会`路由的使用`、`管理好一个路由`、`路由传参`、`路由带参返回`、
-`路由记录`、`返回到指定路由`，
+`路由记录`、`返回到指定路由`、`路由动画`，
 然后使用pop操作来进行回退到某个路由；
 
 # Navigator
@@ -308,3 +308,104 @@ class NewPage extends StatelessWidget {
 <img src="../img/push3.gif" width="30%">
 
 这样就实现了到第二个页面的时候点击回到首页按钮就直接返回到首页了。
+
+# 路由记录
+我们每次跳转一个新路由然后想返回到之前跳转过的某个路由难道每个都要注册路由名吗？那样的话太麻烦了，
+这节就教大家`路由记录`，只要我们跳转过某个路由就记录起来，
+然后最后面的路由想返回到前面的三个中的某个都不需要配置名字了。
+
+##### 配置：
+```dart
+/*
+ * 路由跳转方法
+ * */
+push() {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => MyHomePage(),
+      settings: new RouteSettings(
+        name: MyHomePage().toStringShort(), // 设置的路由名
+        isInitialRoute: false, // 是否初始路由
+      ),
+    ),
+  );
+}
+```
+这样我们就把我们要跳转到的`MyHomePage`跳转了，同时还记录了路由名字；
+
+##### 使用：
+```dart
+class TowPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: new AppBar(title: new Text('页面二')),
+      body: new RaisedButton(
+        onPressed: () => Navigator.popUntil(
+          context,
+          // 使用记录好的路由名字
+          ModalRoute.withName(MyHomePage().toStringShort()),
+        ),
+        child: new Text("返回到MyHomePage"),
+      ),
+    );
+  }
+}
+```
+这样我们就可以完美的返回到`MyHomePage`页面了，使用起来非常方便。
+
+# 路由动画理论
+路由动画就是我们跳转到下一个路由栈的时候所产生的过度动画，官方提供了两个动画：
+`MaterialPageRoute`、`CupertinoPageRoute`；
+
+##### 解释：
+* MaterialPageRoute：存在于：`import 'package:flutter/material.dart';`包；
+* CupertinoPageRoute：存在于：`import 'package:flutter/cupertino.dart';`包；
+
+##### 使用：
+直接把我们用来push的`MaterialPageRoute`更改为：`CupertinoPageRoute`即可查看动画效果；
+
+# 自定义路由动画
+首先编写好一个路由动画，路由动画必须继承至`PageRouteBuilder`：
+```dart
+/*
+* 渐变动画
+* */
+class FadeRoute extends PageRouteBuilder {
+  // 传过来的页面page
+  final Widget page;
+  // 构造
+  FadeRoute({this.page})
+      : super(
+    pageBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        ) =>
+    page,
+    transitionsBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        Widget child,
+        ) =>
+        FadeTransition(
+          opacity: animation, // 透明度
+          child: child, // 页面存放
+        ),
+  );
+}
+```
+然后push方法直接更改为：
+```dart
+push() {
+  Navigator.push(
+    context,
+    FadeRoute(page: MyHomePage()),
+  );
+}
+```
+
+更多路由动画直接看：
+* [https://github.com/fluttercandies/nav_router/tree/master/lib/routers](https://github.com/fluttercandies/nav_router/tree/master/lib/routers)
