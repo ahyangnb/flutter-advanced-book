@@ -4,6 +4,7 @@
 创办者，微信公众号"[Flutter前线](http://www.flutterj.com/content/uploadfile/202001/87441578227752.png)"小编，
 [FlutterCandies](https://github.com/fluttercandies)开源组织成员，具有：
 [wechat_flutter](https://github.com/fluttercandies/wechat_flutter)，
+[ncov_2019](https://github.com/fluttercandies/ncov_2019)，
 [nav_router](https://github.com/fluttercandies/nav_router)等开源项目作品，
 视频课程：[Flutter实用例子进阶课程](http://www.flutterj.com/?post=124) ，
 [高仿谷歌翻译项目课程](http://www.flutterj.com/?post=73)，

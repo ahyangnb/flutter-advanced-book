@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b46192b1-bdd3-4da5-8f70-dcda4123d019" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/chapter1/screen_widget.md" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_book/chapter1/index.html" afterPath="$PROJECT_DIR$/_book/chapter1/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/chapter1/partial_refresh.html" afterPath="$PROJECT_DIR$/_book/chapter1/partial_refresh.html" />
-      <change beforePath="$PROJECT_DIR$/_book/chapter1/screen_algorithm.html" afterPath="$PROJECT_DIR$/_book/chapter1/screen_algorithm.html" />
-      <change beforePath="$PROJECT_DIR$/_book/chapter2/index.html" afterPath="$PROJECT_DIR$/_book/chapter2/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/chapter2/setstate.html" afterPath="$PROJECT_DIR$/_book/chapter2/setstate.html" />
-      <change beforePath="$PROJECT_DIR$/_book/chapter3/dart_interview.html" afterPath="$PROJECT_DIR$/_book/chapter3/dart_interview.html" />
-      <change beforePath="$PROJECT_DIR$/_book/chapter3/flutter_framwork.html" afterPath="$PROJECT_DIR$/_book/chapter3/flutter_framwork.html" />
-      <change beforePath="$PROJECT_DIR$/_book/chapter3/index.html" afterPath="$PROJECT_DIR$/_book/chapter3/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/index.html" afterPath="$PROJECT_DIR$/_book/index.html" />
-      <change beforePath="$PROJECT_DIR$/_book/search_index.json" afterPath="$PROJECT_DIR$/_book/search_index.json" />
-      <change beforePath="$PROJECT_DIR$/_book/search_plus_index.json" afterPath="$PROJECT_DIR$/_book/search_plus_index.json" />
-      <change beforePath="$PROJECT_DIR$/docs/SUMMARY.md" afterPath="$PROJECT_DIR$/docs/SUMMARY.md" />
-      <change beforePath="$PROJECT_DIR$/docs/chapter1/index.md" afterPath="$PROJECT_DIR$/docs/chapter1/index.md" />
-      <change beforePath="$PROJECT_DIR$/docs/chapter1/screen_algorithm.md" afterPath="$PROJECT_DIR$/docs/chapter1/screen_algorithm.md" />
+    <list default="true" id="b46192b1-bdd3-4da5-8f70-dcda4123d019" name="Default" comment="commit theme ok change">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,52 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/chapter1/index.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="45">
-                <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/SUMMARY.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen_widget.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/chapter1/screen_widget.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="75">
-                <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen_algorithm.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docs/chapter1/screen_algorithm.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="105">
-                <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="19" />
-                <folding>
-                  <marker date="1578526731219" expanded="true" signature="135:182" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="230:278" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="328:376" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="429:480" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="531:580" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="632:682" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="737:796" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="855:883" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="938:1014" ph="{...}" />
-                  <marker date="1578526731219" expanded="true" signature="1075:1129" ph="{...}" />
-                </folding>
-              </first_editor>
-              <second_editor />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/chapter2/my_route.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2846">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -86,8 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#f5f2f0</find>
-      <find>e.setTimeout</find>
       <find>sidebar</find>
       <find>.markdown-section code</find>
       <find>markdown-section</find>
@@ -99,7 +60,25 @@
       <find>scheduleBuildFor</find>
       <find>engine.cc</find>
       <find>f7f7f7</find>
+      <find>Color类型</find>
+      <find>`Color`类型，</find>
+      <find>类型</find>
+      <find>Theme</find>
+      <find>highlightColor</find>
+      <find>inflateWidget</find>
+      <find>transientCallbacks</find>
+      <find>回调</find>
+      <find>flushSemantics</find>
+      <find>buildScope</find>
+      <find>package_info</find>
       <find>局部刷新优化性能</find>
+      <find>2.2</find>
+      <find>30</find>
+      <find>pushNamedAndRemoveUntil</find>
+      <find>pushAndRemoveUntil</find>
+      <find>新页面</find>
+      <find>push</find>
+      <find>效果图</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -112,11 +91,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -131,42 +105,49 @@
         <option value="$PROJECT_DIR$/SUMMARY.md" />
         <option value="$PROJECT_DIR$/docs/preface.md" />
         <option value="$PROJECT_DIR$/book.json" />
-        <option value="$PROJECT_DIR$/docs/chapter2/index.md" />
         <option value="$PROJECT_DIR$/docs/chapter3/dart_interview.md" />
-        <option value="$PROJECT_DIR$/docs/chapter3/index.md" />
         <option value="$PROJECT_DIR$/_book/gitbook/gitbook-plugin-prism/prism.css" />
         <option value="$PROJECT_DIR$/node_modules/prismjs/themes/prism.css" />
-        <option value="$PROJECT_DIR$/docs/chapter2/setstate.md" />
-        <option value="$PROJECT_DIR$/docs/README.md" />
         <option value="$PROJECT_DIR$/docs/chapter1/partial_refresh.md" />
         <option value="$PROJECT_DIR$/docs/chapter3/flutter_framwork.md" />
-        <option value="$PROJECT_DIR$/docs/SUMMARY.md" />
-        <option value="$PROJECT_DIR$/docs/chapter1/index.md" />
         <option value="$PROJECT_DIR$/docs/chapter1/screen_widget.md" />
         <option value="$PROJECT_DIR$/docs/chapter1/screen_algorithm.md" />
+        <option value="$PROJECT_DIR$/docs/chapter1/theme.md" />
+        <option value="$PROJECT_DIR$/docs/chapter1/widget_offset.md" />
+        <option value="$PROJECT_DIR$/docs/chapter2/setstate.md" />
+        <option value="$PROJECT_DIR$/docs/chapter2/run_app.md" />
+        <option value="$PROJECT_DIR$/docs/chapter0/mac_os.md" />
+        <option value="$PROJECT_DIR$/docs/chapter0/windows.md" />
+        <option value="$PROJECT_DIR$/docs/chapter3/mvvm.md" />
+        <option value="$PROJECT_DIR$/docs/chapter3/index.md" />
+        <option value="$PROJECT_DIR$/docs/chapter3/mvc.md" />
+        <option value="$PROJECT_DIR$/docs/chapter1/upgrade.md" />
+        <option value="$PROJECT_DIR$/docs/chapter0/index.md" />
+        <option value="$PROJECT_DIR$/docs/chapter1/index.md" />
+        <option value="$PROJECT_DIR$/docs/chapter3/run_app.md" />
+        <option value="$PROJECT_DIR$/docs/chapter2/index.md" />
+        <option value="$PROJECT_DIR$/docs/chapter2/no_context_route.md" />
+        <option value="$PROJECT_DIR$/docs/chapter4/steam.md" />
+        <option value="$PROJECT_DIR$/docs/chapter4/index.md" />
+        <option value="$PROJECT_DIR$/docs/chapter4/bloc.md" />
+        <option value="$PROJECT_DIR$/docs/SUMMARY.md" />
+        <option value="$PROJECT_DIR$/docs/chapter2/route.md" />
+        <option value="$PROJECT_DIR$/docs/chapter2/my_route.md" />
+        <option value="$PROJECT_DIR$/docs/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1122" />
-    <option name="height" value="803" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="89" />
+    <option name="width" value="1440" />
+    <option name="height" value="811" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,34 +164,64 @@
               <item name="flutter-advanced-book" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter-advanced-book" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter-advanced-book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter-advanced-book" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
               <item name="chapter1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter-advanced-book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter-advanced-book" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter-advanced-book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter-advanced-book" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter-advanced-book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter-advanced-book" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter-advanced-book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter-advanced-book" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter5" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/docs/chapter2" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/chapter6" />
       <recent name="$PROJECT_DIR$/docs/img" />
+      <recent name="$PROJECT_DIR$/docs/chapter2" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/_book" />
-      <recent name="$PROJECT_DIR$/img" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/img" />
+      <recent name="$PROJECT_DIR$/docs" />
+      <recent name="$PROJECT_DIR$/docs/chapter2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -226,83 +237,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-    </configuration>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -312,9 +246,27 @@
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -425,225 +377,293 @@
       <option name="project" value="LOCAL" />
       <updated>1578500716369</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="commit build offset widget">
+      <created>1578793554624</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1578793554624</updated>
+    </task>
+    <task id="LOCAL-00016" summary="commit build text">
+      <created>1578910049314</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1578910049314</updated>
+    </task>
+    <task id="LOCAL-00017" summary="commit run app">
+      <created>1578971128976</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1578971128976</updated>
+    </task>
+    <task id="LOCAL-00018" summary="commit theme start">
+      <created>1578997924396</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1578997924396</updated>
+    </task>
+    <task id="LOCAL-00019" summary="commit theme ok">
+      <created>1579001864040</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1579001864040</updated>
+    </task>
+    <task id="LOCAL-00020" summary="commit theme ok change">
+      <created>1579004580351</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1579004580351</updated>
+    </task>
+    <task id="LOCAL-00021" summary="commit theme ok change 1">
+      <created>1579004907632</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1579004907632</updated>
+    </task>
+    <task id="LOCAL-00022" summary="commit upgrade">
+      <created>1579005447941</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1579005447941</updated>
+    </task>
+    <task id="LOCAL-00023" summary="commit theme dark 1">
+      <created>1579049673559</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1579049673559</updated>
+    </task>
+    <task id="LOCAL-00024" summary="commit theme dark ok">
+      <created>1579076268678</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1579076268678</updated>
+    </task>
+    <task id="LOCAL-00025" summary="commit theme upgrade 1">
+      <created>1579090417079</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1579090417079</updated>
+    </task>
+    <task id="LOCAL-00026" summary="commit widget offset ok">
+      <created>1579092451528</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1579092451528</updated>
+    </task>
+    <task id="LOCAL-00027" summary="commit run app ok">
+      <created>1579099661817</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1579099661817</updated>
+    </task>
+    <task id="LOCAL-00028" summary="commit environment">
+      <created>1579100274688</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1579100274688</updated>
+    </task>
+    <task id="LOCAL-00029" summary="commit mvvm and mvc">
+      <created>1579100679008</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1579100679008</updated>
+    </task>
+    <task id="LOCAL-00030" summary="commit pubspec">
+      <created>1579164698537</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1579164698537</updated>
+    </task>
+    <task id="LOCAL-00031" summary="commit update gif">
+      <created>1579185438706</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1579185438707</updated>
+    </task>
+    <task id="LOCAL-00032" summary="commit chapter0">
+      <created>1579238875570</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1579238875570</updated>
+    </task>
+    <task id="LOCAL-00033" summary="commit optimization">
+      <created>1579253958717</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1579253958717</updated>
+    </task>
+    <task id="LOCAL-00034" summary="commit route once ok">
+      <created>1579595162401</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1579595162401</updated>
+    </task>
+    <task id="LOCAL-00035" summary="commit context route">
+      <created>1579595768636</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1579595768636</updated>
+    </task>
+    <task id="LOCAL-00036" summary="commit route no context">
+      <created>1579597625767</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1579597625767</updated>
+    </task>
+    <task id="LOCAL-00037" summary="commit bloc">
+      <created>1579623142184</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1579623142184</updated>
+    </task>
+    <task id="LOCAL-00038" summary="commit route fix">
+      <created>1579681826561</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1579681826561</updated>
+    </task>
+    <task id="LOCAL-00039" summary="commit my route">
+      <created>1579684971876</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1579684971876</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1122" height="803" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2962963" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32909605" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26694915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Resources Explorer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22603719" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Captures" order="3" weight="0.25" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49713877" visible="true" weight="0.27831325" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5028612" side_tool="true" weight="0.28072625" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.37988827" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="right" id="Flutter Performance" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Flutter Inspector" order="5" />
+      <window_info anchor="right" id="Flutter Outline" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit update test" />
-    <MESSAGE value="commit update version" />
-    <MESSAGE value="commit update 2" />
-    <MESSAGE value="commit update 3" />
-    <MESSAGE value="commit update 4" />
-    <MESSAGE value="commit update 4 partial_refresh" />
-    <MESSAGE value="commit setstate" />
-    <MESSAGE value="commit update setstate" />
-    <MESSAGE value="commit update 1" />
-    <MESSAGE value="commit 局部刷新优化性能" />
-    <MESSAGE value="commit img" />
-    <MESSAGE value="commit build part" />
-    <MESSAGE value="commit build part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit build part 1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+    <MESSAGE value="commit build offset widget" />
+    <MESSAGE value="commit build text" />
+    <MESSAGE value="commit run app" />
+    <MESSAGE value="commit theme start" />
+    <MESSAGE value="commit theme ok" />
+    <MESSAGE value="commit theme ok change" />
+    <MESSAGE value="commit theme ok change 1" />
+    <MESSAGE value="commit upgrade" />
+    <MESSAGE value="commit theme dark 1" />
+    <MESSAGE value="commit theme dark ok" />
+    <MESSAGE value="commit theme upgrade 1" />
+    <MESSAGE value="commit widget offset ok" />
+    <MESSAGE value="commit run app ok" />
+    <MESSAGE value="commit environment" />
+    <MESSAGE value="commit mvvm and mvc" />
+    <MESSAGE value="commit pubspec" />
+    <MESSAGE value="commit update gif" />
+    <MESSAGE value="commit chapter0" />
+    <MESSAGE value="commit optimization" />
+    <MESSAGE value="commit route once ok" />
+    <MESSAGE value="commit context route" />
+    <MESSAGE value="commit route no context" />
+    <MESSAGE value="commit bloc" />
+    <MESSAGE value="commit route fix" />
+    <MESSAGE value="commit my route" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit my route" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/prismjs/themes/prism.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/preface.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="30">
-            <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_book/intro.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="90">
-            <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter1/mobile_development_intro.md" />
-    <entry file="file://$PROJECT_DIR$/docs/chapter3/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" column="32" lean-forward="true" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter3/dart_interview.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="90">
-            <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter1/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter2/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" column="40" lean-forward="false" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter2/setstate.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1231">
-            <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
-            <folding>
-              <marker date="1578495516854" expanded="true" signature="439:485" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="627:927" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="1191:1692" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="2044:2525" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="2698:2756" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="2877:3301" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="2995:3080" ph="//..." />
-              <marker date="1578495516854" expanded="true" signature="2995:3095" ph="//..." />
-              <marker date="1578495516854" expanded="true" signature="2995:3096" ph="//..." />
-              <marker date="1578495516854" expanded="true" signature="3918:4287" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="6290:7341" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="7583:8477" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="8835:9191" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="9435:9650" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="9981:10369" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/SUMMARY.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="165">
-            <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.MD">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chapter1/README.md" />
-    <entry file="file://$PROJECT_DIR$/chapter1/section1.md" />
-    <entry file="file://$PROJECT_DIR$/chapter1/section2.md" />
-    <entry file="file://$PROJECT_DIR$/chapter2/section2.md" />
-    <entry file="file://$PROJECT_DIR$/chapter2/section1.md" />
-    <entry file="file://$PROJECT_DIR$/chapter2/README.md" />
     <entry file="file://$PROJECT_DIR$/end/README.md" />
     <entry file="file://$PROJECT_DIR$/SUMMARY.md" />
     <entry file="file://$PROJECT_DIR$/build.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -667,7 +687,7 @@
     <entry file="file://$PROJECT_DIR$/_book/gitbook/gitbook.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="0" column="7514" lean-forward="false" selection-start-line="0" selection-start-column="7514" selection-end-line="0" selection-end-column="7514" />
+          <caret column="7514" selection-start-column="7514" selection-end-column="7514" />
         </state>
       </provider>
     </entry>
@@ -675,7 +695,7 @@
     <entry file="file://$PROJECT_DIR$/node_modules/gitbook-plugin-ace/assets/ace/mode-autohotkey.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="0" column="43526" lean-forward="true" selection-start-line="0" selection-start-column="43526" selection-end-line="0" selection-end-column="43526" />
+          <caret column="43526" lean-forward="true" selection-start-column="43526" selection-end-column="43526" />
         </state>
       </provider>
     </entry>
@@ -690,203 +710,65 @@
     <entry file="file://$PROJECT_DIR$/docs/chapter1/mobile_development_intro.md" />
     <entry file="file://$PROJECT_DIR$/docs/preface.md" />
     <entry file="file://$PROJECT_DIR$/docs/intro.md" />
-    <entry file="file://$PROJECT_DIR$/docs/chapter3/dart_interview.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="90">
-            <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter3/index.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="41" lean-forward="false" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" column="32" lean-forward="true" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter3/dart_interview.md" />
     <entry file="file://$PROJECT_DIR$/_book/gitbook/gitbook-plugin-prism/prism.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="128" column="17" lean-forward="true" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_book/gitbook/theme.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="0" column="1720" lean-forward="true" selection-start-line="0" selection-start-column="1720" selection-end-line="0" selection-end-column="1720" />
-          <folding />
+          <caret column="1720" lean-forward="true" selection-start-column="1720" selection-end-column="1720" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_book/gitbook/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="8" column="7920" lean-forward="false" selection-start-line="8" selection-start-column="7920" selection-end-line="8" selection-end-column="7920" />
-          <folding />
+          <caret line="8" column="7920" selection-start-line="8" selection-start-column="7920" selection-end-line="8" selection-end-column="7920" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/img/avatar.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_book/search_index.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="0" column="905" lean-forward="false" selection-start-line="0" selection-start-column="905" selection-end-line="0" selection-end-column="905" />
-          <folding />
+          <caret column="905" selection-start-column="905" selection-end-column="905" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/prismjs/themes/prism.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
-          <caret line="61" column="17" lean-forward="false" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-          <folding />
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="285">
-            <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter2/setstate.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="135">
-            <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-            <folding>
-              <marker date="1578495516854" expanded="true" signature="439:485" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="627:927" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="1191:1692" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="2044:2525" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="2698:2756" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="2877:3301" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="2995:3080" ph="//..." />
-              <marker date="1578495516854" expanded="true" signature="2995:3095" ph="//..." />
-              <marker date="1578495516854" expanded="true" signature="2995:3096" ph="//..." />
-              <marker date="1578495516854" expanded="true" signature="3918:4287" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="6290:7341" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="7583:8477" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="8835:9191" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="9435:9650" ph="{...}" />
-              <marker date="1578495516854" expanded="true" signature="9981:10369" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter2/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" column="32" lean-forward="true" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter1/partial_refresh.md">
+    <entry file="file://$PROJECT_DIR$/docs/chapter2/partial_refresh.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1320">
-            <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-            <folding>
-              <marker date="1578500309804" expanded="true" signature="335:404" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="453:660" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="522:658" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="549:653" ph="(...)" />
-              <marker date="1578500309804" expanded="true" signature="636:646" ph="(...)" />
-              <marker date="1578500309804" expanded="true" signature="812:881" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="930:1435" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="1052:1433" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="1075:1428" ph="(...)" />
-              <marker date="1578500309804" expanded="true" signature="1144:1152" ph="&lt;~&gt;" />
-              <marker date="1578500309804" expanded="true" signature="1176:1185" ph="(...)" />
-              <marker date="1578500309804" expanded="true" signature="1221:1412" ph="(...)" />
-              <marker date="1578500309804" expanded="true" signature="1388:1401" ph="(...)" />
-              <marker date="1578500309804" expanded="true" signature="1494:1625" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="1675:1865" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="1749:1782" ph="{...}" />
-              <marker date="1578500309804" expanded="true" signature="1770:1777" ph="(...)" />
-              <marker date="1578500309804" expanded="true" signature="1812:1863" ph="{...}" />
-            </folding>
+            <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter3/flutter_framwork.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="165">
-            <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/docs/chapter3/flutter_framwork.md" />
+    <entry file="file://$PROJECT_DIR$/../1/flutter-advanced-book/docs/chapter1/widget_offset.md" />
+    <entry file="file://$PROJECT_DIR$/docs/img/material_color.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter1/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/docs/img/avatar.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/SUMMARY.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/docs/chapter1/screen_algorithm.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-            <folding />
+          <first_editor relative-caret-position="187">
+            <caret line="81" column="25" lean-forward="true" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
           </first_editor>
           <second_editor />
         </state>
@@ -895,31 +777,269 @@
     <entry file="file://$PROJECT_DIR$/docs/chapter1/screen_widget.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="75">
-            <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-            <folding />
+          <first_editor relative-caret-position="303">
+            <caret line="141" column="11" selection-start-line="141" selection-start-column="11" selection-end-line="141" selection-end-column="11" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter1/screen_algorithm.md">
+    <entry file="file://$PROJECT_DIR$/docs/chapter1/widget_offset.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="105">
-            <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="19" />
+          <first_editor relative-caret-position="319">
+            <caret line="347" column="34" lean-forward="true" selection-start-line="347" selection-start-column="34" selection-end-line="347" selection-end-column="34" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter3/setstate.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="178">
+            <caret line="312" column="26" lean-forward="true" selection-start-line="312" selection-start-column="26" selection-end-line="312" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter0/windows.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="13" selection-start-column="2" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter5/mvc.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter5/mvvm.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter1/theme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="196">
+            <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter0/mac_os.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter3/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter1/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter3/run_app.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="180">
+            <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter0/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter1/upgrade.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2677">
+            <caret line="591" column="21" lean-forward="true" selection-start-line="591" selection-start-column="21" selection-end-line="591" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter2/no_context_route.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="364">
+            <caret line="106" column="4" lean-forward="true" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter5/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter4/steam.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter2/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter4/bloc.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter4/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter2/route.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="409">
+            <caret line="407" column="3" lean-forward="true" selection-start-line="407" selection-start-column="3" selection-end-line="407" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter2/my_route.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2846">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="260">
+            <caret line="229" column="3" selection-start-line="229" selection-start-column="3" selection-end-line="229" selection-end-column="3" />
             <folding>
-              <marker date="1578526731219" expanded="true" signature="135:182" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="230:278" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="328:376" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="429:480" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="531:580" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="632:682" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="737:796" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="855:883" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="938:1014" ph="{...}" />
-              <marker date="1578526731219" expanded="true" signature="1075:1129" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="335:486" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="548:564" ph="&lt;~&gt;" />
+              <marker date="1579684903147" expanded="true" signature="650:690" ph="///..." />
+              <marker date="1579684903147" expanded="true" signature="776:893" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="994:1742" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="1844:2037" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="1877:2034" ph="(...)" />
+              <marker date="1579684903147" expanded="true" signature="1957:2029" ph="(...)" />
+              <marker date="1579684903147" expanded="true" signature="2084:2276" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="2116:2273" ph="(...)" />
+              <marker date="1579684903147" expanded="true" signature="2196:2268" ph="(...)" />
+              <marker date="1579684903147" expanded="true" signature="2307:2350" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="2381:2419" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="2453:2494" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="2526:2563" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="2593:2630" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="2670:2714" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="2854:3586" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="3639:4166" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="4387:4412" ph="nav_router: &lt;1 key&gt;" />
+              <marker date="1579684903147" expanded="true" signature="4409:4412" ph="../" />
+              <marker date="1579684903147" expanded="true" signature="4646:4829" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="4697:4827" ph="{...}" />
+              <marker date="1579684903147" expanded="true" signature="4725:4822" ph="(...)" />
             </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/SUMMARY.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="315">
+            <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="195">
+            <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           </first_editor>
           <second_editor />
         </state>
