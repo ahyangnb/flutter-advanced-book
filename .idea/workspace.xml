@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b46192b1-bdd3-4da5-8f70-dcda4123d019" name="Default" comment="commit theme ok change">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="b46192b1-bdd3-4da5-8f70-dcda4123d019" name="Default" comment="commit new pro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter0/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter0/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter1/life_cycle.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter1/life_cycle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter1/screen_algorithm.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter1/screen_algorithm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter1/screen_widget.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter1/screen_widget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter1/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter1/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter1/upgrade.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter1/upgrade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter1/widget_offset.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter1/widget_offset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter2/my_route.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter2/my_route.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter2/no_context_route.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter2/no_context_route.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter2/partial_refresh.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter2/partial_refresh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter2/route.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter2/route.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter3/run_app.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter3/run_app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter3/setstate.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter3/setstate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter4/bloc.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter4/bloc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter4/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter4/steam.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter4/steam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter5/mvc.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter5/mvc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/chapter5/mvvm.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/chapter5/mvvm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/search_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/_book/search_index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_book/search_plus_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/_book/search_plus_index.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +45,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/SUMMARY.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
+            <state relative-caret-position="315">
               <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
             </state>
           </provider>
@@ -30,8 +54,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+            <state relative-caret-position="330">
+              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/chapter2/index.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -39,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/chapter2/my_route.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2846">
+            <state relative-caret-position="300">
               <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
             </state>
           </provider>
@@ -138,8 +171,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="89" />
-    <option name="width" value="1440" />
+    <option name="y" value="23" />
+    <option name="width" value="1084" />
     <option name="height" value="811" />
   </component>
   <component name="ProjectView">
@@ -552,21 +585,28 @@
       <option name="project" value="LOCAL" />
       <updated>1579684971876</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="commit new pro">
+      <created>1580696514104</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1580696514104</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Resources Explorer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22603719" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21101573" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Captures" order="3" weight="0.25" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Resources Explorer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -574,11 +614,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49713877" visible="true" weight="0.27831325" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49713877" visible="true" weight="0.24819277" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5028612" side_tool="true" weight="0.28072625" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.37988827" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.37951806" />
       <window_info anchor="bottom" id="Messages" order="10" />
-      <window_info anchor="right" id="Flutter Performance" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -587,6 +626,7 @@
       <window_info anchor="right" id="Flutter Inspector" order="5" />
       <window_info anchor="right" id="Flutter Outline" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Flutter Performance" order="8" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -630,7 +670,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit build offset widget" />
     <MESSAGE value="commit build text" />
     <MESSAGE value="commit run app" />
     <MESSAGE value="commit theme start" />
@@ -655,7 +694,8 @@
     <MESSAGE value="commit bloc" />
     <MESSAGE value="commit route fix" />
     <MESSAGE value="commit my route" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit my route" />
+    <MESSAGE value="commit new pro" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit new pro" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/end/README.md" />
@@ -934,16 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter2/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/chapter4/bloc.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -974,50 +1004,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/chapter2/my_route.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2846">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="260">
-            <caret line="229" column="3" selection-start-line="229" selection-start-column="3" selection-end-line="229" selection-end-column="3" />
-            <folding>
-              <marker date="1579684903147" expanded="true" signature="335:486" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="548:564" ph="&lt;~&gt;" />
-              <marker date="1579684903147" expanded="true" signature="650:690" ph="///..." />
-              <marker date="1579684903147" expanded="true" signature="776:893" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="994:1742" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="1844:2037" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="1877:2034" ph="(...)" />
-              <marker date="1579684903147" expanded="true" signature="1957:2029" ph="(...)" />
-              <marker date="1579684903147" expanded="true" signature="2084:2276" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="2116:2273" ph="(...)" />
-              <marker date="1579684903147" expanded="true" signature="2196:2268" ph="(...)" />
-              <marker date="1579684903147" expanded="true" signature="2307:2350" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="2381:2419" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="2453:2494" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="2526:2563" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="2593:2630" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="2670:2714" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="2854:3586" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="3639:4166" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="4387:4412" ph="nav_router: &lt;1 key&gt;" />
-              <marker date="1579684903147" expanded="true" signature="4409:4412" ph="../" />
-              <marker date="1579684903147" expanded="true" signature="4646:4829" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="4697:4827" ph="{...}" />
-              <marker date="1579684903147" expanded="true" signature="4725:4822" ph="(...)" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/SUMMARY.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
+        <state relative-caret-position="315">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
@@ -1030,10 +1019,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter2/my_route.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="260">
+            <caret line="229" column="3" selection-start-line="229" selection-start-column="3" selection-end-line="229" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/chapter2/index.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docs/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        <state relative-caret-position="330">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
         </state>
       </provider>
       <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
