@@ -10,7 +10,7 @@ Flutter开发组长，
 [nav_router](https://github.com/fluttercandies/nav_router)等开源项目作品，
 视频课程：[Flutter实用例子进阶课程](http://www.flutterj.com/?post=124) ，
 [高仿谷歌翻译项目课程](http://www.flutterj.com/?post=73)，
-目前就职于广州某创业公司，
+目前就职于珠海某公司，
 持续对[Flutter社区](https://flutter.cn/)输出文章资源，主要关注移动端行业发展和技术更新迭代，不断进步。
 
 

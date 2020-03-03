@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b46192b1-bdd3-4da5-8f70-dcda4123d019" name="Default" comment="commit readme">
+    <list default="true" id="b46192b1-bdd3-4da5-8f70-dcda4123d019" name="Default" comment="commit md update new">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
     </list>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            <state relative-caret-position="180">
+              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -574,7 +574,21 @@
       <option name="project" value="LOCAL" />
       <updated>1580881510973</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="commit md update">
+      <created>1583236782836</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1583236782836</updated>
+    </task>
+    <task id="LOCAL-00043" summary="commit md update new">
+      <created>1583236893915</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1583236893915</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -652,8 +666,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit run app" />
-    <MESSAGE value="commit theme start" />
     <MESSAGE value="commit theme ok" />
     <MESSAGE value="commit theme ok change" />
     <MESSAGE value="commit theme ok change 1" />
@@ -677,7 +689,9 @@
     <MESSAGE value="commit my route" />
     <MESSAGE value="commit new pro" />
     <MESSAGE value="commit readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit readme" />
+    <MESSAGE value="commit md update" />
+    <MESSAGE value="commit md update new" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit md update new" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/end/README.md" />
@@ -1033,8 +1047,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        <state relative-caret-position="180">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
         </state>
       </provider>
       <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
