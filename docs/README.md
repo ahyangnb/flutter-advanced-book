@@ -1,7 +1,7 @@
 ## 作者
 [q1](https://github.com/ahyangnb)，近两年Flutter经验，企业内部Flutter培训讲师，
 Flutter开发组长，
-作品曾受谷歌官方赞扬并签署谷歌开发者案例研究授权书，
+作品曾受谷歌官方赞扬并签署【谷歌开发者案例研究授权书】，
 [Flutter教程网](http://www.flutterj.com/)
 创办者，微信公众号"[Flutter前线](http://www.flutterj.com/content/uploadfile/202001/87441578227752.png)"小编，
 [FlutterCandies](https://github.com/fluttercandies)开源组织成员，具有：
