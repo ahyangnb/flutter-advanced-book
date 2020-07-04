@@ -33,5 +33,8 @@
     * [5.1：MVVM架构搭建](chapter5/mvvm.md)
     * [5.2：MVC架构搭建](chapter5/mvc.md)
     
+*  [Flutter Wiki](wiki/index.md)
+    * [1.1：package:flutter的测试范围](wiki/test_coverage.md)
+    
 ---
 *  [Flutter面试题](https://github.com/ahyangnb/flutter_interview)
